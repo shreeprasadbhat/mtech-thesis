@@ -40,10 +40,14 @@ def generate_fake_samples(n):
     y_fake = np.zeros(n)
     return x_fake, y_fake
 
-#HyperParams = json.load('HyperParams.json')
-latent_dim = 16 
-epochs = 1000
-batch_size = 512 
+readlines = ""
+with open('HyperParams.json') as file:
+    readlines = file.read() 
+
+HyperParams = json.loads(readlines) 
+latent_dim = HyperParams['latent_dim'] 
+epochs = HyperParams['epochs']
+batch_size = HyperParams['batch_size']
 input_size = 2048
 n_classes = 3
 train_size = 26000 
@@ -58,7 +62,6 @@ z.sort()
 x_real, y_real = generate_real_samples(train_size, z)
 #x_real_580 = x_real[:,:580]
 x_real_580 = x_real[:,idx]
-print(x_real_580.shape)
 
 x_real_580 = np.reshape(x_real_580, (-1,580,1))
 # split into test, validation, and training sets
