@@ -84,6 +84,7 @@ train_dataset = (
         .from_tensor_slices((x_train_580, x_train, y_train))
         .shuffle(buffer_size, reshuffle_each_iteration=True)
         .batch(batch_size)
+        .prefetch(tf.data.AUTOTUNE)
 )
 val_dataset = (
     tf.data.Dataset
@@ -99,10 +100,6 @@ test_dataset = (
 )
 
 vaegan = VAEGAN(latent_dim, input_size, n_classes)
-
-enc_optimizer = keras.optimizers.Adam()
-gen_optimizer = keras.optimizers.Adam()
-disc_optimizer = keras.optimizers.Adam()
 
 enc_train_loss_results = []
 gen_train_loss_results = []
@@ -131,18 +128,8 @@ for epoch in range(epochs):
     disc_epoch_accuracy = keras.metrics.SparseCategoricalAccuracy()
 
     for x_real_580, x_real, y_real in train_dataset:
-        with tf.GradientTape() as enc_tape, tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
-            enc_loss, gen_loss, disc_loss, x_fake, y_fake = vaegan.vaegan_loss(x_real_580, x_real, y_real)      
-            
-        # calculate gradients
-        enc_grads = enc_tape.gradient(enc_loss, vaegan.encoder.trainable_variables)
-        gen_grads = gen_tape.gradient(gen_loss, vaegan.generator.trainable_variables)
-        disc_grads = disc_tape.gradient(disc_loss, vaegan.discriminator.trainable_variables)
- 
-        # apply gradients
-        enc_optimizer.apply_gradients(zip(enc_grads, vaegan.encoder.trainable_weights))
-        gen_optimizer.apply_gradients(zip(gen_grads, vaegan.generator.trainable_weights))
-        disc_optimizer.apply_gradients(zip(disc_grads, vaegan.discriminator.trainable_weights)) 
+
+        enc_loss, gen_loss, disc_loss, x_fake, y_fake = vaegan.train_step(x_real_580, x_real, y_real)
 
         # track progress
         enc_epoch_loss_avg.update_state(enc_loss)

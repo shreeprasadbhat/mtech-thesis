@@ -8,11 +8,15 @@ from Discriminator import Discriminator
 
 class VAEGAN(keras.Model):
 
-    def __init__(self, latent_dim, n_inputs, n_classes):
+    def __init__(self, latent_dim, n_inputs, n_classes, train=True):
         super(VAEGAN, self).__init__()
         self.encoder = Encoder(latent_dim)
         self.generator = Generator(n_inputs)
         self.discriminator = Discriminator(n_classes)
+        if train:
+            self.enc_optimizer = keras.optimizers.Adam()
+            self.gen_optimizer = keras.optimizers.Adam()
+            self.disc_optimizer = keras.optimizers.Adam()
     
     def sample(self, z_mean, z_log_var):
         # sample using reparameterization trick
@@ -30,7 +34,7 @@ class VAEGAN(keras.Model):
 
     def discriminator_reconstruction_loss(self, h_real, h_fake):
         return tf.reduce_mean(tf.reduce_mean(tf.math.square(h_real-h_fake), axis=0))
-        
+
     def vaegan_loss(self, x_real_580, x_real, y_real):
         z_mean, z_log_var = self.encoder(x_real_580)
         z_sampled = self.sample(z_mean, z_log_var)
@@ -51,6 +55,24 @@ class VAEGAN(keras.Model):
         disc_loss = disc_real_loss + disc_fake_loss
         
         return enc_loss, gen_loss, disc_loss, x_fake, y_fake
+
+    @tf.function
+    def train_step(self, x_real_580, x_real, y_real):
+        with tf.GradientTape() as enc_tape, tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
+            enc_loss, gen_loss, disc_loss, x_fake, y_fake = self.vaegan_loss(x_real_580, x_real, y_real)      
+                
+        # calculate gradients
+        enc_grads = enc_tape.gradient(enc_loss, self.encoder.trainable_variables)
+        gen_grads = gen_tape.gradient(gen_loss, self.generator.trainable_variables)
+        disc_grads = disc_tape.gradient(disc_loss, self.discriminator.trainable_variables)
+     
+        # apply gradients
+        self.enc_optimizer.apply_gradients(zip(enc_grads, self.encoder.trainable_weights))
+        self.gen_optimizer.apply_gradients(zip(gen_grads, self.generator.trainable_weights))
+        self.disc_optimizer.apply_gradients(zip(disc_grads, self.discriminator.trainable_weights)) 
+
+        return enc_loss, gen_loss, disc_loss, x_fake, y_fake
+
  
     def interpolate(self, x1, x2):
         z1 = self.encoder(x1)
