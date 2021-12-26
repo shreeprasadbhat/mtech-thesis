@@ -11,34 +11,9 @@ from numpy.random import RandomState
 # add parent directory of project to system path, to access all the packages in project, sys.path.append appends are not permanent
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from src.model.VAEGAN.VAEGAN import VAEGAN
+from VAEGAN import VAEGAN
 from src.data.toy_models.ParabolicModel import ParabolicModel
-from src.data.toy_models.SineModel import SineModel 
-from src.data.toy_models.TrueModel import TrueModel
-
-def generate_real_samples(size, z):
-    parabolicModelObj = ParabolicModel() 
-    x1 = np.zeros([int(size/2), 2048]) 
-    for i in range(int(size/2)):
-        x1[i] = parabolicModelObj.sample(z)     
-    y1 = tf.zeros(int(size/2))
-    sineModelObj = SineModel()
-    x2 = np.zeros([int(size/2), 2048])
-    for i in range(int(size/2)):
-        x2[i] = sineModelObj.sample(z)
-    y2 = tf.ones(int(size/2))
-    x_real = np.concatenate([x1, x2])
-    y_real = np.concatenate([y1, y2])
-    return x_real, y_real 
-
-def generate_latent_samples(batch_size):
-    return np.random.randn(batch_size, latent_dim)
-
-def generate_fake_samples(n):
-    latent_samples = generate_latent_samples(n)
-    x_fake = generator.predict(latent_samples)
-    y_fake = np.zeros(n)
-    return x_fake, y_fake
+from src.data.toy_models.SineModel import SineModel
 
 readlines = ""
 with open('HyperParams.json') as file:
@@ -48,36 +23,39 @@ HyperParams = json.loads(readlines)
 latent_dim = HyperParams['latent_dim'] 
 epochs = HyperParams['epochs']
 batch_size = HyperParams['batch_size']
-input_size = 2048
-n_classes = 3
-train_size = 26000 
+input_dim = HyperParams['input_dim']
+output_dim = HyperParams['output_dim']
+n_classes = HyperParams['n_classes']
+train_size = HyperParams['train_size']
 buffer_size = train_size 
 
-prng = RandomState(123)
-# generate z
-idx = prng.randint(0,2048,580)
-z = prng.uniform(0,1,2048)
+def generate_real_samples(train_size, z, input_dim):
+    half_train_size = int(train_size/2) 
+    parabolicModelObj = ParabolicModel()
+    x1 = np.zeros([half_train_size, input_dim])
+    for i in range(half_train_size):
+        x1[i] = parabolicModelObj.sample(z)
+    y1 = np.zeros(half_train_size)
+    sineModelObj = SineModel()
+    x2 = np.zeros([half_train_size, input_dim])
+    for i in range(half_train_size):
+        x2[i] = sineModelObj.sample(z)
+    y2 = np.ones(half_train_size)
+    x_real = np.concatenate([x1, x2])
+    y_real = np.concatenate([y1, y2])
+    return x_real, y_real
+
+prng = np.random.RandomState(123)
+z = prng.uniform(0, 1, output_dim)
 z.sort()
+idx = prng.randint(0, output_dim, input_dim)
+x_real, y_real = generate_real_samples(train_size, z, output_dim) 
+x_real_580 = x_real[:, idx] 
+y_real = y_real[:, np.newaxis]
 
-x_real, y_real = generate_real_samples(train_size, z)
-#x_real_580 = x_real[:,:580]
-x_real_580 = x_real[:,idx]
-
-x_real_580 = np.reshape(x_real_580, (-1,580,1))
 # split into test, validation, and training sets
-
-x_train = x_real[:22230]
-x_train_580 = x_real_580[:22230]
-y_train = y_real[:22230]
-x_val = x_real[22230:24700]
-x_val_580 = x_real_580[22230:24700]
-y_val = y_real[22230:24700]
-x_test = x_real[24700:]
-x_test_580 = x_real[24700:]
-y_test = y_real[24700:]
-
-#x_train, x_test, y_train, y_test = train_test_split(x_real, y_real, test_size=0.05)
-#x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=0.1)
+x_train_580, x_test_580, x_train, x_test, y_train, y_test = train_test_split(x_real_580, x_real, y_real, test_size=0.05)
+x_train_580, x_val_580, x_train, x_val, y_train, y_val = train_test_split(x_train_580, x_train, y_train, test_size=0.1)
 
 train_dataset = ( 
     tf.data.Dataset
@@ -86,6 +64,7 @@ train_dataset = (
         .batch(batch_size)
         .prefetch(tf.data.AUTOTUNE)
 )
+
 val_dataset = (
     tf.data.Dataset
         .from_tensor_slices((x_val_580, x_val, y_val))
@@ -99,7 +78,7 @@ test_dataset = (
         .batch(batch_size)
 )
 
-vaegan = VAEGAN(latent_dim, input_size, n_classes)
+vaegan = VAEGAN(latent_dim, input_dim, output_dim, n_classes)
 
 enc_train_loss_results = []
 gen_train_loss_results = []

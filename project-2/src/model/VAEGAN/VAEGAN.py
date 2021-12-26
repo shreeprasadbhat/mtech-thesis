@@ -1,17 +1,17 @@
 import tensorflow as tf
 from tensorflow import keras
 from keras import layers
-
+import numpy as np
 from Encoder import Encoder
 from Generator import Generator
 from Discriminator import Discriminator
 
 class VAEGAN(keras.Model):
 
-    def __init__(self, latent_dim, n_inputs, n_classes, train=True):
+    def __init__(self, latent_dim, input_dim, output_dim, n_classes, train=True):
         super(VAEGAN, self).__init__()
-        self.encoder = Encoder(latent_dim)
-        self.generator = Generator(n_inputs)
+        self.encoder = Encoder(latent_dim, input_dim)
+        self.generator = Generator(output_dim)
         self.discriminator = Discriminator(n_classes)
         if train:
             self.enc_optimizer = keras.optimizers.Adam()
@@ -59,13 +59,13 @@ class VAEGAN(keras.Model):
     @tf.function
     def train_step(self, x_real_580, x_real, y_real):
         with tf.GradientTape() as enc_tape, tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
-            enc_loss, gen_loss, disc_loss, x_fake, y_fake = self.vaegan_loss(x_real_580, x_real, y_real)      
-                
+            enc_loss, gen_loss, disc_loss, x_fake, y_fake = self.vaegan_loss(x_real_580, x_real, y_real)
+
         # calculate gradients
         enc_grads = enc_tape.gradient(enc_loss, self.encoder.trainable_variables)
         gen_grads = gen_tape.gradient(gen_loss, self.generator.trainable_variables)
         disc_grads = disc_tape.gradient(disc_loss, self.discriminator.trainable_variables)
-     
+
         # apply gradients
         self.enc_optimizer.apply_gradients(zip(enc_grads, self.encoder.trainable_weights))
         self.gen_optimizer.apply_gradients(zip(gen_grads, self.generator.trainable_weights))
@@ -82,4 +82,4 @@ class VAEGAN(keras.Model):
         return out
 
 if __name__ == "__main__":
-    self = VAEGAN(5,2,3)
+    self = VAEGAN(20, 580, 2048,3)

@@ -1,1 +1,9 @@
-{"latent_dim" :16,"epochs" :100,"batch_size" :512}
+{
+    "latent_dim" :16,
+    "epochs" :1,
+    "batch_size" :512,
+    "input_dim" :580,
+    "output_dim": 2048,
+    "n_classes": 3, 
+    "train_size": 26000
+}
