@@ -27,7 +27,7 @@ class VAEGAN(keras.Model):
         return -0.5 * tf.reduce_mean(z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1)
  
     def generator_loss(self, y_true, y_pred):
-        return keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred)
+        return - keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred)
    
     def discriminator_loss(self, y_true, y_pred):
         return keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred) 
@@ -73,13 +73,5 @@ class VAEGAN(keras.Model):
 
         return enc_loss, gen_loss, disc_loss, x_fake, y_fake
 
- 
-    def interpolate(self, x1, x2):
-        z1 = self.encoder(x1)
-        z2 = self.encoder(x2)
-        z = [z1+(z2-z2)*t for t in np.linspace(0,1,10)]
-        out = self.generator(z)
-        return out
-
 if __name__ == "__main__":
-    self = VAEGAN(20, 580, 2048,3)
+    obj = VAEGAN(20, 580, 2048,3)

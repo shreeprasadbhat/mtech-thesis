@@ -1,6 +1,6 @@
 {
     "latent_dim" :16,
-    "epochs" :1,
+    "epochs" :10,
     "batch_size" :512,
     "input_dim" :580,
     "output_dim": 2048,
