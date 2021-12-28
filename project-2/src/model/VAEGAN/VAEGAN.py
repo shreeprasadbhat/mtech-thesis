@@ -45,13 +45,13 @@ class VAEGAN(keras.Model):
         
         # calculate losses
         kl_loss = self.kl_loss(z_mean, z_log_var)
-        gen_fake_loss = self.generator_loss(y_fake, y_fake_pred)
+        #gen_fake_loss = self.generator_loss(y_fake, y_fake_pred)
         disc_real_loss = self.discriminator_loss(y_real, y_real_pred)
         disc_fake_loss = self.discriminator_loss(y_fake, y_fake_pred)
         disc_recon_loss = self.discriminator_reconstruction_loss(h_real, h_fake)
 
         enc_loss = kl_loss + disc_recon_loss
-        gen_loss = gen_fake_loss + disc_recon_loss
+        gen_loss = disc_recon_loss #+ gen_fake_loss 
         disc_loss = disc_real_loss + disc_fake_loss
         
         return enc_loss, gen_loss, disc_loss, x_fake, y_fake
