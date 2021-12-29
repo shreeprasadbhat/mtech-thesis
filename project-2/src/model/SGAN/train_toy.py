@@ -78,8 +78,8 @@ test_dataset = (
         .batch(batch_size)
 )
 
-gan = GAN(output_dim, latent_dim, n_classes)
-gan.def_optimizer(lr_gen, lr_disc)
+sgan = SGAN(output_dim, latent_dim, n_classes)
+sgan.def_optimizer(lr_gen, lr_disc)
 
 gen_train_loss_results = []
 disc_train_loss_results = []
@@ -100,13 +100,13 @@ for epoch in range(epochs):
 
     for x_real, y_real in train_dataset:
 
-        gen_loss, disc_loss = gan.train_step(x_real, y_real)
+        gen_loss, disc_loss = sgan.train_step(x_real, y_real)
 
         # track progress
         gen_epoch_loss_avg.update_state(gen_loss)
         disc_epoch_loss_avg.update_state(disc_loss)
       
-        disc_epoch_accuracy.update_state(y_real, gan.discriminator.predict(x_real)[0])
+        disc_epoch_accuracy.update_state(y_real, sgan.discriminator.predict(x_real)[0])
             
     gen_train_loss_results.append(gen_epoch_loss_avg.result())
     disc_train_loss_results.append(disc_epoch_loss_avg.result())
@@ -126,13 +126,13 @@ for epoch in range(epochs):
 
     for x_real, y_real in val_dataset:
        
-        gen_loss, disc_loss= gan.gan_loss(x_real, y_real, x_real.shape[0])
+        gen_loss, disc_loss= sgan.sgan_loss(x_real, y_real, x_real.shape[0])
 
         # track progress
         gen_epoch_loss_avg.update_state(gen_loss)
         disc_epoch_loss_avg.update_state(disc_loss)
       
-        disc_epoch_accuracy.update_state(y_real, gan.discriminator.predict(x_real)[0])
+        disc_epoch_accuracy.update_state(y_real, sgan.discriminator.predict(x_real)[0])
 
     
     gen_val_loss_results.append(gen_epoch_loss_avg.result())
@@ -149,7 +149,7 @@ for epoch in range(epochs):
 checkpoint_path = "./saved_models/cp.ckpt"
 
 # Save the weights using the `checkpoint_path` format
-gan.save_weights(checkpoint_path)
+sgan.save_weights(checkpoint_path)
 
 plt.plot(np.arange(epochs), gen_train_loss_results, '-', label='generator train loss')
 plt.plot(np.arange(epochs), gen_val_loss_results, '--', label='generator val loss')

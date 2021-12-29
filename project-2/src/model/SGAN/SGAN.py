@@ -5,7 +5,7 @@ from keras import layers
 from Generator import Generator
 from Discriminator import Discriminator
 
-class GAN(keras.Model):
+class SGAN(keras.Model):
     def __init__(self, input_dim, latent_dim, n_classes ):
         super().__init__()
         self.latent_dim = latent_dim
@@ -24,7 +24,7 @@ class GAN(keras.Model):
         result = logexpsum / ( logexpsum + 1.)
         return result
  
-    def gan_loss(self, x_real, y_real, batch_size):
+    def sgan_loss(self, x_real, y_real, batch_size):
         z = tf.random.normal((batch_size, self.latent_dim))
         x_fake = self.generator(z) 
         y_fake_pred, h_fake = self.discriminator(x_fake)
@@ -48,7 +48,7 @@ class GAN(keras.Model):
         
         # calculate the loss
         with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
-           gen_loss, disc_loss = self.gan_loss(x_real, y_real, x_real.shape[0])  
+           gen_loss, disc_loss = self.sgan_loss(x_real, y_real, x_real.shape[0])  
         
         # calculate the gradients        
         gen_grads = gen_tape.gradient(gen_loss, self.generator.trainable_variables)
