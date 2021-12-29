@@ -11,7 +11,7 @@ from numpy.random import RandomState
 # add parent directory of project to system path, to access all the packages in project, sys.path.append appends are not permanent
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from GAN import GAN
+from SGAN import SGAN
 from src.data.toy_models.ParabolicModel import ParabolicModel
 from src.data.toy_models.SineModel import SineModel
 
