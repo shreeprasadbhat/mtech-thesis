@@ -8,7 +8,7 @@ from Discriminator import Discriminator
 
 class VAEGAN(keras.Model):
 
-    def __init__(self, latent_dim, input_dim, output_dim, n_classes, train=True):
+    def __init__(self, latent_dim, input_dim, output_dim, n_classes, batch_size, train=True):
         super(VAEGAN, self).__init__()
         self.encoder = Encoder(latent_dim, input_dim)
         self.generator = Generator(output_dim)
@@ -18,41 +18,55 @@ class VAEGAN(keras.Model):
             self.gen_optimizer = keras.optimizers.Adam()
             self.disc_optimizer = keras.optimizers.Adam()
     
-    def sample(self, z_mean, z_log_var):
+    def sample(self, shape, z_mean=0., z_log_var=0.):
         # sample using reparameterization trick
-        eps = tf.random.normal(z_mean.shape)
+        eps = tf.random.normal(shape)
         return z_mean + tf.exp(z_log_var*0.5)*eps
    
     def kl_loss(self, z_mean, z_log_var):
         return -0.5 * tf.reduce_mean(z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1)
- 
-    def generator_loss(self, y_true, y_pred):
-        return - keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred)
+     
+    #def generator_loss(self, y_true, y_pred):
+    #    return - keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred)
    
-    def discriminator_loss(self, y_true, y_pred):
-        return keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred) 
+    def supervised_loss(self, y_true, y_pred):
+        return keras.losses.SparseCategoricalCrossentropy() (y_true, y_pred) 
+    
+    def unsupervised_loss(self, y_true, y_pred):
+        return keras.losses.BinaryCrossentropy() (y_true, y_pred)    
+
+    def custom_activation(self, out):
+        logexpsum = tf.reduce_sum(tf.exp(out), axis=-1, keepdims=True) 
+        result = logexpsum / (logexpsum + 1.)
+        return result
 
     def discriminator_reconstruction_loss(self, h_real, h_fake):
         return tf.reduce_mean(tf.reduce_mean(tf.math.square(h_real-h_fake), axis=0))
 
     def vaegan_loss(self, x_real_580, x_real, y_real):
         z_mean, z_log_var = self.encoder(x_real_580)
-        z_sampled = self.sample(z_mean, z_log_var)
+        z_sampled = self.sample(z_mean.shape, z_mean, z_log_var)
+        z_prior = self.sample(z_mean.shape)
+
         x_fake = self.generator(z_sampled)
+        x_enc = self.generator(z_prior)
         y_fake = tf.fill((x_fake.shape[0],), 2) 
         y_real_pred, h_real = self.discriminator(x_real)
         y_fake_pred, h_fake = self.discriminator(x_fake)
+        _, h_enc = self.discriminator(x_enc)
         
         # calculate losses
         kl_loss = self.kl_loss(z_mean, z_log_var)
         #gen_fake_loss = self.generator_loss(y_fake, y_fake_pred)
-        disc_real_loss = self.discriminator_loss(y_real, y_real_pred)
-        disc_fake_loss = self.discriminator_loss(y_fake, y_fake_pred)
-        disc_recon_loss = self.discriminator_reconstruction_loss(h_real, h_fake)
+        generator_loss = self.unsupervised_loss(tf.ones_like(y_fake), self.custom_activation(h_fake))
+        supervised_loss = self.supervised_loss(y_real, y_real_pred)
+        unsupervised_loss = self.unsupervised_loss(tf.ones_like(y_real), self.custom_activation(h_real))
+        unsupervised_loss += self.unsupervised_loss(tf.zeros_like(y_fake), self.custom_activation(h_fake))
+        disc_recon_loss = self.discriminator_reconstruction_loss(h_real, h_enc)
 
         enc_loss = kl_loss + disc_recon_loss
-        gen_loss = disc_recon_loss #+ gen_fake_loss 
-        disc_loss = disc_real_loss + disc_fake_loss
+        gen_loss = disc_recon_loss + generator_loss
+        disc_loss = supervised_loss + unsupervised_loss
         
         return enc_loss, gen_loss, disc_loss, x_fake, y_fake
 

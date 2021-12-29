@@ -10,7 +10,8 @@ class Discriminator(keras.Model):
         self.conv3 = layers.Conv1D(filter_size*4, kernel_size=7, strides=4, kernel_initializer='he_uniform', activation=layers.LeakyReLU())
         self.conv4 = layers.Conv1D(filter_size*8, kernel_size=7, strides=4, kernel_initializer='he_uniform', activation=layers.LeakyReLU())
         self.flatten = layers.Flatten()
-        self.out = layers.Dense(n_classes, activation='softmax')
+        self.dense = layers.Dense(n_classes)
+        self.softmax = layers.Softmax()
     
     def call(self, inputs):
         x = self.reshape(inputs) 
@@ -19,7 +20,8 @@ class Discriminator(keras.Model):
         x = self.conv3(x)
         x = self.conv4(x)
         x = self.flatten(x)
-        return self.out(x), x
+        x = self.dense(x)
+        return self.softmax(x), x
 
 if __name__ == "__main__":
     discrminator = Discriminator(3)
