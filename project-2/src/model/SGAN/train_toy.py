@@ -73,14 +73,12 @@ train_dataset = (
 val_dataset = (
     tf.data.Dataset
         .from_tensor_slices((x_val, y_val))
-        .shuffle(buffer_size)
         .batch(batch_size)
 )
 
 test_dataset = (
     tf.data.Dataset
         .from_tensor_slices((x_test, y_test))
-        .shuffle(buffer_size)
         .batch(batch_size)
 )
 
@@ -93,7 +91,7 @@ def generate_fake_samples(generator, latent_dim, n_samples):
 	# generate points in latent space
 	z_input = generate_latent_points(latent_dim, n_samples)
 	# predict outputs
-	x = generator.predict(z_input)
+	x = generator(z_input)
 	# create class labels
 	y = tf.zeros((n_samples, 1))
 	return x, y
@@ -129,7 +127,7 @@ real_loss_avg = tf.keras.metrics.Mean()
 fake_loss_avg = tf.keras.metrics.Mean()
 g_loss_avg = tf.keras.metrics.Mean() 
 
-d_acc_avg = tf.keras.metrics.SparseCategoricalAccuracy()
+d_acc_avg = tf.keras.metrics.Mean()
 
 d_train_loss_results = []
 d_train_acc_results = []
@@ -138,6 +136,28 @@ g_train_loss_results = []
 d_val_loss_results = []
 d_val_acc_results = []
 g_val_loss_results = []
+
+optimizer=tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc)
+
+@tf.function
+def train_step1(model, x, y):
+    with tf.GradientTape() as tape:
+        y_pred = model(x)
+        loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True) (y, y_pred)
+    grads = tape.gradient(loss, model.trainable_weights)
+    optimizer.apply_gradients(zip(grads, model.trainable_weights))
+    model.compiled_metrics.update_state(y, y_pred)
+    return loss, model.metrics[0].result()
+
+@tf.function
+def train_step2(model, x, y):
+    with tf.GradientTape() as tape:
+        y_pred = model(x)
+        loss = tf.keras.losses.BinaryCrossentropy(from_logits=False) (y, y_pred)
+    grads = tape.gradient(loss, model.trainable_weights)
+    optimizer.apply_gradients(zip(grads, model.trainable_weights))
+    return loss
+
 
 for epoch in range(epochs):
 
@@ -151,9 +171,13 @@ for epoch in range(epochs):
     for x_real, y_real in train_dataset:
         batch_size = x_real.shape[0]
         
-        d_loss, d_acc = sup_discriminator.train_on_batch(x_real, y_real)
-        real_loss = unsup_discriminator.train_on_batch(x_real, tf.ones((batch_size,1)))
+        d_loss, d_acc = train_step1(sup_discriminator, x_real, y_real)
+        #d_loss, d_acc = sup_discriminator.train_on_batch(x_real, y_real)
+        y_real = tf.ones((batch_size,1)) + 0.05 * tf.random.uniform((batch_size,1))
+        real_loss = train_step2(unsup_discriminator, x_real, y_real)
+        #real_loss = unsup_discriminator.train_on_batch(x_real, y_real)
         x_fake, y_fake = generate_fake_samples(generator, latent_dim, batch_size)
+        y_fake += 0.05 * tf.random.uniform(y_fake.shape)
         fake_loss = unsup_discriminator.train_on_batch(x_fake, y_fake)
         x_gan, y_gan = generate_latent_points(latent_dim, batch_size), tf.ones((batch_size, 1))
         g_loss = sgan.train_on_batch(x_gan, y_gan)
@@ -163,7 +187,7 @@ for epoch in range(epochs):
         fake_loss_avg.update_state(fake_loss)
         g_loss_avg.update_state(g_loss)
 
-        d_acc_avg.update_state(y_real, sup_discriminator.predict(x_real))
+        d_acc_avg.update_state(d_acc)
 
     d_train_loss_results.append(d_loss_avg.result())
     d_train_acc_results.append(d_acc_avg.result()*100)
@@ -199,7 +223,7 @@ for epoch in range(epochs):
         fake_loss_avg.update_state(fake_loss)
         g_loss_avg.update_state(g_loss)
 
-        d_acc_avg.update_state(y_real, sup_discriminator.predict(x_real))
+        d_acc_avg.update_state(d_acc)
 
     d_val_loss_results.append(d_loss_avg.result())
     d_val_acc_results.append(d_acc_avg.result()*100)

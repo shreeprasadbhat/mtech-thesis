@@ -10,7 +10,7 @@ class SupervisedDiscriminator(keras.Model):
 
     def call(self, inputs):
         x = self.discriminator(inputs)
-        x = self.softmax(x)
+        #x = self.softmax(x)
         return x
 
 if __name__ == '__main__':
