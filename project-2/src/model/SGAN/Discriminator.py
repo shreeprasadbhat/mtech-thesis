@@ -1,7 +1,7 @@
 from tensorflow import keras
-from keras import layers
+from tensorflow.keras import layers
 
-class Discriminator(keras.Model):
+class Discriminator(layers.Layer):
     def __init__(self, input_dim, n_classes, filter_size=8, kernel_initializer='he_uniform', alpha=0.3):
         super(Discriminator, self).__init__()
         self.reshape = layers.Reshape((input_dim,1))
@@ -19,7 +19,6 @@ class Discriminator(keras.Model):
         self.leakyrelu4 = layers.LeakyReLU(alpha)
         self.flatten = layers.Flatten()
         self.dense = layers.Dense(n_classes)
-        self.softmax = layers.Softmax()
     
     def call(self, inputs):
         x = self.reshape(inputs) 
@@ -37,7 +36,7 @@ class Discriminator(keras.Model):
         x = self.leakyrelu4(x)
         x = self.flatten(x)
         x = self.dense(x)
-        return self.softmax(x), x
+        return x 
 
 if __name__ == "__main__":
     discrminator = Discriminator(2048, 2)

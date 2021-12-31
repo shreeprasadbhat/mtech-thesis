@@ -2,34 +2,20 @@ import os
 import sys
 import json
 import numpy as np
-from sklearn.model_selection import train_test_split 
 import tensorflow as tf
-from tensorflow import keras
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-from numpy.random import RandomState
+from Generator import Generator
+from Discriminator import Discriminator
+from UnsupervisedDiscriminator import UnsupervisedDiscriminator
+from SupervisedDiscriminator import SupervisedDiscriminator
+from SGAN import SGAN
 
 # add parent directory of project to system path, to access all the packages in project, sys.path.append appends are not permanent
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from SGAN import SGAN
 from src.data.toy_models.ParabolicModel import ParabolicModel
 from src.data.toy_models.SineModel import SineModel
-
-readlines = ""
-with open('HyperParams.json') as file:
-    readlines = file.read() 
-
-HyperParams = json.loads(readlines) 
-latent_dim = HyperParams['latent_dim'] 
-epochs = HyperParams['epochs']
-lr_gen = HyperParams['lr_gen']
-lr_disc = HyperParams['lr_disc']
-batch_size = HyperParams['batch_size']
-input_dim = HyperParams['input_dim']
-output_dim = HyperParams['output_dim']
-n_classes = HyperParams['n_classes']
-train_size = HyperParams['train_size']
-buffer_size = train_size 
 
 def generate_real_samples(train_size, z, input_dim):
     half_train_size = int(train_size/2) 
@@ -46,6 +32,25 @@ def generate_real_samples(train_size, z, input_dim):
     x_real = np.concatenate([x1, x2])
     y_real = np.concatenate([y1, y2])
     return x_real, y_real
+
+readlines = ""
+with open('HyperParams.json') as file:
+    readlines = file.read() 
+
+HyperParams = json.loads(readlines) 
+latent_dim = HyperParams['latent_dim'] 
+epochs = HyperParams['epochs']
+lr_gen = HyperParams['lr_gen']
+beta_1_gen = HyperParams['beta_1_gen']
+lr_disc = HyperParams['lr_disc']
+beta_1_disc= HyperParams['beta_1_disc']
+batch_size = HyperParams['batch_size']
+input_dim = HyperParams['input_dim']
+output_dim = HyperParams['output_dim']
+n_classes = HyperParams['n_classes']
+train_size = HyperParams['train_size']
+buffer_size = train_size 
+
 
 prng = np.random.RandomState(123)
 z = prng.uniform(0, 1, output_dim)
@@ -71,6 +76,7 @@ val_dataset = (
         .shuffle(buffer_size)
         .batch(batch_size)
 )
+
 test_dataset = (
     tf.data.Dataset
         .from_tensor_slices((x_test, y_test))
@@ -78,83 +84,145 @@ test_dataset = (
         .batch(batch_size)
 )
 
-sgan = SGAN(output_dim, latent_dim, n_classes)
-sgan.def_optimizer(lr_gen, lr_disc)
+# generate points in latent space as input for the generator
+def generate_latent_points(lac_disc_optimizertent_dim, n_samples):
+	return tf.random.normal((n_samples, latent_dim))
+ 
+# use the generator to generate n fake examples, with class labels
+def generate_fake_samples(generator, latent_dim, n_samples):
+	# generate points in latent space
+	z_input = generate_latent_points(latent_dim, n_samples)
+	# predict outputs
+	x = generator.predict(z_input)
+	# create class labels
+	y = tf.zeros((n_samples, 1))
+	return x, y
+ 
+def summarize_performance(step, generator, sup_discriminator, latent_dim, dataset, n_samples=100):
+	# evaluate the classifier model
+	_, acc = sup_discriminator.evaluate(dataset, verbose=0)
+	print('Classifier Accuracy: %.3f%%' % (acc * 100))
 
-gen_train_loss_results = []
-disc_train_loss_results = []
+generator = Generator(latent_dim)
+discriminator = Discriminator(output_dim, n_classes)
+sup_discriminator = SupervisedDiscriminator(discriminator)
+unsup_discriminator = UnsupervisedDiscriminator(discriminator)
 
-disc_train_acc_results = []
+sup_discriminator.compile(
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(), 
+    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
+    metrics=['accuracy']
+)
+unsup_discriminator.compile(
+    loss=tf.keras.losses.BinaryCrossentropy(), 
+    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
+)
 
-gen_val_loss_results = []
-disc_val_loss_results = []
+sgan = SGAN(generator, unsup_discriminator)
+sgan.compile(
+    loss=tf.keras.losses.BinaryCrossentropy(), 
+    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_gen, beta_1=beta_1_gen)
+)
 
-disc_val_acc_results = []
+d_loss_avg = tf.keras.metrics.Mean()
+real_loss_avg = tf.keras.metrics.Mean()
+fake_loss_avg = tf.keras.metrics.Mean()
+g_loss_avg = tf.keras.metrics.Mean() 
+
+d_acc_avg = tf.keras.metrics.SparseCategoricalAccuracy()
+
+d_train_loss_results = []
+d_train_acc_results = []
+g_train_loss_results = []
+
+d_val_loss_results = []
+d_val_acc_results = []
+g_val_loss_results = []
 
 for epoch in range(epochs):
 
-    gen_epoch_loss_avg = keras.metrics.Mean()
-    disc_epoch_loss_avg = keras.metrics.Mean()
+    d_loss_avg.reset_states()
+    real_loss_avg.reset_states()
+    fake_loss_avg.reset_states()
+    g_loss_avg.reset_states()
 
-    disc_epoch_accuracy = keras.metrics.SparseCategoricalAccuracy()
+    d_acc_avg.reset_states()
 
     for x_real, y_real in train_dataset:
+        batch_size = x_real.shape[0]
+        
+        d_loss, d_acc = sup_discriminator.train_on_batch(x_real, y_real)
+        real_loss = unsup_discriminator.train_on_batch(x_real, tf.ones((batch_size,1)))
+        x_fake, y_fake = generate_fake_samples(generator, latent_dim, batch_size)
+        fake_loss = unsup_discriminator.train_on_batch(x_fake, y_fake)
+        x_gan, y_gan = generate_latent_points(latent_dim, batch_size), tf.ones((batch_size, 1))
+        g_loss = sgan.train_on_batch(x_gan, y_gan)
 
-        gen_loss, disc_loss = sgan.train_step(x_real, y_real)
+        d_loss_avg.update_state(d_loss) 
+        real_loss_avg.update_state(real_loss)
+        fake_loss_avg.update_state(fake_loss)
+        g_loss_avg.update_state(g_loss)
 
-        # track progress
-        gen_epoch_loss_avg.update_state(gen_loss)
-        disc_epoch_loss_avg.update_state(disc_loss)
-      
-        disc_epoch_accuracy.update_state(y_real, sgan.discriminator.predict(x_real)[0])
-            
-    gen_train_loss_results.append(gen_epoch_loss_avg.result())
-    disc_train_loss_results.append(disc_epoch_loss_avg.result())
+        d_acc_avg.update_state(y_real, sup_discriminator.predict(x_real))
 
-    disc_train_acc_results.append(disc_epoch_accuracy.result())
+    d_train_loss_results.append(d_loss_avg.result())
+    d_train_acc_results.append(d_acc_avg.result()*100)
+    g_train_loss_results.append(g_loss_avg.result())
+
+    print('>%d, c[%.3f,%.0f], d[%.3f,%.3f], g[%.3f]' % (
+                                                        epoch+1, 
+                                                        d_loss_avg.result(), 
+                                                        d_acc_avg.result()*100, 
+                                                        real_loss_avg.result(), 
+                                                        fake_loss_avg.result(), 
+                                                        g_loss_avg.result()))
     
-    print('Epoch {:03d}: Gen Loss {:03g} Disc Loss {:03g} Acc {:03g}:'.format(epoch+1,
-                                                                               gen_epoch_loss_avg.result(), 
-                                                                               disc_epoch_loss_avg.result(),
-                                                                               disc_epoch_accuracy.result()))
-
-    gen_epoch_loss_avg = keras.metrics.Mean()
-    disc_epoch_loss_avg = keras.metrics.Mean()
-
-    disc_epoch_accuracy = keras.metrics.SparseCategoricalAccuracy()
-
-
+    d_loss_avg.reset_states()
+    real_loss_avg.reset_states()
+    fake_loss_avg.reset_states()
+    g_loss_avg.reset_states()
+    
+    d_acc_avg.reset_states()
+    
     for x_real, y_real in val_dataset:
-       
-        gen_loss, disc_loss= sgan.sgan_loss(x_real, y_real, x_real.shape[0])
+        batch_size = x_real.shape[0]
+        d_loss, d_acc = sup_discriminator.test_on_batch(x_real, y_real)
+        real_loss = unsup_discriminator.test_on_batch(x_real, tf.ones((batch_size,1)))
+        x_fake, y_fake = generate_fake_samples(generator, latent_dim, batch_size)
+        fake_loss = unsup_discriminator.test_on_batch(x_fake, y_fake)
+        x_gan, y_gan = generate_latent_points(latent_dim, batch_size), tf.ones((batch_size, 1))
+        g_loss = sgan.test_on_batch(x_gan, y_gan)
 
-        # track progress
-        gen_epoch_loss_avg.update_state(gen_loss)
-        disc_epoch_loss_avg.update_state(disc_loss)
-      
-        disc_epoch_accuracy.update_state(y_real, sgan.discriminator.predict(x_real)[0])
+        # evaluate the model performance every so often
+        d_loss_avg.update_state(d_loss) 
+        real_loss_avg.update_state(real_loss)
+        fake_loss_avg.update_state(fake_loss)
+        g_loss_avg.update_state(g_loss)
 
-    
-    gen_val_loss_results.append(gen_epoch_loss_avg.result())
-    disc_val_loss_results.append(disc_epoch_loss_avg.result())
+        d_acc_avg.update_state(y_real, sup_discriminator.predict(x_real))
 
-    disc_val_acc_results.append(disc_epoch_accuracy.result())
-    
-    print('Epoch {:03d}: Gen Loss {:03g} Disc Loss {:03g} Acc {:03g}:'.format(epoch+1,
-                                                                               gen_epoch_loss_avg.result(), 
-                                                                               disc_epoch_loss_avg.result(),
-                                                                               disc_epoch_accuracy.result()))
+    d_val_loss_results.append(d_loss_avg.result())
+    d_val_acc_results.append(d_acc_avg.result()*100)
+    g_val_loss_results.append(g_loss_avg.result())
 
-    
-checkpoint_path = "./saved_models/cp.ckpt"
+    print('>%d, c[%.3f,%.0f], d[%.3f,%.3f], g[%.3f]' % (epoch+1, 
+                                                        d_loss_avg.result(), 
+                                                        d_acc_avg.result()*100, 
+                                                        real_loss_avg.result(), 
+                                                        fake_loss_avg.result(), 
+                                                        g_loss_avg.result()))
+
+
+checkpoint_path = "./saveunsup_discriminators/cp.ckpt"
 
 # Save the weights using the `checkpoint_path` format
 sgan.save_weights(checkpoint_path)
 
-plt.plot(np.arange(epochs), gen_train_loss_results, '-', label='generator train loss')
-plt.plot(np.arange(epochs), gen_val_loss_results, '--', label='generator val loss')
-plt.plot(np.arange(epochs), disc_train_loss_results, '-', label='discriminator train loss')
-plt.plot(np.arange(epochs), disc_val_loss_results, '--', label='discriminator val loss')
+plt.plot(np.arange(epochs), g_train_loss_results, '-', label='generator train loss')
+plt.plot(np.arange(epochs), g_val_loss_results, '--', label='generator val loss')
+plt.plot(np.arange(epochs), d_train_loss_results, '-', label='discriminator train loss')
+plt.plot(np.arange(epochs), d_val_loss_results, '--', label='discriminator val loss')
+
 
 plt.xlabel('epochs')
 plt.ylabel('loss')
@@ -163,8 +231,8 @@ plt.title('epoch vs loss')
 plt.savefig('./out/epoch_vs_loss')
 plt.show()
 
-plt.plot(np.arange(epochs), disc_train_acc_results, '-', label='discriminator train accuracy')
-plt.plot(np.arange(epochs), disc_val_acc_results, '--', label='discriminator val accuracy')
+plt.plot(np.arange(epochs), d_train_acc_results, '-', label='discriminator train accuracy')
+plt.plot(np.arange(epochs), d_val_acc_results, '--', label='discriminator val accuracy')
 
 plt.xlabel('epochs')
 plt.ylabel('metrics')
