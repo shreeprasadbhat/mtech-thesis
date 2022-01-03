@@ -10,8 +10,7 @@ import tensorflow as tf
 # add parent directory of project to system path, to access all the packages in project, sys.path.append appends are not permanent
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 
-from src.data.toy_models.ParabolicModel import ParabolicModel
-from src.data.toy_models.SineModel import SineModel
+from src.data.toy_models.ParabolicModel import ParabolicModel from src.data.toy_models.SineModel import SineModel
 
 def generate_real_samples(train_size, z, input_dim):
     half_train_size = int(train_size/2) 

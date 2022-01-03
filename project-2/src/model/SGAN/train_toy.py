@@ -101,7 +101,7 @@ history = sgan.fit(train_dataset, epochs=epochs, validation_data= val_dataset)
 sgan.evaluate(test_dataset)
 
 
-checkpoint_path = "./saveunsup_discriminators/cp.ckpt"
+checkpoint_path = "./saved_models/cp.ckpt"
 
 # Save the weights using the `checkpoint_path` format
 sgan.save_weights(checkpoint_path)
