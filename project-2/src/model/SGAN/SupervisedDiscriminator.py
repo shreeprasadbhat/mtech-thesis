@@ -6,10 +6,12 @@ class SupervisedDiscriminator(keras.Model):
     def __init__(self, discriminator):
         super().__init__()
         self.discriminator = discriminator
+        self.dense = layers.Dense(2)
         self.softmax = layers.Softmax()
 
     def call(self, inputs):
         x = self.discriminator(inputs)
+        x = self.dense(x)
         #x = self.softmax(x)
         return x
 

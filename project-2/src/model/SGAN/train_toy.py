@@ -20,12 +20,12 @@ from src.data.toy_models.SineModel import SineModel
 def generate_real_samples(train_size, z, input_dim):
     half_train_size = int(train_size/2) 
     parabolicModelObj = ParabolicModel()
-    x1 = np.zeros([half_train_size, input_dim])
+    x1 = np.zeros([half_train_size, input_dim], dtype='float32')
     for i in range(half_train_size):
         x1[i] = parabolicModelObj.sample(z)
     y1 = np.zeros(half_train_size)
     sineModelObj = SineModel()
-    x2 = np.zeros([half_train_size, input_dim])
+    x2 = np.zeros([half_train_size, input_dim], dtype='float32')
     for i in range(half_train_size):
         x2[i] = sineModelObj.sample(z)
     y2 = np.ones(half_train_size)
@@ -82,185 +82,69 @@ test_dataset = (
         .batch(batch_size)
 )
 
-# generate points in latent space as input for the generator
-def generate_latent_points(lac_disc_optimizertent_dim, n_samples):
-	return tf.random.normal((n_samples, latent_dim))
- 
-# use the generator to generate n fake examples, with class labels
-def generate_fake_samples(generator, latent_dim, n_samples):
-	# generate points in latent space
-	z_input = generate_latent_points(latent_dim, n_samples)
-	# predict outputs
-	x = generator(z_input)
-	# create class labels
-	y = tf.zeros((n_samples, 1))
-	return x, y
- 
-def summarize_performance(step, generator, sup_discriminator, latent_dim, dataset, n_samples=100):
-	# evaluate the classifier model
-	_, acc = sup_discriminator.evaluate(dataset, verbose=0)
-	print('Classifier Accuracy: %.3f%%' % (acc * 100))
-
 generator = Generator(latent_dim)
 discriminator = Discriminator(output_dim, n_classes)
 sup_discriminator = SupervisedDiscriminator(discriminator)
 unsup_discriminator = UnsupervisedDiscriminator(discriminator)
 
-sup_discriminator.compile(
-    loss=tf.keras.losses.SparseCategoricalCrossentropy(), 
-    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
-    metrics=['accuracy']
-)
-unsup_discriminator.compile(
-    loss=tf.keras.losses.BinaryCrossentropy(), 
-    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
-)
-
-sgan = SGAN(generator, unsup_discriminator)
+sgan = SGAN(latent_dim, generator, sup_discriminator, unsup_discriminator)
 sgan.compile(
-    loss=tf.keras.losses.BinaryCrossentropy(), 
-    optimizer=tf.keras.optimizers.Adam(learning_rate=lr_gen, beta_1=beta_1_gen)
+    tf.keras.optimizers.Adam(learning_rate=lr_gen, beta_1=beta_1_gen),
+    tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
+    tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc),
+    tf.keras.losses.BinaryCrossentropy(from_logits=True),
+    tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 )
 
-d_loss_avg = tf.keras.metrics.Mean()
-real_loss_avg = tf.keras.metrics.Mean()
-fake_loss_avg = tf.keras.metrics.Mean()
-g_loss_avg = tf.keras.metrics.Mean() 
+history = sgan.fit(train_dataset, epochs=epochs, validation_data= val_dataset)
 
-d_acc_avg = tf.keras.metrics.Mean()
-
-d_train_loss_results = []
-d_train_acc_results = []
-g_train_loss_results = []
-
-d_val_loss_results = []
-d_val_acc_results = []
-g_val_loss_results = []
-
-optimizer=tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc)
-
-@tf.function
-def train_step1(model, x, y):
-    with tf.GradientTape() as tape:
-        y_pred = model(x)
-        loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True) (y, y_pred)
-    grads = tape.gradient(loss, model.trainable_weights)
-    optimizer.apply_gradients(zip(grads, model.trainable_weights))
-    model.compiled_metrics.update_state(y, y_pred)
-    return loss, model.metrics[0].result()
-
-@tf.function
-def train_step2(model, x, y):
-    with tf.GradientTape() as tape:
-        y_pred = model(x)
-        loss = tf.keras.losses.BinaryCrossentropy(from_logits=False) (y, y_pred)
-    grads = tape.gradient(loss, model.trainable_weights)
-    optimizer.apply_gradients(zip(grads, model.trainable_weights))
-    return loss
-
-
-for epoch in range(epochs):
-
-    d_loss_avg.reset_states()
-    real_loss_avg.reset_states()
-    fake_loss_avg.reset_states()
-    g_loss_avg.reset_states()
-
-    d_acc_avg.reset_states()
-
-    for x_real, y_real in train_dataset:
-        batch_size = x_real.shape[0]
-        
-        d_loss, d_acc = train_step1(sup_discriminator, x_real, y_real)
-        #d_loss, d_acc = sup_discriminator.train_on_batch(x_real, y_real)
-        y_real = tf.ones((batch_size,1)) + 0.05 * tf.random.uniform((batch_size,1))
-        real_loss = train_step2(unsup_discriminator, x_real, y_real)
-        #real_loss = unsup_discriminator.train_on_batch(x_real, y_real)
-        x_fake, y_fake = generate_fake_samples(generator, latent_dim, batch_size)
-        y_fake += 0.05 * tf.random.uniform(y_fake.shape)
-        fake_loss = unsup_discriminator.train_on_batch(x_fake, y_fake)
-        x_gan, y_gan = generate_latent_points(latent_dim, batch_size), tf.ones((batch_size, 1))
-        g_loss = sgan.train_on_batch(x_gan, y_gan)
-
-        d_loss_avg.update_state(d_loss) 
-        real_loss_avg.update_state(real_loss)
-        fake_loss_avg.update_state(fake_loss)
-        g_loss_avg.update_state(g_loss)
-
-        d_acc_avg.update_state(d_acc)
-
-    d_train_loss_results.append(d_loss_avg.result())
-    d_train_acc_results.append(d_acc_avg.result()*100)
-    g_train_loss_results.append(g_loss_avg.result())
-
-    print('>%d, c[%.3f,%.0f], d[%.3f,%.3f], g[%.3f]' % (
-                                                        epoch+1, 
-                                                        d_loss_avg.result(), 
-                                                        d_acc_avg.result()*100, 
-                                                        real_loss_avg.result(), 
-                                                        fake_loss_avg.result(), 
-                                                        g_loss_avg.result()))
-    
-    d_loss_avg.reset_states()
-    real_loss_avg.reset_states()
-    fake_loss_avg.reset_states()
-    g_loss_avg.reset_states()
-    
-    d_acc_avg.reset_states()
-    
-    for x_real, y_real in val_dataset:
-        batch_size = x_real.shape[0]
-        d_loss, d_acc = sup_discriminator.test_on_batch(x_real, y_real)
-        real_loss = unsup_discriminator.test_on_batch(x_real, tf.ones((batch_size,1)))
-        x_fake, y_fake = generate_fake_samples(generator, latent_dim, batch_size)
-        fake_loss = unsup_discriminator.test_on_batch(x_fake, y_fake)
-        x_gan, y_gan = generate_latent_points(latent_dim, batch_size), tf.ones((batch_size, 1))
-        g_loss = sgan.test_on_batch(x_gan, y_gan)
-
-        # evaluate the model performance every so often
-        d_loss_avg.update_state(d_loss) 
-        real_loss_avg.update_state(real_loss)
-        fake_loss_avg.update_state(fake_loss)
-        g_loss_avg.update_state(g_loss)
-
-        d_acc_avg.update_state(d_acc)
-
-    d_val_loss_results.append(d_loss_avg.result())
-    d_val_acc_results.append(d_acc_avg.result()*100)
-    g_val_loss_results.append(g_loss_avg.result())
-
-    print('>%d, c[%.3f,%.0f], d[%.3f,%.3f], g[%.3f]' % (epoch+1, 
-                                                        d_loss_avg.result(), 
-                                                        d_acc_avg.result()*100, 
-                                                        real_loss_avg.result(), 
-                                                        fake_loss_avg.result(), 
-                                                        g_loss_avg.result()))
+sgan.evaluate(test_dataset)
 
 
 checkpoint_path = "./saveunsup_discriminators/cp.ckpt"
 
 # Save the weights using the `checkpoint_path` format
 sgan.save_weights(checkpoint_path)
-
-plt.plot(np.arange(epochs), g_train_loss_results, '-', label='generator train loss')
-plt.plot(np.arange(epochs), g_val_loss_results, '--', label='generator val loss')
-plt.plot(np.arange(epochs), d_train_loss_results, '-', label='discriminator train loss')
-plt.plot(np.arange(epochs), d_val_loss_results, '--', label='discriminator val loss')
-
-
+'''
+plt.plot(history.history['g_loss'], '-', label='g_loss')
+plt.plot(history.history['val_g_loss'], '--', label='val_g_loss')
+plt.plot(history.history['u_loss'], '-', label='u_loss')
+plt.plot(history.history['val_u_loss'], '--', label='val_u_loss')
+plt.title('GAN loss curve')
 plt.xlabel('epochs')
 plt.ylabel('loss')
-plt.legend()
-plt.title('epoch vs loss')
-plt.savefig('./out/epoch_vs_loss')
+plt.savefig('./out/unsupervised_loss_curve.png')
 plt.show()
 
-plt.plot(np.arange(epochs), d_train_acc_results, '-', label='discriminator train accuracy')
-plt.plot(np.arange(epochs), d_val_acc_results, '--', label='discriminator val accuracy')
-
+plt.plot(history.history['s_loss'], '-', label='s_loss')
+plt.plot(history.history['val_s_loss'], '--', label='val_s_loss')
+plt.title('Supervised loss curve')
 plt.xlabel('epochs')
-plt.ylabel('metrics')
-plt.legend()
-plt.title('epoch vs metrics')
-plt.savefig('./out/epoch_vs_metrics')
+plt.ylabel('loss')
+plt.savefig('./out/supervised_loss_curve.png')
 plt.show()
+
+plt.plot(history.history['s_acc'], '-', label='s_acc')
+plt.plot(history.history['val_s_acc'], '--', label='val_s_acc')
+plt.title('Supervised accuracy')
+plt.xlabel('epochs')
+plt.ylabel('accuracy')
+plt.savefig('./out/supervised_accuracy.png')
+plt.show()
+
+plt.plot(history.history['u_acc'], '-', label='u_acc')
+plt.plot(history.history['val_u_acc'], '--', label='val_u_acc')
+plt.title('Unsupervised accuracy')
+plt.xlabel('epochs')
+plt.ylabel('accuracy')
+plt.savefig('./out/unsupervised_accuracy.png')
+plt.show()
+'''
+x = generator(tf.random.normal((1,latent_dim)))
+plt.plot(z, np.reshape(x, (output_dim) ))
+plt.title('Generated output')
+plt.xlabel('z')
+plt.ylabel('x')
+plt.savefig('./out/sample_out.png')
+plt.show()
+

@@ -1,8 +1,8 @@
 from tensorflow import keras
 from tensorflow.keras import layers
 
-class Discriminator(layers.Layer):
-    def __init__(self, input_dim, n_classes, filter_size=8, kernel_initializer='he_uniform', alpha=0.):
+class Discriminator(keras.Model):
+    def __init__(self, input_dim, n_classes, filter_size=8, kernel_initializer='he_uniform', alpha=0.3):
         super(Discriminator, self).__init__()
         self.reshape = layers.Reshape((input_dim,1))
         self.conv1 = layers.Conv1D(filter_size, kernel_size=69, strides=1, kernel_initializer=kernel_initializer, use_bias=False)
@@ -35,7 +35,7 @@ class Discriminator(layers.Layer):
         x = self.bn4(x)
         x = self.leakyrelu4(x)
         x = self.flatten(x)
-        x = self.dense(x)
+        #x = self.dense(x)
         return x 
 
 if __name__ == "__main__":
