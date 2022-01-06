@@ -43,7 +43,7 @@ def luminosity_distance(z, omega_M, H0, w_DE):
 def distance_modulus(z, omega_M, H0, w_DE):
     return 5 * np.log10(luminosity_distance(z, omega_M, H0, w_DE)) + 25
 
-size = 10
+size = 12800 
 input_dim = 2048
 
 def omegaCDMSample(z):

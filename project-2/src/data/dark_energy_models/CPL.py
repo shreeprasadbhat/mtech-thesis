@@ -52,7 +52,7 @@ def luminosity_distance(z, omega_M, H0, w0, wa):
 def distance_modulus(z, omega_M, H0, w0, wa):
     return 5 * np.log10(luminosity_distance(z, omega_M, H0, w0, wa)) + 25
 
-size = 10
+size = 12800 
 input_dim = 2048
 
 def CPLSample(z):

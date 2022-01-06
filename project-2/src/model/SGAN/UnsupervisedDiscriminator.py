@@ -22,4 +22,4 @@ class UnsupervisedDiscriminator(keras.Model):
 
 if __name__ == '__main__':
     from Discriminator import Discriminator
-    obj = UnsupervisedDiscriminator(Discriminator(2048,2))
+    obj = UnsupervisedDiscriminator(Discriminator(2048))

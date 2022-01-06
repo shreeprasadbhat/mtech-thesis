@@ -1,7 +1,12 @@
+import sys
+import os
 import tensorflow as tf
 from tensorflow.keras import layers
-from Encoder import Encoder
-from Decoder import Decoder
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
+
+from src.model.VAE.Encoder import Encoder
+from src.model.VAE.Decoder import Decoder
 
 class Sampling(layers.Layer):
     """Uses (z_mean, z_log_var) to sample z, the vector encoding a digit."""

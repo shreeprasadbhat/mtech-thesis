@@ -1,6 +1,7 @@
 {
-    "latent_dim" :16,
-    "epochs" :100,
+    "latent_dim" : 20,
+    "epochs" :1000,
+    "patience": 1000,
     "lr_gen": 2e-4,
     "beta_1_gen": 0.9,
     "beta_1_disc": 0.9,
@@ -8,6 +9,7 @@
     "batch_size" : 512,
     "input_dim" :580,
     "output_dim": 2048,
-    "n_classes": 2, 
-    "train_size": 26000
+    "n_classes": 3, 
+    "train_size": 38400,
+    "outdir": "runs/run01"
 }

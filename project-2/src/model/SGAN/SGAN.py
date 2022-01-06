@@ -2,9 +2,6 @@ import tensorflow as tf
 from tensorflow import keras
 from keras import layers 
 
-from Generator import Generator
-from Discriminator import Discriminator
-
 class SGAN(keras.Model):
     def __init__(self, latent_dim, generator, s_discriminator, u_discriminator):
         super().__init__()
@@ -48,9 +45,10 @@ class SGAN(keras.Model):
         self.s_acc.update_state(y_real, y_pred)
 
         z = tf.random.normal(shape=(batch_size, self.latent_dim))
+        print(z)
         x = tf.concat([x_real, self.generator(z)], axis=0)
         y = tf.concat([tf.ones(shape=(batch_size)), tf.zeros(shape=(batch_size))], axis=0)
-        #y += 0.05 * tf.random.uniform(tf.shape(y))
+        y += 0.05 * tf.random.uniform(tf.shape(y))
         with tf.GradientTape() as tape:
             y_pred = self.u_discriminator(x)
             u_loss = self.binary_cross_entropy_loss_fn(y, y_pred)
@@ -126,5 +124,5 @@ if __name__ == "__main__":
     from Discriminator import Discriminator
     from SupervisedDiscriminator import SupervisedDiscriminator
     from UnsupervisedDiscriminator import UnsupervisedDiscriminator
-    discriminator = Discriminator(2048,2)
+    discriminator = Discriminator(2048)
     sgan = SGAN(16, Generator(2), SupervisedDiscriminator(discriminator), UnsupervisedDiscriminator(discriminator))

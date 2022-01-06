@@ -36,7 +36,7 @@ def luminosity_distance(z, omega_M, H0):
 def distance_modulus(z, omega_M, H0):
     return 5 * np.log10(luminosity_distance(z, omega_M, H0)) + 25
 
-size = 10
+size = 12800 
 input_dim = 2048
 
 def lambdaCDMSample(z):
@@ -53,8 +53,8 @@ idx = np.where(np.in1d(z, z_obs))[0]
 x_real_580 = x_real[:, idx]
 
 np.savetxt("x_real_580_lambdaCDM.csv", x_real_580, delimiter=",")
-np.savetxt("x_real_lambda_CDM.csv", x_real, delimiter=",")
-np.savetxt("y_real_lambda_CDM.csv", y_real, delimiter=",")
+np.savetxt("x_real_lambdaCDM.csv", x_real, delimiter=",")
+np.savetxt("y_real_lambdaCDM.csv", y_real, delimiter=",")
 
 if __name__ == '__main__':
     import numpy as np
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     z = prng.uniform(0.8*np.min(z_obs), 1.2*np.max(z_obs), 1468)
     z = np.concatenate((z, z_obs), axis=0)
     z.sort()
-    x_real = np.genfromtxt('x_real_lambda_CDM.csv',delimiter=',')
+    x_real = np.genfromtxt('x_real_lambdaCDM.csv',delimiter=',')
     plt.plot(z, x_real[0])
     plt.plot(z, x_real[1])
     plt.show()
