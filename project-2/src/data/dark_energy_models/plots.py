@@ -22,6 +22,7 @@ plt.xlabel('redshift z')
 plt.ylabel('distance modulus')
 plt.title('Examples training samples from three dark energy models')
 plt.legend()
+plt.savefig('training examples from LambdaCDM, omegaCDM, CPL.png')
 plt.show()
 
 
