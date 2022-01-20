@@ -69,9 +69,7 @@ def generate_real_samples(train_size, z, input_dim):
     return x_real, y_real
 
 
-prng = np.random.RandomState(123)
-z = prng.uniform(0, 1, output_dim)
-z.sort()
+z = np.genfromtxt('../../../data/toy_models/z.csv')
 x_real, y_real = generate_real_samples(train_size, z, output_dim) 
 y_real = y_real[:, np.newaxis]
 

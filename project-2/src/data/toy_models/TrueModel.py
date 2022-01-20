@@ -15,12 +15,7 @@ class TrueModel:
     def err(self, z, z_err):
         return 0
 
-    def sample(self, z):
-        A = np.random.normal(self.A_mean, self.A_err, size=z.shape)
-        B = np.random.normal(self.B_mean, self.B_err, size=z.shape)
-        C = np.random.normal(self.C_mean, self.C_err, size=z.shape)
-        return A*(z**2) + (-A+B)*z + C
-
+    
 if __name__ == "__main__":
     obj = TrueModel()
     z = np.random.uniform(0,1,580)

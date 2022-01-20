@@ -84,6 +84,7 @@ val_dataset = (
         .from_tensor_slices((x_val_580, x_val))
         .batch(batch_size)
 )
+
 test_dataset = (
     tf.data.Dataset
         .from_tensor_slices((x_test_580, x_test))

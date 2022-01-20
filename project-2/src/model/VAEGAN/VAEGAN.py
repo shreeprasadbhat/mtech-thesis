@@ -1,91 +1,143 @@
 import tensorflow as tf
 from tensorflow import keras
-from keras import layers
-import numpy as np
-from Encoder import Encoder
-from Generator import Generator
-from Discriminator import Discriminator
+from tensorflow.keras import layers 
 
 class VAEGAN(keras.Model):
+    def __init__(self, latent_dim, encoder, generator, s_discriminator, u_discriminator):
+        super().__init__()
+        self.latent_dim = latent_dim
+        self.encoder = encoder
+        self.generator = generator
+        self.s_discriminator = s_discriminator
+        self.u_discriminator = u_discriminator
 
-    def __init__(self, latent_dim, input_dim, output_dim, n_classes, batch_size, train=True):
-        super(VAEGAN, self).__init__()
-        self.encoder = Encoder(latent_dim, input_dim)
-        self.generator = Generator(output_dim)
-        self.discriminator = Discriminator(n_classes)
-        if train:
-            self.enc_optimizer = keras.optimizers.Adam()
-            self.gen_optimizer = keras.optimizers.Adam()
-            self.disc_optimizer = keras.optimizers.Adam()
-    
-    def sample(self, shape, z_mean=0., z_log_var=0.):
-        # sample using reparameterization trick
-        eps = tf.random.normal(shape)
-        return z_mean + tf.exp(z_log_var*0.5)*eps
-   
-    def kl_loss(self, z_mean, z_log_var):
-        return -0.5 * tf.reduce_mean(z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1)
-     
-    #def generator_loss(self, y_true, y_pred):
-    #    return - keras.losses.SparseCategoricalCrossentropy()(y_true, y_pred)
-   
-    def supervised_loss(self, y_true, y_pred):
-        return keras.losses.SparseCategoricalCrossentropy() (y_true, y_pred) 
-    
-    def unsupervised_loss(self, y_true, y_pred):
-        return keras.losses.BinaryCrossentropy() (y_true, y_pred)    
+    def compile(self,
+            s_optimizer, 
+            u_optimizer, 
+            g_optimizer,
+            e_optimizer,
+            mse_loss_fn,
+            binary_cross_entropy_loss_fn,
+            sparse_categorical_cross_entropy_loss_fn):
+        super().compile()
+        self.g_optimizer = g_optimizer
+        self.s_optimizer = s_optimizer
+        self.u_optimizer = u_optimizer
+        self.e_optimizer = e_optimizer
+        self.mse_loss_fn = mse_loss_fn
+        self.binary_cross_entropy_loss_fn = binary_cross_entropy_loss_fn    
+        self.sparse_categorical_cross_entropy_loss_fn = sparse_categorical_cross_entropy_loss_fn
+        self.s_acc = tf.keras.metrics.SparseCategoricalAccuracy(name='s_acc') 
+        self.u_acc = tf.keras.metrics.BinaryAccuracy(name='u_acc') 
+        self.e_loss = tf.keras.metrics.Mean(name='e_loss')
+        self.g_loss = tf.keras.metrics.Mean(name='g_loss')
+        self.s_loss = tf.keras.metrics.Mean(name='s_loss')
+        self.u_loss = tf.keras.metrics.Mean(name='u_loss')
 
-    def custom_activation(self, out):
-        logexpsum = tf.reduce_sum(tf.exp(out), axis=-1, keepdims=True) 
-        result = logexpsum / (logexpsum + 1.)
-        return result
-
-    def discriminator_reconstruction_loss(self, h_real, h_fake):
-        return tf.reduce_mean(tf.reduce_mean(tf.math.square(h_real-h_fake), axis=0))
-
-    def vaegan_loss(self, x_real_580, x_real, y_real):
-        z_mean, z_log_var = self.encoder(x_real_580)
-        z_sampled = self.sample(z_mean.shape, z_mean, z_log_var)
-        z_prior = self.sample(z_mean.shape)
-
-        x_fake = self.generator(z_sampled)
-        x_enc = self.generator(z_prior)
-        y_fake = tf.fill((x_fake.shape[0],), 2) 
-        y_real_pred, h_real = self.discriminator(x_real)
-        y_fake_pred, h_fake = self.discriminator(x_fake)
-        _, h_enc = self.discriminator(x_enc)
-        
-        # calculate losses
-        kl_loss = self.kl_loss(z_mean, z_log_var)
-        #gen_fake_loss = self.generator_loss(y_fake, y_fake_pred)
-        generator_loss = self.unsupervised_loss(tf.ones_like(y_fake), self.custom_activation(h_fake))
-        supervised_loss = self.supervised_loss(y_real, y_real_pred)
-        unsupervised_loss = self.unsupervised_loss(tf.ones_like(y_real), self.custom_activation(h_real))
-        unsupervised_loss += self.unsupervised_loss(tf.zeros_like(y_fake), self.custom_activation(h_fake))
-        disc_recon_loss = self.discriminator_reconstruction_loss(h_real, h_enc)
-
-        enc_loss = kl_loss + disc_recon_loss
-        gen_loss = disc_recon_loss + generator_loss
-        disc_loss = supervised_loss + unsupervised_loss
-        
-        return enc_loss, gen_loss, disc_loss, x_fake, y_fake
 
     @tf.function
-    def train_step(self, x_real_580, x_real, y_real):
-        with tf.GradientTape() as enc_tape, tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
-            enc_loss, gen_loss, disc_loss, x_fake, y_fake = self.vaegan_loss(x_real_580, x_real, y_real)
+    def train_step(self, data):
 
-        # calculate gradients
-        enc_grads = enc_tape.gradient(enc_loss, self.encoder.trainable_variables)
-        gen_grads = gen_tape.gradient(gen_loss, self.generator.trainable_variables)
-        disc_grads = disc_tape.gradient(disc_loss, self.discriminator.trainable_variables)
+        x_real_580, x_real, y_real = data
 
-        # apply gradients
-        self.enc_optimizer.apply_gradients(zip(enc_grads, self.encoder.trainable_weights))
-        self.gen_optimizer.apply_gradients(zip(gen_grads, self.generator.trainable_weights))
-        self.disc_optimizer.apply_gradients(zip(disc_grads, self.discriminator.trainable_weights)) 
+        batch_size = tf.shape(x_real)[0]
 
-        return enc_loss, gen_loss, disc_loss, x_fake, y_fake
+        with tf.GradientTape() as tape:
+            y_pred = self.s_discriminator(x_real)
+            s_loss = self.sparse_categorical_cross_entropy_loss_fn(y_real, y_pred)
+
+        grads = tape.gradient(s_loss, self.s_discriminator.trainable_weights)
+        self.s_optimizer.apply_gradients(zip(grads, self.s_discriminator.trainable_weights))
+        self.s_loss.update_state(s_loss)
+        self.s_acc.update_state(y_real, y_pred)
+
+        z = tf.random.normal(shape=(batch_size, self.latent_dim))
+
+        x = tf.concat([x_real, self.generator(z)], axis=0)
+        y = tf.concat([tf.ones(shape=(batch_size)), tf.zeros(shape=(batch_size))], axis=0)
+        y += 0.05 * tf.random.uniform(tf.shape(y))
+        with tf.GradientTape() as tape:
+            y_pred = self.u_discriminator(x)
+            u_loss = self.binary_cross_entropy_loss_fn(y, y_pred)
+        
+        grads = tape.gradient(u_loss, self.u_discriminator.trainable_weights)
+        self.u_optimizer.apply_gradients(zip(grads, self.u_discriminator.trainable_weights))
+        self.u_loss.update_state(u_loss)
+        self.u_acc.update_state(y, y_pred) 
+
+        z = tf.random.normal(shape=(batch_size, self.latent_dim))
+
+        with tf.GradientTape() as tape:
+            y_pred = self.u_discriminator(self.generator(z))
+            y_true = tf.ones(shape=(batch_size, 1))
+            g_loss = self.binary_cross_entropy_loss_fn(y_true, y_pred)
+
+        grads = tape.gradient(g_loss, self.generator.trainable_weights)
+        self.g_optimizer.apply_gradients(zip(grads, self.generator.trainable_weights))
+        self.g_loss.update_state(g_loss)
+
+        with tf.GradientTape() as tape:
+            y_pred = self.u_discriminator(self.encoder(x_real_580))
+            e_loss = self.mse_loss_fn(x_real, y_pred)
+
+        grads = tape.gradient(e_loss, self.encoder.trainable_weights)
+        self.e_optimizer.apply_gradients(zip(grads, self.encoder.trainable_weights))
+        self.e_loss.update(e_loss) 
+
+        # Return a dict mapping metric names to current value.
+        # Note that it will include the loss (tracked in self.metrics).
+        return {m.name: m.result() for m in self.metrics}
+
+    @tf.function
+    def test_step(self, data):
+        x_real, y_real = data
+
+        batch_size = tf.shape(x_real)[0]
+
+        z = tf.random.normal(shape=(batch_size, self.latent_dim))
+
+        y_pred = self.s_discriminator(x_real)
+        s_loss = self.sparse_categorical_cross_entropy_loss_fn(y_real, y_pred)
+        self.s_loss.update_state(s_loss)
+        self.s_acc.update_state(y_real, y_pred)
+
+        y_pred = self.u_discriminator(self.generator(z))
+        y_true = tf.zeros(shape=(batch_size, 1))
+        fake_loss = self.binary_cross_entropy_loss_fn(y_true, y_pred)
+        self.u_loss.update_state(fake_loss)
+        self.u_acc.update_state(y_true, y_pred)
+        
+        y_pred = self.u_discriminator(x_real)
+        y_true = tf.ones(shape=(batch_size, 1))
+        real_loss = self.binary_cross_entropy_loss_fn(y_true, y_pred)
+        self.u_loss.update_state(y_true, y_pred)
+        self.u_acc.update_state(y_true, y_pred)
+        
+        z = tf.random.normal(shape=(batch_size, self.latent_dim))
+
+        y_pred = self.u_discriminator(self.generator(z))
+        y_true = tf.ones(shape=(batch_size, 1))
+        g_loss = self.binary_cross_entropy_loss_fn(y_true, y_pred)
+        self.g_loss.update_state(g_loss)
+
+        # Return a dict mapping metric names to current value.
+        # Note that it will include the loss (tracked in self.metrics).
+        return {m.name: m.result() for m in self.metrics}
+
+
+    @property
+    def metrics(self):
+        # We list our `Metric` objects here so that `reset_states()` can be
+        # called automatically at the start of each epoch
+        # or at the start of `evaluate()`.
+        # If you don't implement this property, you have to call
+        # `reset_states()` yourself at the time of your choosing.
+        return [self.s_loss, self.u_loss, self.g_loss, self.s_acc, self.u_acc]
 
 if __name__ == "__main__":
-    obj = VAEGAN(20, 580, 2048,3)
+    from Generator import Generator
+    from Discriminator import Discriminator
+    from SupervisedDiscriminator import SupervisedDiscriminator
+    from UnsupervisedDiscriminator import UnsupervisedDiscriminator
+    discriminator = Discriminator(2048)
+    sgan = SGAN(16, Generator(2), SupervisedDiscriminator(3, discriminator), UnsupervisedDiscriminator(discriminator))

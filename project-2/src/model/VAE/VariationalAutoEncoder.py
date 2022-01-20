@@ -44,7 +44,7 @@ class VariationalAutoEncoder(tf.keras.Model):
         kl_loss = -0.5 * tf.reduce_mean(
             z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1
         )
-        #self.add_loss(kl_loss)
+        self.add_loss(kl_loss)
         return reconstructed
 
 if __name__ == '__main__':

@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))))
 
 from src.model.VAE.VariationalAutoEncoder import VariationalAutoEncoder
+from src.model.SGAN.Discriminator import Discriminator
+from src.model.SGAN.SupervisedDiscriminator import SupervisedDiscriminator
 
 readlines = ""
 with open('Params.json') as file:
@@ -18,8 +20,10 @@ Params = json.loads(readlines)
 latent_dim = Params['latent_dim'] 
 epochs = Params['epochs']
 patience = Params['patience']
-lr = Params['lr']
-beta_1 = Params['beta_1']
+lr_gen = Params['lr_gen']
+beta_1_gen = Params['beta_1_gen']
+lr_disc = Params['lr_disc']
+beta_1_disc= Params['beta_1_disc']
 batch_size = Params['batch_size']
 input_dim = Params['input_dim']
 output_dim = Params['output_dim']
@@ -36,28 +40,34 @@ z = np.genfromtxt('../../../data/dark_energy_models/z.csv')
 
 vae = VariationalAutoEncoder(input_dim, latent_dim)
 vae.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=lr, beta_1=beta_1), 
+        optimizer=tf.keras.optimizers.Adam(learning_rate=lr_gen, beta_1=beta_1_gen),
         loss='mse', 
         metrics=['mse']
 )
 
-checkpoint_path = os.path.join(outdir,"ckpt/cp.ckpt")
+checkpoint_path = os.path.join(os.path.join('../../VAE/toy', outdir),"ckpt/cp.ckpt")
 
 # load the best model
 vae.load_weights(checkpoint_path)
 
-vae_test = vae.predict(np.reshape(mu, (1,580)))
+discriminator = Discriminator(output_dim)
+sup_discriminator = SupervisedDiscriminator(n_classes, discriminator)
 
-plt.scatter(z_obs, mu, s=4, color='r', label='observed')
-plt.scatter(z, np.reshape(vae_test, 2048), s=4, color='b',label='reconstructed')
+sup_discriminator.compile(
+        optimizer = tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc),
+        loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+        metrics = 'accuracy'
+    )
 
-plt.xlabel('redshift z')
-plt.ylabel('Distance modulus')
-plt.legend()
-plt.title('Reconstruction of the distance modulus by the VAE-GAN')
-plt.savefig(os.path.join(outdir,'fig/true_vs_reconstructed'))
-plt.draw()
-plt.pause(0.001)
-#plt.show()
+checkpoint_path = os.path.join(outdir,"ckpt/cp.ckpt")
+
+# load the best model
+sup_discriminator.load_weights(checkpoint_path)
+
+predictions = sup_discriminator.predict(vae.predict(np.reshape(x_obs, (1, 580))))
+pred_class = tf.argmax(predictions, axis=-1)
+pred_prob = tf.nn.softmax(predictions)
+print(pred_class)
+print(pred_prob)
 
 input("Press Enter to continue...")
