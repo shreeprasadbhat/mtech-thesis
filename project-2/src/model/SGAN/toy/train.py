@@ -57,12 +57,12 @@ def generate_real_samples(train_size, z, input_dim):
     parabolicModelObj = ParabolicModel()
     x1 = np.zeros([half_train_size, input_dim], dtype='float32')
     for i in range(half_train_size):
-        x1[i] = parabolicModelObj.sample(z)
+        x1[i] = parabolicModelObj.sample(z, input_dim)
     y1 = np.zeros(half_train_size)
     sineModelObj = SineModel()
     x2 = np.zeros([half_train_size, input_dim], dtype='float32')
     for i in range(half_train_size):
-        x2[i] = sineModelObj.sample(z)
+        x2[i] = sineModelObj.sample(z, input_dim)
     y2 = np.ones(half_train_size)
     x_real = np.concatenate([x1, x2])
     y_real = np.concatenate([y1, y2])

@@ -37,7 +37,7 @@ z = np.genfromtxt('../../../data/toy_models/z.csv')
 z_580 = np.genfromtxt('../../../data/toy_models/z_obs.csv')
 
 trueModelObj = TrueModel()
-x_obs = trueModelObj.sample(z_580)
+x_obs = trueModelObj.sample(z_580, 580)
 
 vae = VariationalAutoEncoder(input_dim, latent_dim)
 vae.compile(

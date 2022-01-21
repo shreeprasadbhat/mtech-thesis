@@ -3,7 +3,7 @@ import numpy as np
 
 obj = TrueModel()
 z = np.random.uniform(0,1,580)
-y = obj.sample(z)
+y = obj.sample(z, 580)
 
 import matplotlib.pyplot as plt
 

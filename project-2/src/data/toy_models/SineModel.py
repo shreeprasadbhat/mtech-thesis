@@ -54,7 +54,7 @@ if __name__ == '__main__':
     obj = SineModel()
     prng = np.random.RandomState(123)
     z = prng.uniform(0, 1, 2048)
-    x = obj.sample(z)
+    x = obj.sample(z, 2048)
     
     import matplotlib.pyplot as plt
 
