@@ -66,8 +66,10 @@ np.savetxt("x_real_omegaCDM.csv", x_real, delimiter=",")
 np.savetxt("y_real_omegaCDM.csv", y_real, delimiter=",")
 
 if __name__ == '__main__':
+
     import numpy as np
     import matplotlib.pyplot as plt
+
     union = np.genfromtxt('../../../data/Union/union.txt', delimiter=' ', usecols=(1,2,3), names=True)
     union.sort(order='zCMB')
     z_obs = union['zCMB'].astype('float32')
@@ -78,6 +80,7 @@ if __name__ == '__main__':
     z = np.concatenate((z, z_obs), axis=0)
     z.sort()
     x_real = np.genfromtxt('x_real_omegaCDM.csv',delimiter=',')
+
     plt.plot(z, x_real[0])
     plt.plot(z, x_real[1])
     plt.show()

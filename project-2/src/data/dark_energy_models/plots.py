@@ -5,7 +5,7 @@ x_real_lambdaCDM = np.genfromtxt('x_real_lambdaCDM.csv', delimiter=',')
 x_real_omegaCDM = np.genfromtxt('x_real_omegaCDM.csv', delimiter=',')
 x_real_CPL = np.genfromtxt('x_real_CPL.csv', delimiter=',')
 z = np.genfromtxt('z.csv')
-print(x_real_lambdaCDM.shape)
+
 plt.plot(z, x_real_lambdaCDM[0], color='b', label=r'\LambdaCDM')
 plt.plot(z, x_real_lambdaCDM[1], color='b')
 plt.plot(z, x_real_lambdaCDM[2], color='b')
