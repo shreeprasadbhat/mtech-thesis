@@ -40,10 +40,10 @@ size = 12800
 input_dim = 2048
 
 def lambdaCDMSample(z):
-    omega_M = np.random.uniform(omega_M_low, omega_M_high, (size,1))
-    H0 = np.random.uniform(H0_low, H0_high, (size,1))
-    omega_M = np.tile(omega_M, (1, input_dim))
-    H0 = np.tile(H0, (1, input_dim))
+    omega_M = np.random.uniform(omega_M_low, omega_M_high, (size, input_dim))
+    H0 = np.random.uniform(H0_low, H0_high, (size, input_dim))
+    #omega_M = np.tile(omega_M, (1, input_dim))
+    #H0 = np.tile(H0, (1, input_dim))
     return distance_modulus(z, omega_M, H0)
 
 x_real = lambdaCDMSample(np.tile(np.reshape(z, (1, input_dim)), (size, 1)))
