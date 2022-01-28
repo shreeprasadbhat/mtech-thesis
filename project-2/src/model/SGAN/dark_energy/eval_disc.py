@@ -45,7 +45,7 @@ vae.compile(
         metrics=['mse']
 )
 
-checkpoint_path = os.path.join(os.path.join('../../VAE/toy', outdir),"ckpt/cp.ckpt")
+checkpoint_path = os.path.join(os.path.join('../../VAE/dark_energy', outdir),"ckpt/cp.ckpt")
 
 # load the best model
 vae.load_weights(checkpoint_path)
@@ -64,7 +64,7 @@ checkpoint_path = os.path.join(outdir,"ckpt/cp.ckpt")
 # load the best model
 sup_discriminator.load_weights(checkpoint_path)
 
-predictions = sup_discriminator.predict(vae.predict(np.reshape(x_obs, (1, 580))))
+predictions = sup_discriminator.predict(vae.predict(np.reshape(mu, (1, 580))))
 pred_class = tf.argmax(predictions, axis=-1)
 pred_prob = tf.nn.softmax(predictions)
 print(pred_class)
