@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  18 JAN 2022 20:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  29 JAN 2022 18:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -49,25 +49,63 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 5.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./report.aux) ) 
+
+! Package inputenc Error: Unicode character Λ (U+039B)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...For various cosmological models, such as Λ
+                                                  CDM model, wCDM model, Che...
+
+? 
+! Misplaced alignment tab character &.
+l.8 ...e discrepant in high redshift (Chevallier &
+                                                   Polarski 2001; Wang et al...
+
+? 
+! Misplaced alignment tab character &.
+l.8 ...ters can be tightly constrained (Friedman &
+                                                   Bloom 2005; Wang & Dai 20...
+
+? 
+! Misplaced alignment tab character &.
+l.8 ... constrained (Friedman & Bloom 2005; Wang &
+                                                   Dai 2006; Izzo et al. 200...
+
+? 
+! Misplaced alignment tab character &.
+l.8 ...1; Bloom et al. 2003; Xu et al. 2005; Wei &
+                                                   Zhang 2009; Demianski & P...
+
+? 
+! Misplaced alignment tab character &.
+l.8 ... et al. 2005; Wei & Zhang 2009; Demianski &
+                                                   Piedipalumbo 2011; Cai et...
+
+? 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 372 strings out of 481239
- 6298 string characters out of 5920377
- 236562 words of memory out of 5000000
- 15719 multiletter control sequences out of 15000+600000
- 533848 words of font info for 29 fonts, out of 8000000 for 9000
+ 376 strings out of 481239
+ 6344 string characters out of 5920377
+ 241562 words of memory out of 5000000
+ 15722 multiletter control sequences out of 15000+600000
+ 534454 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 24i,6n,21p,140b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b>
-Output written on report.pdf (1 page, 21071 bytes).
+ 24i,6n,21p,1256b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on report.pdf (2 pages, 39923 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 10 compressed objects within 1 object stream
+ 23 PDF objects out of 1000 (max. 8388607)
+ 15 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
