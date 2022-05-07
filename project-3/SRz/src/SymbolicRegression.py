@@ -11,8 +11,7 @@ from mpl_toolkits import mplot3d
 from matplotlib import cm
 import pysr
 from pysr import PySRRegressor
-from sympy import lambdify
-from sympy import symbols
+import sympy
 
 pysr.silence_julia_warning()
 
@@ -77,6 +76,7 @@ print(f'Best equation : {model.sympy()}\n')
 logging.info(f'Best equation : {model.sympy()}\n')
 
 for k in range(n_equations):
+
     equation_sympy =  model.equations['sympy_format'][k]
     print(f'==========================================\n')
     print(f'Equation {str(k)} : {equation_sympy}')
@@ -93,34 +93,40 @@ for k in range(n_equations):
         format='%(asctime)s:%(levelname)s:%(message)s'
     )
 
-    y=y_test
-    y_predict=model.equations['lambda_format'][k](X_test)
+    y = y_test
+    y_predict = model.equations['lambda_format'][k](X_test)
 
-    fig=plt.figure()
-    ax=fig.add_subplot(111)
-    H,xedges,yedges=np.histogram2d(y,y_predict, bins=50)
-    level=np.linspace(0,np.round(2*np.max(np.log(np.transpose(H+1))))/2.0,20)
-    ax.set_facecolor('black')
-    xe=np.zeros(len(xedges)-1)
-    ye=np.zeros(len(yedges)-1)
-    for i in range(len(xedges)-1):
-        xe[i]=0.5*(xedges[i+1]+xedges[i])
-        ye[i]=0.5*(yedges[i+1]+yedges[i])
+    def heatmap_predictions() :
 
-    plt.contourf(xe,ye,np.log(np.transpose(H+1)),levels=level,cmap='hot')
-    plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
-    plt.ylim((min(y),max(y)))
+        H,xedges, yedges = np.histogram2d(y,y_predict, bins=50)
+        level = np.linspace(0,np.round(2*np.max(np.log(np.transpose(H+1))))/2.0,20)
+        xe = np.zeros(len(xedges)-1)
+        ye = np.zeros(len(yedges)-1)
+        for i in range(len(xedges)-1):
+            xe[i] = 0.5*(xedges[i+1]+xedges[i])
+            ye[i] = 0.5*(yedges[i+1]+yedges[i])
 
-    cbar=plt.colorbar()
+        plt.figure(facecolor='black')
+        plt.contourf(xe,ye,np.log(np.transpose(H+1)),levels=level,cmap='hot')
+        plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
+        plt.ylim((min(y),max(y)))
+        plt.xlabel(r'$z_{spec}$',fontsize=30)
+        plt.tick_params(axis='both', which='major', labelsize=20)
+        plt.ylabel(r'$z_{phot}$',fontsize=30)
+        plt.ylim((min(y),max(y)))
+        plt.xlim((min(y),max(y)))
+        plt.title('Logarithmic density of true vs predicted redshifts of ~3000 galaxies in test set')
 
-    plt.xlabel(r'$z_{spec}$',fontsize=30)
-    plt.tick_params(axis='both', which='major', labelsize=20)
-    plt.ylabel(r'$z_{phot}$',fontsize=30)
-    plt.ylim((min(y),max(y)))
-    plt.xlim((min(y),max(y)))
-    cbar.set_label('$log(density)$',fontsize=20)
-    cbar.ax.tick_params(labelsize=20)
-    cbar.solids.set_edgecolor("face")
+        cbar = plt.colorbar()
+        cbar.set_label('$log(density)$',fontsize=20)
+        cbar.ax.tick_params(labelsize=20)
+        cbar.solids.set_edgecolor("face")
+
+        plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'density_plot.png'))
+        #plt.show()
+        plt.close()
+
+    heatmap_predictions()
 
     print('Metric a')
     logging.info('Metric a')
@@ -133,33 +139,74 @@ for k in range(n_equations):
     logging.info(f'rms w/o outliers {np.sqrt(np.mean(((y-y_predict)[abs(y-y_predict)<0.1])**2))}')
     print(f'Bias: {np.mean(y-y_predict)}')
     logging.info(f'Bias: {np.mean(y-y_predict)}')
-    plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'density_plot.png'))
-    #plt.show()
+       
+    def plot_z_photo_vs_z_spec ():
 
-    # plot of predictions vs truth
-    plt.plot(y, y_predict, '.')
-    plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
-    plt.xlabel(r'$z_{spec}$',fontsize=30)
-    plt.tick_params(axis='both', which='major', labelsize=20)
-    plt.ylabel(r'$z_{phot}$',fontsize=30)
-    plt.ylim((min(y),max(y)))
-    plt.xlim((min(y),max(y)))
-    plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'predictions.png'))
-    #plt.show()
+        # plot of predictions vs truth
+        plt.figure() 
+        plt.plot(y, y_predict, '.')
+        plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
+        plt.xlabel(r'$z_{spec}$',fontsize=30)
+        plt.tick_params(axis='both', which='major', labelsize=20)
+        plt.ylabel(r'$z_{phot}$',fontsize=30)
+        plt.ylim((min(y),max(y)))
+        plt.xlim((min(y),max(y)))
+        plt.title('Photometric redshift prediction for test set')
+        plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'predictions.png'))
+        #plt.show()
+        plt.close()
 
-    # plot of predictions with error for 300 subsamples of galaxies
-    
-    #rng = np.random.default_rng(12345)
-    #idx = rng.choice(range(len(y)), 300)
-    #plt.errorbar(y[idx], y_predict[idx], yerr=err[idx], fmt='.', color='blue')
-    #plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='r')
-    #plt.xlabel(r'$z_{spec}$',fontsize=30)
-    #plt.tick_params(axis='both', which='major', labelsize=20)
-    #plt.ylabel(r'$z_{phot}$',fontsize=30)
-    #plt.ylim((min(y),max(y)))
-    #plt.xlim((min(y),max(y)))
-    #plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'predictions_with_error.png'))
-    #plt.show()
+    plot_z_photo_vs_z_spec()
+
+    def calculate_errors(expr) :
+        # source : https://github.com/HDembinski/essays/blob/master/error_propagation_with_sympy.ipynb
+
+        expr = sympy.parse_expr(expr)
+
+        symbols = sympy.symbols('u g r i z')
+        err_symbols = sympy.symbols('err_u err_g err_r err_i err_z')
+
+        expr2 = sum(expr.diff(s) ** 2 * c**2 for s, c in zip(symbols, err_symbols))
+        expr2 = expr2.simplify() # recommended for speed and accuracy
+
+        #fval = sympy.lambdify(symbols, expr)
+        fcov = sympy.lambdify(symbols + err_symbols, expr2)
+
+        def fn(variables, errs):
+            x = tuple(variables)
+            c = tuple(errs)
+            return np.sqrt(fcov(*variables, *errs)) #fval(*x), fcov(*x, *c)
+
+        return fn
+
+    err = []
+    for i in range(df_test.shape[0]):
+        err.append(
+                calculate_errors(model.equations['equation'][k])(
+                    df_test.iloc[i,:5].to_numpy(), 
+                    df_test.iloc[i,5:-1].to_numpy())
+                )
+    err = np.array(err)
+
+    def plot_predictions_with_errors() :
+
+        # plot of predictions with error for 300 subsamples of galaxies
+        rng = np.random.default_rng(12345)
+        idx = rng.choice(range(len(y)), 300)
+
+        plt.figure() 
+        plt.errorbar(y[idx], y_predict[idx], yerr=err[idx], fmt='.', color='blue', capsize=5)
+        plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='r')
+        plt.xlabel(r'$z_{spec}$',fontsize=30)
+        plt.tick_params(axis='both', which='major', labelsize=20)
+        plt.ylabel(r'$z_{phot}$',fontsize=30)
+        plt.ylim((min(y),max(y)))
+        plt.xlim((min(y),max(y)))
+        plt.title('Photometric redshift prediction and errorbars for subsample of 300 galaxies')
+        plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'predictions_with_error.png'))
+        #plt.show()
+        plt.close()
+
+    plot_predictions_with_errors()
 
     print(f'==========================================\n')
-
