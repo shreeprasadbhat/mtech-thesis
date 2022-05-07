@@ -1,0 +1,21 @@
+outdir : "../runs/01/"
+train_filepath : '../../data/train'
+val_filepath : '../../data/valid'
+test_filepath : '../../data/test'
+equation_file : 'equation.csv'
+niterations : 10
+binary_operators :
+        - 'plus'
+        - 'sub'
+        - 'mult'
+        - 'div'
+unary_operators :
+variable_names : 
+        - 'u'
+        - 'g'
+        - 'r'
+        - 'i'
+        - 'z'
+model_selection : 'accuracy'
+loss : 'L2DistLoss()'
+progress : True
