@@ -1,10 +1,9 @@
-outdir : "../runs/02/"
-train_filepath : ''
-val_filepath : ''
-test_filepath : '../../data/sky_data_model.txt'
+outdir : "../runs/04/"
+train_filepath : '../../data/train'
+val_filepath : '../../data/valid'
+test_filepath : '../../data/test'
 equation_file : 'equation.csv'
-equation : '(-6.297718*i + 7.297718*r - 0.11231361*u - 11.924731)/g'
-niterations : 10
+niterations : 1
 binary_operators :
         - 'plus'
         - 'sub'

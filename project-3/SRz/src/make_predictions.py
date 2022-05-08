@@ -30,55 +30,24 @@ logging.basicConfig(
         format='%(asctime)s:%(levelname)s:%(message)s'
     )
 
-# Load 2SLAQ LRG Data
-df_train = pd.read_csv(config['train_filepath'], header=None, sep=' ')
-df_val = pd.read_csv(config['val_filepath'], header=None, sep=' ')
-df_train = pd.concat([df_train, df_val])
-df_test = pd.read_csv(config['test_filepath'], header=None, sep=' ')
+df_test = pd.read_csv(
+            config['test_filepath'], 
+            header=None, 
+            sep=' ',
+            names = ['u','g','r','i','z','u_err','g_err','r_err','i_err','z_err','z_spec']
+        )
 
-X_train = df_train.iloc[:,:5].to_numpy()
-y_train = df_train.iloc[:,-1].to_numpy()
 X_test = df_test.iloc[:,:5].to_numpy()
 X_err = df_test.iloc[:,5:-1].to_numpy()
 y_test = df_test.iloc[:,-1].to_numpy()
 
 #weights = 1./ np.square(np.sum(df_train.iloc[:,5:-1].to_numpy(), axis=1))
 
-model = PySRRegressor(
-    niterations = config['niterations'],
-    binary_operators = config['binary_operators'],
-    unary_operators = config['unary_operators'],
-    extra_sympy_mappings = {'pow2': lambda x : x**2, 'pow3' : lambda x : x**3, 'pow4' : lambda x : x**4, 'pow5' : lambda x : x**5},
-    variable_names = config['variable_names'],
-    model_selection = config['model_selection'],
-    #weights = weights,
-    loss = config['loss'],
-    equation_file = os.path.join(config['outdir'], config['equation_file']) ,
-    progress = config['progress'] 
-)
-
-starttime = time.time()
-
-model.fit(X_train, y_train)
-
-endtime = time.time()
-
-print(f'Time take to fit model - {(endtime-starttime)//60} minutes') 
-logging.info(f'Time take to fit model - {(endtime-starttime)//60} minutes')
-
-print(model)
-logging.info(model)
-
-model.equations.to_csv(os.path.join(config['outdir'],'dataframe.csv'), index=False)
-
-n_equations = model.equations.shape[0]
-
-print(f'Best equation : {model.sympy()}\n')
-logging.info(f'Best equation : {model.sympy()}\n')
+n_equations = 1
 
 for k in range(n_equations):
 
-    equation_sympy =  model.equations['sympy_format'][k]
+    equation_sympy =  sympy.parse_expr(config['equation'])
     print(f'==========================================\n')
     print(f'Equation {str(k)} : {equation_sympy}')
     print(f'==========================================\n')
@@ -94,9 +63,24 @@ for k in range(n_equations):
     logger.addHandler(file_handler)
     logger.setLevel(logging.DEBUG)
     
-    y = y_test
-    y_predict = model.equations['lambda_format'][k](X_test)
+    def predict(equation) :
+        expr = sympy.parse_expr(equation)
 
+        symbols = sympy.symbols('u g r i z')
+
+        fval = sympy.lambdify(symbols, expr, 'numpy')
+
+        def fn(variables):
+            x = tuple(variables)
+            return fval(*variables)
+
+        return fn
+
+    equation = config['equation']
+
+    y_predict = predict(equation)(np.transpose(X_test))
+    y = y_test
+    
     def heatmap_predictions() :
 
         H,xedges, yedges = np.histogram2d(y,y_predict, bins=50)
@@ -178,7 +162,7 @@ for k in range(n_equations):
 
         return fn
 
-    err = calculate_errors(model.equations['equation'][k])(np.transpose(X_test), np.transpose(X_err))
+    err = calculate_errors(equation)(np.transpose(X_test), np.transpose(X_err))
 
     def plot_predictions_with_errors() :
 
@@ -200,8 +184,8 @@ for k in range(n_equations):
         #plt.draw()
         #plt.pause(0.001)
         plt.close()
-    
-    if len(err.shape) > 0:
+
+    if len(err.shape) > 0 :
         plot_predictions_with_errors()
 
     print(f'==========================================\n')
