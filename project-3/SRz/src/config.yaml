@@ -3,7 +3,7 @@ train_filepath : '../../data/train'
 val_filepath : '../../data/valid'
 test_filepath : '../../data/test'
 equation_file : 'equation.csv'
-niterations : 10
+niterations : 1
 binary_operators :
         - 'plus'
         - 'sub'

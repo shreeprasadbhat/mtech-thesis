@@ -24,7 +24,7 @@ if not os.path.isdir(config['outdir']):
 shutil.copy('config.yaml', config['outdir']) 
 
 logging.basicConfig(
-        filename=os.path.join(config['outdir'],'log.log'), 
+        filename=os.path.join(config['outdir'],'logfile.log'), 
         level=logging.DEBUG, 
         filemode='w', 
         format='%(asctime)s:%(levelname)s:%(message)s'
@@ -62,7 +62,7 @@ model.fit(X_train, y_train)
 
 endtime = time.time()
 
-print(f'Time take to fit model - {(endtime-starttime)//60} minutes')
+print(f'Time take to fit model - {(endtime-starttime)//60} minutes') 
 logging.info(f'Time take to fit model - {(endtime-starttime)//60} minutes')
 
 print(model)
@@ -86,13 +86,13 @@ for k in range(n_equations):
     if not os.path.isdir(os.path.join(config['outdir'],'eq'+str(k))):
         os.mkdir(os.path.join(config['outdir'],'eq'+str(k)))
 
-    logging.basicConfig(
-        filename=os.path.join(config['outdir'],'eq'+str(k),'log.log'), 
-        level=logging.DEBUG, 
-        filemode='w', 
-        format='%(asctime)s:%(levelname)s:%(message)s'
-    )
-
+    logger = logging.getLogger('eq'+str(k))
+    file_handler = logging.FileHandler(os.path.join(config['outdir'],'eq'+str(k),'logfile.log'), mode='w')
+    formatter = logging.Formatter('%(levelname)s:%(message)s')
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    logger.setLevel(logging.DEBUG)
+    
     y = y_test
     y_predict = model.equations['lambda_format'][k](X_test)
 
@@ -106,13 +106,13 @@ for k in range(n_equations):
             xe[i] = 0.5*(xedges[i+1]+xedges[i])
             ye[i] = 0.5*(yedges[i+1]+yedges[i])
 
-        plt.figure(facecolor='black')
+        #plt.figure(facecolor='black')
         plt.contourf(xe,ye,np.log(np.transpose(H+1)),levels=level,cmap='hot')
         plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
         plt.ylim((min(y),max(y)))
-        plt.xlabel(r'$z_{spec}$',fontsize=30)
-        plt.tick_params(axis='both', which='major', labelsize=20)
-        plt.ylabel(r'$z_{phot}$',fontsize=30)
+        plt.xlabel(r'$z_{spec}$')
+        #plt.tick_params(axis='both', which='major', labelsize=20)
+        plt.ylabel(r'$z_{phot}$')
         plt.ylim((min(y),max(y)))
         plt.xlim((min(y),max(y)))
         plt.title('Logarithmic density of true vs predicted redshifts of ~3000 galaxies in test set')
@@ -129,16 +129,16 @@ for k in range(n_equations):
     heatmap_predictions()
 
     print('Metric a')
-    logging.info('Metric a')
+    logger.info('Metric a')
     outliers=y_predict[abs(y-y_predict)>0.1]
     print(f'Catastrophic Outliers: {outliers.shape[0]*100.0/y.shape[0]} %')
-    logging.info(f'Catastrophic Outliers: {outliers.shape[0]*100.0/y.shape[0]} %')
+    logger.info(f'Catastrophic Outliers: {outliers.shape[0]*100.0/y.shape[0]} %')
     print(f'Total rms: {np.sqrt(np.mean((y-y_predict)**2))}')
-    logging.info(f'Total rms: {np.sqrt(np.mean((y-y_predict)**2))}')
+    logger.info(f'Total rms: {np.sqrt(np.mean((y-y_predict)**2))}')
     print(f'rms w/o outliers {np.sqrt(np.mean(((y-y_predict)[abs(y-y_predict)<0.1])**2))}')
-    logging.info(f'rms w/o outliers {np.sqrt(np.mean(((y-y_predict)[abs(y-y_predict)<0.1])**2))}')
+    logger.info(f'rms w/o outliers {np.sqrt(np.mean(((y-y_predict)[abs(y-y_predict)<0.1])**2))}')
     print(f'Bias: {np.mean(y-y_predict)}')
-    logging.info(f'Bias: {np.mean(y-y_predict)}')
+    logger.info(f'Bias: {np.mean(y-y_predict)}')
        
     def plot_z_photo_vs_z_spec ():
 
@@ -146,9 +146,9 @@ for k in range(n_equations):
         plt.figure() 
         plt.plot(y, y_predict, '.')
         plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
-        plt.xlabel(r'$z_{spec}$',fontsize=30)
-        plt.tick_params(axis='both', which='major', labelsize=20)
-        plt.ylabel(r'$z_{phot}$',fontsize=30)
+        plt.xlabel(r'$z_{spec}$')
+        #plt.tick_params(axis='both', which='major', labelsize=20)
+        plt.ylabel(r'$z_{phot}$')
         plt.ylim((min(y),max(y)))
         plt.xlim((min(y),max(y)))
         plt.title('Photometric redshift prediction for test set')
@@ -195,16 +195,18 @@ for k in range(n_equations):
         idx = rng.choice(range(len(y)), 300)
 
         plt.figure() 
-        plt.errorbar(y[idx], y_predict[idx], yerr=err[idx], fmt='.', color='blue', capsize=5)
+        plt.errorbar(y[idx], y_predict[idx], yerr=err[idx], fmt='.', linewidth=1, color='blue', capsize=5)
         plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='r')
-        plt.xlabel(r'$z_{spec}$',fontsize=30)
-        plt.tick_params(axis='both', which='major', labelsize=20)
-        plt.ylabel(r'$z_{phot}$',fontsize=30)
-        plt.ylim((min(y),max(y)))
-        plt.xlim((min(y),max(y)))
+        plt.xlabel(r'$z_{spec}$')
+        #plt.tick_params(axis='both', which='major', labelsize=20)
+        plt.ylabel(r'$z_{phot}$')
+        plt.ylim(0.35, 0.75)
+        plt.xlim(0.4, 0.7)
         plt.title('Photometric redshift prediction and errorbars for subsample of 300 galaxies')
         plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'predictions_with_error.png'))
         #plt.show()
+        #plt.draw()
+        #plt.pause(0.001)
         plt.close()
 
     plot_predictions_with_errors()
