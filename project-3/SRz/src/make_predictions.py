@@ -37,9 +37,9 @@ df_test = pd.read_csv(
             names = ['u','g','r','i','z','u_err','g_err','r_err','i_err','z_err','z_spec']
         )
 
-#df_test = df_test[df_test['z_spec'] < 0.7]
-#df_test = df_test[df_test['z_spec'] > 0.4]
-#print(df_test.shape)
+df_test = df_test[df_test['z_spec'] < 0.7]
+df_test = df_test[df_test['z_spec'] > 0.4]
+print(df_test.shape)
 
 X_test = df_test.iloc[:,:5].to_numpy()
 X_err = df_test.iloc[:,5:-1].to_numpy()

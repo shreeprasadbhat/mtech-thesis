@@ -1,7 +1,7 @@
-outdir : "../runs/04/"
+outdir : "../runs/03/"
 train_filepath : ''
 val_filepath : ''
-test_filepath : '../../data/test'
+test_filepath : '../../data/sky_data_model.txt'
 equation_file : 'equation.csv'
 equation : '(-6.297718*i + 7.297718*r - 0.11231361*u - 11.924731)/g'
 niterations : 10
