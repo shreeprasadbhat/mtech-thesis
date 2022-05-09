@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-filename = 'Skyserver_Imaging5_9_2022 12_00_10 PM.csv'
+filename = 'Skyserver_SQL5_9_2022 5_54_08 PM.csv'
 
 df = pd.read_csv(filename, sep=',')
 #df = df[df.iloc[:,-1] < 0.7]
