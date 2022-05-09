@@ -42,10 +42,10 @@ df_test = pd.read_csv(
 #print(df_test.shape)
 
 X_test = df_test.iloc[:,:5].to_numpy()
-X_err = df_test.iloc[:,5:-1].to_numpy()
-y_test = df_test.iloc[:,-1].to_numpy()
+X_err = df_test.iloc[:,5:10].to_numpy()
+y_test = df_test.iloc[:,10].to_numpy()
 
-#weights = 1./ np.square(np.sum(df_train.iloc[:,5:-1].to_numpy(), axis=1))
+#weights = 1./ np.square(np.sum(df_train.iloc[:,5:11].to_numpy(), axis=1))
 
 n_equations = 1
 

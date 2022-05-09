@@ -40,12 +40,12 @@ if config['val_filepath']: # if validation data exists, merge it with train, PyS
 df_test = pd.read_csv(config['test_filepath'], header=None, sep=' ')
 
 X_train = df_train.iloc[:,:5].to_numpy()
-y_train = df_train.iloc[:,-1].to_numpy()
+y_train = df_train.iloc[:,10].to_numpy()
 X_test = df_test.iloc[:,:5].to_numpy()
-X_err = df_test.iloc[:,5:-1].to_numpy()
-y_test = df_test.iloc[:,-1].to_numpy()
+X_err = df_test.iloc[:,5:10].to_numpy()
+y_test = df_test.iloc[:,10].to_numpy()
 
-#weights = 1./ np.square(np.sum(df_train.iloc[:,5:-1].to_numpy(), axis=1))
+#weights = 1./ np.square(np.sum(df_train.iloc[:,5:10].to_numpy(), axis=1))
 
 model = PySRRegressor(
     niterations = config['niterations'],
