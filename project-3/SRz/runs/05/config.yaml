@@ -1,0 +1,24 @@
+outdir : "../runs/05/"
+train_filepath : '../../data/sky_data_model_filt_train.txt'
+val_filepath : ''
+test_filepath : '../../data/sky_data_model_filt_test.txt'
+equation_file : 'equation.csv'
+equation : '(-6.297718*i + 7.297718*r - 0.11231361*u - 11.924731)/g'
+niterations : 10
+binary_operators :
+        - 'plus'
+        - 'sub'
+        - 'mult'
+        - 'div'
+unary_operators :
+variable_names : 
+        - 'u'
+        - 'g'
+        - 'r'
+        - 'i'
+        - 'z'
+batching : False 
+batch_size : 5000
+model_selection : 'accuracy'
+loss : 'L2DistLoss()'
+progress : True
