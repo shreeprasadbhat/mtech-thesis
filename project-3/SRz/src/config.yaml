@@ -1,7 +1,7 @@
-outdir : "../runs/09/"
-train_filepath : '../../data/Skyserver_SQL5_9_2022 6_18_15 PM_train.csv'
-val_filepath : ''
-test_filepath : '../../data/Skyserver_SQL5_9_2022 6_18_15 PM_test.csv'
+outdir : "../runs/01/"
+train_filepath : '../../data/train'
+val_filepath : '../../data/valid'
+test_filepath : '../../data/test'
 equation_file : 'equation.csv'
 niterations : 10
 binary_operators :
