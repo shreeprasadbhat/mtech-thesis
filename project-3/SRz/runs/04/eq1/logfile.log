@@ -1,0 +1,5 @@
+INFO:Metric a
+INFO:Catastrophic Outliers: 97.545 %
+INFO:Total rms: 0.7353343034660865
+INFO:rms w/o outliers 0.05690958767042149
+INFO:Bias: -0.04427509523106196

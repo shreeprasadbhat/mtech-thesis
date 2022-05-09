@@ -32,8 +32,11 @@ logging.basicConfig(
 
 # Load 2SLAQ LRG Data
 df_train = pd.read_csv(config['train_filepath'], header=None, sep=' ')
-df_val = pd.read_csv(config['val_filepath'], header=None, sep=' ')
-df_train = pd.concat([df_train, df_val])
+
+if config['val_filepath']: # if validation data exists, merge it with train, PySR will take care of val split
+    df_val = pd.read_csv(config['val_filepath'], header=None, sep=' ')
+    df_train = pd.concat([df_train, df_val])
+
 df_test = pd.read_csv(config['test_filepath'], header=None, sep=' ')
 
 X_train = df_train.iloc[:,:5].to_numpy()
@@ -192,8 +195,8 @@ for k in range(n_equations):
         plt.xlabel(r'$z_{spec}$')
         #plt.tick_params(axis='both', which='major', labelsize=20)
         plt.ylabel(r'$z_{phot}$')
-        plt.ylim(min(y[idx])-0.5, max(y[idx])+0.5)
-        plt.xlim(min(y[idx])-0.5, max(y[idx])+0.5)
+        plt.ylim(min(y[idx])-0.05, max(y[idx])+0.05)
+        plt.xlim(min(y[idx]), max(y[idx]))
         plt.title('Photometric redshift prediction and errorbars for subsample of 300 galaxies')
         plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'predictions_with_error.png'))
         #plt.show()
