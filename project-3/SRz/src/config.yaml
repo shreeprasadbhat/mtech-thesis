@@ -1,9 +1,9 @@
 outdir : "../runs/07/"
-train_filepath : '../../data/train'
-val_filepath : '../../data/valid'
-test_filepath : '../../data/test'
+train_filepath : '../../data/Skyserver_Imaging5_9_2022 12_00_10 PM_train.csv'
+val_filepath : ''
+test_filepath : '../../data/Skyserver_Imaging5_9_2022 12_00_10 PM_test.csv'
 equation_file : 'equation.csv'
-niterations : 1
+niterations : 10
 binary_operators :
         - 'plus'
         - 'sub'

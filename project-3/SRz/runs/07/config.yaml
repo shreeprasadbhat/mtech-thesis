@@ -1,0 +1,21 @@
+outdir : "../runs/07/"
+train_filepath : '../../data/Skyserver_Imaging5_9_2022 12_00_10 PM_train.csv'
+val_filepath : ''
+test_filepath : '../../data/Skyserver_Imaging5_9_2022 12_00_10 PM_test.csv'
+equation_file : 'equation.csv'
+niterations : 10
+binary_operators :
+        - 'plus'
+        - 'sub'
+        - 'mult'
+        - 'div'
+unary_operators :
+variable_names : 
+        - 'u'
+        - 'g'
+        - 'r'
+        - 'i'
+        - 'z'
+model_selection : 'accuracy'
+loss : 'L2DistLoss()'
+progress : True
