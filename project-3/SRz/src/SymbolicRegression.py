@@ -13,7 +13,7 @@ import pysr
 from pysr import PySRRegressor
 import sympy
 
-pysr.silence_julia_warning()
+#pysr.silence_julia_warning()
 
 with open('config.yaml') as f :
     config = yaml.load(f, Loader=yaml.Loader)
@@ -45,10 +45,14 @@ X_test = df_test.iloc[:,:5].to_numpy()
 X_err = df_test.iloc[:,5:10].to_numpy()
 y_test = df_test.iloc[:,10].to_numpy()
 
-#weights = 1./ np.square(np.sum(df_train.iloc[:,5:10].to_numpy(), axis=1))
+#weights = 1./ y_train
 
 model = PySRRegressor(
+    populations = config['populations'],
+    population_size = config['population_size'],
     niterations = config['niterations'],
+    #batching = config['batching'],
+    #batch_size = config['batch_size'],
     binary_operators = config['binary_operators'],
     unary_operators = config['unary_operators'],
     extra_sympy_mappings = {'pow2': lambda x : x**2, 'pow3' : lambda x : x**3, 'pow4' : lambda x : x**4, 'pow5' : lambda x : x**5},
@@ -101,7 +105,7 @@ for k in range(n_equations):
     y_predict = model.equations['lambda_format'][k](X_test)
 
     def heatmap_predictions() :
-
+        
         H,xedges, yedges = np.histogram2d(y,y_predict, bins=50)
         level = np.linspace(0,np.round(2*np.max(np.log(np.transpose(H+1))))/2.0,20)
         xe = np.zeros(len(xedges)-1)
@@ -109,16 +113,14 @@ for k in range(n_equations):
         for i in range(len(xedges)-1):
             xe[i] = 0.5*(xedges[i+1]+xedges[i])
             ye[i] = 0.5*(yedges[i+1]+yedges[i])
-
-        #plt.figure(facecolor='black')
+        fig, ax = plt.subplots()
+        ax.set_facecolor(color='black')
         plt.contourf(xe,ye,np.log(np.transpose(H+1)),levels=level,cmap='hot')
         plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
-        plt.ylim((min(y),max(y)))
         plt.xlabel(r'$z_{spec}$')
-        #plt.tick_params(axis='both', which='major', labelsize=20)
         plt.ylabel(r'$z_{phot}$')
-        plt.ylim((min(y),max(y)))
-        plt.xlim((min(y),max(y)))
+        plt.ylim(min(y), max(y))
+        plt.xlim(min(y), max(y))
         plt.title('Logarithmic density of true vs predicted redshifts of ~3000 galaxies in test set')
 
         cbar = plt.colorbar()
@@ -187,7 +189,21 @@ for k in range(n_equations):
 
         # plot of predictions with error for 300 subsamples of galaxies
         rng = np.random.default_rng(12345)
-        idx = rng.choice(range(len(y)), 300)
+        def stratified_sample() :
+            interval_size = 0.1
+            sample_size = int(300 / (max(y) / interval_size))
+            l = np.arange(0, max(y), 0.1)
+            idx = np.empty(0, dtype='int') 
+            for i in l :
+                cur_idx = ((y >= i) & (y < i+interval_size)).nonzero()[0]
+                if len(cur_idx) > sample_size :
+                    cur_idx = rng.choice(cur_idx, sample_size)
+
+                idx = np.concatenate([idx, cur_idx])
+            return idx
+
+        #idx = rng.choice(range(len(y)), 300)
+        idx = stratified_sample()
 
         plt.figure() 
         plt.errorbar(y[idx], y_predict[idx], yerr=err[idx], fmt='.', linewidth=1, color='blue', capsize=5)

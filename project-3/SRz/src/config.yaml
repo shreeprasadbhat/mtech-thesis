@@ -1,14 +1,17 @@
-outdir : "../runs/01/"
-train_filepath : '../../data/train'
-val_filepath : '../../data/valid'
-test_filepath : '../../data/test'
+outdir : "../runs/33/"
+train_filepath : '../../data/MyTable_shreeprasadbhat_train.csv'
+val_filepath : ''
+test_filepath : '../../data/MyTable_shreeprasadbhat_test.csv'
 equation_file : 'equation.csv'
-niterations : 10
+equation : '0.009954149*g*i + i*(-0.0014492471*g*i + 0.037396688*i) - 5.6483536'
+populations : 100
+population_size : 50 
+niterations : 5 
 binary_operators :
         - 'plus'
-        - 'sub'
+          #- 'sub'
         - 'mult'
-        - 'div'
+          #- 'div'
 unary_operators :
 variable_names : 
         - 'u'

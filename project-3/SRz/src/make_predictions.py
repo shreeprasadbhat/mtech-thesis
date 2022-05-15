@@ -13,8 +13,6 @@ import pysr
 from pysr import PySRRegressor
 import sympy
 
-pysr.silence_julia_warning()
-
 with open('config.yaml') as f :
     config = yaml.load(f, Loader=yaml.Loader)
 
@@ -34,18 +32,16 @@ df_test = pd.read_csv(
             config['test_filepath'], 
             header=None, 
             sep=' ',
-            names = ['u','g','r','i','z','u_err','g_err','r_err','i_err','z_err','z_spec']
+            names = ['u','g','r','i','z','u_err','g_err','r_err','i_err','z_err','z_spec','z_spec_err','z_photo','z_photo_err']
         )
 
-#df_test = df_test[df_test['z_spec'] < 0.7]
-#df_test = df_test[df_test['z_spec'] > 0.4]
+df_test = df_test[df_test['z_spec'] < 1.]
 #print(df_test.shape)
 
 X_test = df_test.iloc[:,:5].to_numpy()
 X_err = df_test.iloc[:,5:10].to_numpy()
 y_test = df_test.iloc[:,10].to_numpy()
 
-#weights = 1./ np.square(np.sum(df_train.iloc[:,5:11].to_numpy(), axis=1))
 
 n_equations = 1
 
@@ -94,16 +90,14 @@ for k in range(n_equations):
         for i in range(len(xedges)-1):
             xe[i] = 0.5*(xedges[i+1]+xedges[i])
             ye[i] = 0.5*(yedges[i+1]+yedges[i])
-
-        #plt.figure(facecolor='black')
+        fig, ax = plt.subplots()
+        ax.set_facecolor(color='black')
         plt.contourf(xe,ye,np.log(np.transpose(H+1)),levels=level,cmap='hot')
         plt.plot([min(y),max(y)],[min(y),max(y)],'-',color='grey',alpha=0.9, linewidth=1.5)
-        plt.ylim((min(y),max(y)))
         plt.xlabel(r'$z_{spec}$')
-        #plt.tick_params(axis='both', which='major', labelsize=20)
         plt.ylabel(r'$z_{phot}$')
-        plt.ylim((min(y),max(y)))
-        plt.xlim((min(y),max(y)))
+        plt.ylim(min(y), max(y))
+        plt.xlim(min(y), max(y))
         plt.title('Logarithmic density of true vs predicted redshifts of ~3000 galaxies in test set')
 
         cbar = plt.colorbar()
@@ -114,6 +108,7 @@ for k in range(n_equations):
         plt.savefig(os.path.join(config['outdir'],'eq'+str(k),'density_plot.png'))
         #plt.show()
         plt.close()
+
 
     heatmap_predictions()
 
@@ -172,7 +167,21 @@ for k in range(n_equations):
 
         # plot of predictions with error for 300 subsamples of galaxies
         rng = np.random.default_rng(12345)
-        idx = rng.choice(range(len(y)), 300)
+        def stratified_sample() :
+            interval_size = 0.1
+            sample_size = int(1000 / (max(y) / interval_size))
+            l = np.arange(0, max(y), 0.1)
+            idx = np.empty(0, dtype='int') 
+            for i in l :
+                cur_idx = ((y >= i) & (y < i+interval_size)).nonzero()[0]
+                if len(cur_idx) > sample_size :
+                    cur_idx = rng.choice(cur_idx, sample_size)
+
+                idx = np.concatenate([idx, cur_idx])
+            return idx
+
+        #idx = rng.choice(range(len(y)), 300)
+        idx = stratified_sample()
 
         plt.figure() 
         plt.errorbar(y[idx], y_predict[idx], yerr=err[idx], fmt='.', linewidth=1, color='blue', capsize=5)
@@ -188,8 +197,8 @@ for k in range(n_equations):
         #plt.draw()
         #plt.pause(0.001)
         plt.close()
-
-    if len(err.shape) > 0 :
+    
+    if len(err.shape) > 0:
         plot_predictions_with_errors()
 
     print(f'==========================================\n')
