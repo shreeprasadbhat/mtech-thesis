@@ -1,0 +1,65 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname bibinfo\endcsname\relax\def\bibinfo#1#2{#2}\fi
+
+\bibitem{riess1998observational}
+\bibinfo{author}{A.~G. Riess}, \bibinfo{author}{A.~V. Filippenko},
+  \bibinfo{author}{P.~Challis}, \bibinfo{author}{A.~Clocchiatti},
+  \bibinfo{author}{A.~Diercks}, \bibinfo{author}{P.~M. Garnavich},
+  \bibinfo{author}{R.~L. Gilliland}, \bibinfo{author}{C.~J. Hogan},
+  \bibinfo{author}{S.~Jha}, \bibinfo{author}{R.~P. Kirshner} et~al.
+\newblock \bibinfo{title}{Observational evidence from supernovae for an
+  accelerating universe and a cosmological constant}.
+\newblock {\em \bibinfo{journal}{The Astronomical Journal}\/}
+  \bibinfo{volume}{116}, (\bibinfo{year}{1998}) \bibinfo{pages}{1009}.
+
+\bibitem{perlmutter1999measurements}
+\bibinfo{author}{S.~Perlmutter}, \bibinfo{author}{G.~Aldering},
+  \bibinfo{author}{G.~Goldhaber}, \bibinfo{author}{R.~Knop},
+  \bibinfo{author}{P.~Nugent}, \bibinfo{author}{P.~G. Castro},
+  \bibinfo{author}{S.~Deustua}, \bibinfo{author}{S.~Fabbro},
+  \bibinfo{author}{A.~Goobar}, \bibinfo{author}{D.~E. Groom} et~al.
+\newblock \bibinfo{title}{Measurements of $\Omega$ and $\Lambda$ from 42
+  high-redshift supernovae}.
+\newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
+  \bibinfo{volume}{517}, (\bibinfo{year}{1999}) \bibinfo{pages}{565}.
+
+\bibitem{schaefer2007hubble}
+\bibinfo{author}{B.~E. Schaefer}.
+\newblock \bibinfo{title}{The Hubble diagram to redshift> 6 from 69 gamma-ray
+  bursts}.
+\newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
+  \bibinfo{volume}{660}, (\bibinfo{year}{2007}) \bibinfo{pages}{16}.
+
+\bibitem{li2007variation}
+\bibinfo{author}{L.-X. Li}.
+\newblock \bibinfo{title}{Variation of the Amati relation with cosmological
+  redshift: a selection effect or an evolution effect?}
+\newblock {\em \bibinfo{journal}{Monthly Notices of the Royal Astronomical
+  Society: Letters}\/} \bibinfo{volume}{379}, (\bibinfo{year}{2007})
+  \bibinfo{pages}{L55--L59}.
+
+\bibitem{basilakos2008testing}
+\bibinfo{author}{S.~Basilakos} and \bibinfo{author}{L.~Perivolaropoulos}.
+\newblock \bibinfo{title}{Testing gamma-ray bursts as standard candles}.
+\newblock {\em \bibinfo{journal}{Monthly Notices of the Royal Astronomical
+  Society}\/} \bibinfo{volume}{391}, (\bibinfo{year}{2008})
+  \bibinfo{pages}{411--419}.
+
+\bibitem{wang2011updated}
+\bibinfo{author}{F.-Y. Wang}, \bibinfo{author}{S.~Qi}, and
+  \bibinfo{author}{Z.-G. Dai}.
+\newblock \bibinfo{title}{The updated luminosity correlations of gamma-ray
+  bursts and cosmological implications}.
+\newblock {\em \bibinfo{journal}{Monthly Notices of the Royal Astronomical
+  Society}\/} \bibinfo{volume}{415}, (\bibinfo{year}{2011})
+  \bibinfo{pages}{3423--3433}.
+
+\bibitem{tang2021model}
+\bibinfo{author}{L.~Tang}, \bibinfo{author}{X.~Li}, \bibinfo{author}{H.-N.
+  Lin}, and \bibinfo{author}{L.~Liu}.
+\newblock \bibinfo{title}{Model-independently calibrating the luminosity
+  correlations of gamma-ray bursts using deep learning}.
+\newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
+  \bibinfo{volume}{907}, (\bibinfo{year}{2021}) \bibinfo{pages}{121}.
+
+\end{thebibliography}

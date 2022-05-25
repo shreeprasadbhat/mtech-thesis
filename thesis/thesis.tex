@@ -1,0 +1,114 @@
+\documentclass[a4paper,twoside]{iiththesis}
+
+
+\book{Thesis}
+\title{--Title of my thesis--}
+\degree{Master of Technology}
+\department{Artificial Intelligence}
+\submitted{June 2022}
+\author{Shreeprasad Bhat}
+\adviser{Dr. Shantanu Desai}
+\addradviser{Dept. of Physics \\ IITH}
+\chair{---------}
+\addrchair{Dept. of Artificial Intelligence \\ IITH}
+\external{----------}
+\addrexternal{Dept. of Chem Eng \\ IITH}
+\internal{----------}
+\addrinternal{Dept. Math \\ IITH}
+\input{preamble}
+\input{abstract}
+\input{acknowledgements}
+\input{dedication}
+\graphicspath{ {./chapter-1/images/} }
+\renewcommand{\bibname}{References}
+\begin{document}
+
+\tableofcontents
+
+\import{./chapter-1/}{chapter-1}
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Dark Energy Model}
+
+\chapter{Figures}
+\section{Referencing figures}
+The figure where ever possible must be centered. Each figure must have a caption centered to the figure. Every single figure in the document must be referred in the text. For example IITH logo is displayed in Fig.~\ref{iithlogo}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{logo}
+\caption{This is IITH logo}
+\label{iithlogo}
+\end{figure}
+
+Use ``Fig". to refer to a figure if the reference to it appears not at the beginning of a sentence. If the sentence starts with reference to figure use ``Figure". For instance refer to the following text.
+Figure~\ref{iithlogo} is a compressed logo of IITH.\\
+
+\section{File formats}
+You can use jpeg, png, pdf, or eps file format for the figures. However, depending on the file type you will have to use either \textit{pdflatex} or \textit{latex}. Please refer to Chp.~\ref{compiling} for further details.
+
+
+\begin{equation}
+\eta = 1-\bigg(\frac{v_2}{v_1}\bigg)^{\gamma-1} = 1-\bigg(\frac{p_1}{p_2}\bigg)^{(\gamma-1)/\gamma}
+\end{equation}
+
+
+\begin{flushright}
+\begin{eqnarray}
+ \eta = 1-\bigg(\frac{v_2}{v_1}\bigg)^{\gamma-1} = 1-\bigg(\frac{p_1}{p_2}\bigg)^{(\gamma-1)/\gamma} + \\ 
+ \frac{x}{y} + \frac{z}{x} + \frac{z}{y}
+\end{eqnarray}
+
+\end{flushright}
+
+
+\chapter{Tables}
+
+\section{Referencing tables}
+The tables where ever possible must be centered. The table caption must appear at the top of the table and must be centered to the table. Every table in the document must be referred in the text. Please use capitalized ``T" whenever a reference to table is made. i.e Table~\ref{extable} rather than table~\ref{extable}.
+\begin{table}[h]
+\centering
+\caption{This is an example table.}
+\begin{tabular}{l l}
+\hline
+Parameter & Value \\
+\hline
+Density & 1 \\
+Specific heat & 1 \\
+\hline
+\end{tabular}
+\label{extable}
+\end{table}
+
+\chapter{Compiling the \textit{.tex} file }
+\label{compiling}
+
+\section{Options}
+If you are using jpeg or pdf format for the figures please use\textit{pdflatex} to compile the tex file. If you are using eps format you can use \textit{latex} command to compile the tex file. The \textit{latex} command will create \textit{dvi} output which may be converted to \textit{pdf} by using \textit{dvipdf} on any linux distribution. 
+
+\section{Compilation sequence}
+You have to execute the following sequence to commands to get the proper output file.
+\begin{verbatim}
+latex thesis.tex
+bibtex thesis
+latex thesis.tex
+latex thesis.tex
+\end{verbatim}
+Notice that you have to tex the document twice after running bibtex.\\
+
+\clearpage
+\newpage
+\addcontentsline{toc}{chapter}{References} % Please do not remove this
+
+
+\end{document}
