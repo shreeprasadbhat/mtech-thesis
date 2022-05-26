@@ -56,14 +56,14 @@ size = 12800
 input_dim = 2048
 
 def CPLSample(z):
-    omega_M = np.random.uniform(omega_M_low, omega_M_high, (size,1))
-    omega_M = np.tile(omega_M, (1, input_dim))
-    H0 = np.random.uniform(H0_low, H0_high, (size,1))
-    H0 = np.tile(H0, (1, input_dim))
-    w0 = np.random.uniform(w0_low, w0_high, (size, 1))
-    w0 = np.tile(w0, (1, input_dim))
-    wa = np.random.uniform(wa_low, wa_high, (size, 1))
-    wa = np.tile(wa, (1, input_dim))
+    omega_M = np.random.uniform(omega_M_low, omega_M_high, (size, input_dim))
+    #omega_M = np.tile(omega_M, (1, input_dim))
+    H0 = np.random.uniform(H0_low, H0_high, (size, input_dim))
+    #H0 = np.tile(H0, (1, input_dim))
+    w0 = np.random.uniform(w0_low, w0_high, (size, input_dim))
+    #w0 = np.tile(w0, (1, input_dim))
+    wa = np.random.uniform(wa_low, wa_high, (size, input_dim))
+    #wa = np.tile(wa, (1, input_dim))
     return distance_modulus(z, omega_M, H0, w0, wa)
 
 x_real = CPLSample(np.tile(np.reshape(z, (1, input_dim)), (size, 1)))
@@ -77,8 +77,10 @@ np.savetxt("x_real_CPL.csv", x_real, delimiter=",")
 np.savetxt("y_real_CPL.csv", y_real, delimiter=",")
 
 if __name__ == '__main__':
+
     import numpy as np
     import matplotlib.pyplot as plt
+
     union = np.genfromtxt('../../../data/Union/union.txt', delimiter=' ', usecols=(1,2,3), names=True)
     union.sort(order='zCMB')
     z_obs = union['zCMB'].astype('float32')
@@ -89,6 +91,7 @@ if __name__ == '__main__':
     z = np.concatenate((z, z_obs), axis=0)
     z.sort()
     x_real = np.genfromtxt('x_real_CPL.csv',delimiter=',')
+
     plt.plot(z, x_real[0])
     plt.plot(z, x_real[1])
     plt.show()

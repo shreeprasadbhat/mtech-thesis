@@ -1,0 +1,290 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\title{Model Comparison of Dark Energy models Using Deep Network }
+\author{Shreeprasad Bhat $^{1}$, Shantanu Desai $^{1,2}$\\
+${ }^{1}$ Department of Artificial Intelligence, IIT Hyderabad\\
+${ }^{2}$ Department of Physics, IIT Hyderabad}
+
+%\date{}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This work uses a combination of a variational auto-encoder and generative adversarial network to compare different dark energy models in light of observations, e.g., the distance modulus from type Ia supernovae. The network finds an analytical variational approximation to the true posterior of the latent parameters in the models, yielding consistent model comparison results with those derived by the standard Bayesian method, which suffers from a computationally expensive integral over the parameters in the product of the likelihood and the prior. The parallel computational nature of the network together with the stochastic gradient descent optimization technique leads to an efficient way to compare the physical models given a set of observations. The converged network also provides interpolation for a dataset, which is useful for data reconstruction.
+\end{abstract}
+
+Key words: cosmology: dark energy - methods: statistical - methods: data analysis
+
+\section*{1 INTRODUCTION }
+It is well known that predictions about the universe from $\Lambda \mathrm{CDM}$ are in perfect concordance with observations of the Cosmic Microwave Background (CMB)(Aghanim et al. 2018), type Ia supernovae(SNeIa)(Betoule et al. 2014), and Baryon Acoustic Oscillations (BAO) (Alam et al. 2017), making $\Lambda$ CDM the standard paradigm in cosmology. Such a successful model, however, still has its own theoretical problems, which are known as fine tuning and cosmic coincidence Sahni 2002 ; Peebles \& Ratra 2003). More over, a few observations such as the Hubble parameter at high redshift(Delubac et al. (2015) and the linear redshift-space distortions(Macaulay et al. 2013) have shown tensions with $\Lambda$ CDM. All of these motivate research on the universe that allows time-evolving dark energy. People have developed different evolving scalar fields to describe the evolution of dark energy, such as the canonical scalar fields(Caldwell et al. 1998$)$ and phantom fields(Caldwell et al. $2003 ;$ Elizalde et al. $2004 ;$ Scherrer \& Sen 2008). Various parametrisations of evolving dark energy that broadly describe a large number of scalar field dark energy models are also proposed, such as the Chevallier-Polarski-Linder (CPL) Chevallier \& Polarski 2001) and generalized Chaplygin gas (GCG) models (Thakur et al. 2012). Given a specific model and a set Then a question of model choice naturally arises with the development of various dark energy models. A variety of methods such as the $F$-test, Akaike information criterion (AIC) (Penny et al. 2006), Mallows $C_{p}$, Bayesian information criterion (BIC) (Penny et al. 2006), minimum description length (MDL) (Rissanen 1978), and Bayesian model averaging have been proposed to select a good or useful model in light of observations. MacKay 1992 strongly recommends using Bayesian evidence to assign preferences to alternative models since the evidence is the Bayesian's transportable quantity between models, and the popular easyto-use AIC and BIC as well as MDL methods are all approximations to the Bayesian evidence (Penny et al. 2006). The Bayesian evidence for model selection has been applied to the study of cosmology for a long time (Trotta 2008; Martin et al. 2011; Lonappan et al. 2018; Basilakos et al. 2018), and recently a detailed study of Bayesian evidence for a large class of cosmological models taking into account around 21 different dark energy models has been performed by Lonappan et al. 2018. Although Bayesian evidence remains the preferred method compared with information criterions, a full Bayesian inference for model selection is very computationally expensive and often suffers from multi-modal posteriors and parameter degeneracies, which lead to a large time consumption to obtain the final result.
+
+The variational auto-encoder (VAE) and the generative adversarial network (GAN) which build upon the variational Bayes theory provide an efficient way to tackle the model selection problem. VAE (Kingma \& Welling 2014) has the ability to approximate the generative process (generate the observed data given the model parameters) and the inference process (infer the model parameters given the observations) which allow one to interpolate between the observed values, thus it is useful in the reconstruction problem. GAN with semi-supervised learning (Goodfellow et al. 2014; Salimans et al. 2016) has the ability to effectively learn the distribution of the data, and assign probabilities to different models where the data may come. Thus the combination of VAE and GAN brings us a novel and convenient way to do data reconstruction and model selection at the same time. Since the variational method provides an analytical reconstruction and model selection at the same time. Since the variational method provides an analytical parameters rather than using the Monte Carlo Markov Chain approach which may suffer from a low accep tance ratio if the posterior is ill-posed. Moreover, the variational method benefits from natural parallelization of the network computation which can be accelerated by GPU cards.
+
+In this article, we use the VAE-GAN network to learn the distribution of the distance moduli in the $\Lambda \mathrm{CDM}, \omega \mathrm{CDM}$ and CPL universe models, then feed the observations of SNeIa to the network to reconstruct dark energy and discriminate the most probable model. The statistical background of the VAE and GAN is briefly reviewed in Section 2, the model structure is described at the end of this section. In Section 3 , two toy models are created to test the reconstruction and model discrimination ability of the network. Section 4 describes the observables used in this work, the generation of the training set is introduced. Section 5 reports and discusses the results of the data reconstruction and model comparison given by the network, and some prospects that extend the current work follow the discussion.
+
+\section{THE VAE-GAN NETWORK}
+The VAE-GAN network proposed by Larsen et al. 2016 combines a VAE with a GAN, aiming to use the results in better capturing the data distribution, improving the quality of the inference and the generative process of the network in light of the data. This section briefly reviews the background of the VAE and GAN and then introduces the method to do model selection and data reconstruction using VAE-GAN.
+
+\subsection{The Variational Autoencoder}
+A VAE (Kingma \& Welling 2014) consists of an encoder $\mathcal{I}$ and a decoder $\mathcal{G}$. The decoder mimics the generative process of a model or a natural phenomenon once given the model parameters or latent variables $\boldsymbol{\xi}$, yielding the likelihood distribution of the data $\tilde{\boldsymbol{x}} \sim \mathcal{G}(\boldsymbol{x} \mid \boldsymbol{\xi})$. The encoder approximates the inverse process that given a set of observations $\boldsymbol{x}$ it infers the posterior distribution of the model parameters or latent variables $\boldsymbol{\xi} \sim \mathcal{I}(\boldsymbol{\xi} \mid \boldsymbol{x})$.
+
+The optimal $\mathcal{I}$ and $\mathcal{G}$ are obtained by maximizing the lower bound of the marginal likelihood of the observations via variational bayes (Penny et al. 2006; Kingma \& Welling 2014),
+$$
+\mathcal{L}(\boldsymbol{x}) \geq-D_{K L}[\mathcal{I}(\boldsymbol{\xi} \mid \boldsymbol{x}) \| p(\boldsymbol{\xi})]+\mathbb{E}_{\mathcal{I}(\boldsymbol{\xi} \mid \boldsymbol{x})}[\log \mathcal{G}(\boldsymbol{x} \mid \boldsymbol{\xi})]
+$$
+Here, the first item $D_{K L}[\cdot \| \cdot]$ is the Kullback-Leibler (KL) divergence which measures the difference between two distributions. $p(\boldsymbol{\xi})$ is the prior distribution of the latent variables. $\log \mathcal{G}(\boldsymbol{x} \mid \boldsymbol{\xi})$ is the likelihood of the data. The marginal likelihood $\mathcal{L}(\boldsymbol{x})$ equals its lower bound if and only if the approximate posterior $\mathcal{I}(\boldsymbol{\xi} \mid \boldsymbol{x})$ is the same as the true posterior $\mathcal{G}(\boldsymbol{\xi} \mid \boldsymbol{x}) .$ Eq 1 implies that the variational optimal encoder and decoder should constrain the posterior close to the prior while keeping the likelihood as large as possible.
+
+\subsection{The Generative Adversarial Network}
+A GAN Goodfellow et al. 2014 ) consists of a generator $\mathcal{G}$ and a discriminator $\mathcal{D}$. The generator functions similarly to the decoder in that it maps the latent variables $\boldsymbol{\xi} \sim p(\boldsymbol{\xi})$ to the data space $\boldsymbol{x}=\mathcal{G}(\boldsymbol{\xi}) \in p_{\mathcal{G}}(\boldsymbol{x})$, but the difference is that the mapping is determinant and the sampling process happens only at the latent space. The discriminator assigns probability $\mathcal{D}(\boldsymbol{x}) \in[0,1]$ to $\boldsymbol{x}$ to tell how probable the real data are (not produced by the generator). The optimal $\mathcal{G}$ and $\mathcal{D}$ are obtained by searching the Nash equilibrium of the minmax game with the value function:
+$$
+\min _{\mathcal{G}} \max _{\mathcal{D}} V(\mathcal{G}, \mathcal{D})=\mathbb{E}_{p(\boldsymbol{x})}[\log \mathcal{D}(\boldsymbol{x})]+\mathbb{E}_{p_{\mathcal{G}}(x)}[\log (1-\mathcal{D}(\boldsymbol{x}))]
+$$
+where $p(x)$ is the distribution of the real data. A small modification of the game (Salimans et al. 2016) allows $\mathcal{D}$ to classify $\boldsymbol{x}$ into one of $\mathrm{K}+1$ possible classes, for example, to tell which one of the $\mathrm{K}$ classes of dark energy models is the most probable that $\boldsymbol{x}$ is generated from, or $\boldsymbol{x}$ is just the output of the generator which thus belongs to the $(K+1)$-th class.
+$$
+\begin{aligned}
+\min _{\mathcal{G}} \max _{\mathcal{D}} \hat{V}(\mathcal{G}, \mathcal{D})=& \mathbb{E}_{p(\boldsymbol{x})}[\log \mathcal{D}(c \neq K+1 \mid \boldsymbol{x})]+\mathbb{E}_{p_{\mathcal{G}}(x)}[\log (1-\mathcal{D}(c \neq K+1 \mid \boldsymbol{x}))] \\
+&+\mathbb{E}_{p(\boldsymbol{x}, c)}[\log \mathcal{D}(c \mid \boldsymbol{x}, c<K+1)]
+\end{aligned}
+$$
+Here $c$ is the label of the model. $\mathcal{D}(c \neq K+1 \mid \boldsymbol{x})$ corresponds to $\mathcal{D}(\boldsymbol{x})$ in $\mathrm{Eq} 2$ giving the probability that $\boldsymbol{x}$ is classified as real. $p(\boldsymbol{x}, c)$ is the joint distribution of the real data and the model class. $\mathcal{D}(c \mid \boldsymbol{x}, c<K+1)$
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-04}
+
+\section{GAN}
+Fig. 1: The structure of the VAE-GAN network (reproduced from Larsen et al. 2016 with an additional classifier described in Salimans et al. 2016).
+
+\subsection{Training Algorithm}
+The combination of VAE and GAN provides a convenient way to do data interpolation and model selection at the same time, once a set of optimal $\{\mathcal{I}, \mathcal{G}, \mathcal{D}\}$ is obtained by optimizing Eq.1 and Eq.3 The basic logic of the VAE-GAN network is shown in Figure 1 The observed data $\boldsymbol{x}$ are fed to the encoder $\mathcal{I}$ to find the posterior. Then $\xi$ is sampled from the posterior and fed to the decoder/generator $\mathcal{G}$ to derive the reconstruction (or interpolation) of the input data $\hat{x}$. Finally, the discriminator/classifier extracts the useful features from the reconstruction to derive the probability that $\hat{x}$ belongs to a certain model.
+
+Now the remaining question is that given a set of observations $\left\{\boldsymbol{x}_{i}\right\}_{i=1}^{N}$ and their covariance $\Sigma_{o b s}$ as well as a set of model candidates $\left\{M_{j}\right\}_{j=1}^{K}$, how to find the optimal $\mathcal{I}, \mathcal{G}, \mathcal{D}$. Since Eq. 1 and Eq. 3 set constraints on functions, any flexible functions that have learning abilities can fit in this work. A possible choice is the convolutional neural network (CNN) which is good at representation learning and shift-invariant feature extraction. Suppose $\mathcal{I}, \mathcal{G}, \mathcal{D}$ are CNNs whose parameters are $\boldsymbol{\theta}, \boldsymbol{\phi}, \boldsymbol{\psi}$ respectively. One can generate a batch of training samples from the model candidates and train the networks on these fixed data using stochastic gradient descent
+
+\begin{enumerate}
+  \item Select $\left\{\boldsymbol{x}_{i}, c_{i}\right\}$ from the training samples and retrieve the observed part $\boldsymbol{x}_{i, o b s}, c_{j} \in\{1,2, \cdots, K\}$ is the class label. Adding multivariate Gaussian random noise $\sigma_{o b s} \sim \mathcal{N}\left(0, \Sigma_{o b s}\right)$ to $\boldsymbol{x}_{i, o b s}$ yields $\boldsymbol{x}_{i, o b s}^{*}=\boldsymbol{x}_{i, o b s}+\sigma_{o b s} ;$
+
+  \item Feed $\boldsymbol{x}_{i, o b s}^{*}$ to the encoder to get the posterior $\mathcal{I}_{\boldsymbol{\theta}}\left(\boldsymbol{\xi} \mid \boldsymbol{x}_{i, o b s}^{*}\right)$, then calculate the KL divergence $D_{K L}\left[\mathcal{I}_{\boldsymbol{\theta}}\left(\boldsymbol{\xi} \mid \boldsymbol{x}_{i, o b s}^{*}\right) \| p(\boldsymbol{\xi})\right]$ (corresponding to the first item in Eq.1). Suppose the posterior is a multivariate Gaussian distribution with diagonal covariance, $\mathcal{I}_{\boldsymbol{\theta}}\left(\boldsymbol{\xi} \mid \boldsymbol{x}_{i, o b s}^{*}\right)=\mathcal{N}\left(\boldsymbol{\mu}_{i}, \mathbf{I} \boldsymbol{\sigma}_{i}^{2}\right)$, and the prior is the standard normal distribution, $p(\boldsymbol{\xi})=\mathcal{N}(\mathbf{0}, \mathbf{I})$, then the $\mathrm{KL}$ divergence can be analytically written as $-\frac{1}{2} \sum\left(1+\log \sigma_{i}^{2}-\boldsymbol{\mu}_{i}^{2}-\boldsymbol{\sigma}_{i}^{2}\right)$, where the square and sum operations are element-wise (Kingma \& Welling 2014). Find the gradient of the $\mathrm{KL}$ divergence with respect to the parameter of the encoder,
+
+\end{enumerate}
+$$
+\Delta \boldsymbol{\theta}_{K L, i}=-\nabla_{\boldsymbol{\theta}} D_{K L}\left[\mathcal{I}_{\boldsymbol{\theta}}\left(\boldsymbol{\xi} \mid \boldsymbol{x}_{i, o b s}^{*}\right) \| p(\boldsymbol{\xi})\right]
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+  \item Sample $\boldsymbol{\xi}_{i}$ from the posterior and feed it to the generator to obtain the reconstruction $\tilde{\boldsymbol{x}}_{i}=\mathcal{G}_{\phi}\left(\boldsymbol{\xi}_{i}\right)$. The observed part of the reconstruction $\tilde{\boldsymbol{x}}_{i, o b s}$ together with $\boldsymbol{x}_{i, o b s}^{*}$ and $\Sigma_{o b s}$ gives the negative log $\chi^{2}=\left(\boldsymbol{x}_{i, o b s}^{*}-\tilde{\boldsymbol{x}}_{i, o b s}\right)^{T} \Sigma_{o b s}^{-1}\left(\boldsymbol{x}_{i, o b s}^{*}-\tilde{\boldsymbol{x}}_{i, o b s}\right)$ is the goodness of fit that is broadly used in the model regression problems. The const. is the normalization constant of the likelihood, having the value of $\frac{N_{o b s}}{2} \log (2 \pi)+\frac{1}{2} \log \operatorname{det} \Sigma_{o b s}$, where $N_{o b s}$ is the dimension of the covariance $\Sigma_{o b s}$. Because likelihood depends on both the encoder and the generator, its gradient provides an update to $\mathcal{I}_{\boldsymbol{\theta}}, \mathcal{G}_{\boldsymbol{\phi}}$,
+\end{enumerate}
+$$
+\begin{aligned}
+&\Delta \boldsymbol{\theta}_{\mathcal{L}, i}=\nabla_{\boldsymbol{\theta}} \log \mathcal{G}_{\phi}\left(\boldsymbol{x}_{i, o b s}^{*} \mid \boldsymbol{\xi}_{i}\right) \\
+&\Delta \boldsymbol{\phi}_{\mathcal{L}, i}=\nabla_{\boldsymbol{\phi}} \log \mathcal{G}_{\phi}\left(\boldsymbol{x}_{i, o b s}^{*} \mid \boldsymbol{\xi}_{i}\right)
+\end{aligned}
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+  \item Sample $\boldsymbol{\xi}_{j}$ from the prior $p(\boldsymbol{\xi})$ and feed to $\mathcal{G}_{\phi}$ to generate a new sample $\tilde{\boldsymbol{x}}_{j}$. Feed $\boldsymbol{x}_{i}, \tilde{\boldsymbol{x}}_{i}, \boldsymbol{x}_{j}$ to the discriminator $\mathcal{D}_{\boldsymbol{\psi}}$ to obtain the logits $\boldsymbol{l}_{i}, \tilde{\boldsymbol{l}}_{i}, \boldsymbol{l}_{j}$ which can be interpreted as probabilities, e.g., $\mathcal{D}_{\boldsymbol{\psi}}(k \mid$ $\left.\boldsymbol{x}_{i}\right)=\exp \left(l_{i k}\right) / \sum_{k} \exp \left(l_{i k}\right)$ and $l_{i k}$ is the $k$-th element of the logit $\boldsymbol{l}_{i}$. Substituting the probabilities into $\mathrm{Eq} \sqrt{3}$ yields,
+\end{enumerate}
+$$
+\hat{V}\left(\mathcal{G}_{\boldsymbol{\phi}}, \mathcal{D}_{\psi}\right)=\log \mathcal{D}_{\psi}\left(c=c_{i} \mid \boldsymbol{x}_{i}\right)+\log \mathcal{D}_{\psi}\left(c=K+1 \mid \tilde{\boldsymbol{x}}_{i}\right)+\log \mathcal{D}_{\psi}\left(c=K+1 \mid \tilde{\boldsymbol{x}}_{j}\right)
+$$
+The gradient of $\hat{V}\left(\mathcal{G}_{\phi}, \mathcal{D}_{\psi}\right)$ provides a modification to $\mathcal{G}_{\phi}, \mathcal{D}_{\psi}$,
+$$
+\begin{aligned}
+&\Delta \phi_{\hat{V}, i j}=-\nabla_{\phi} \hat{V}\left(\mathcal{G}_{\phi}, \mathcal{D}_{\psi}\right) \\
+&\Delta \psi_{\hat{V}, i j}=+\nabla_{\psi} \hat{V}\left(\mathcal{G}_{\phi}, \mathcal{D}_{\boldsymbol{\psi}}\right)
+\end{aligned}
+$$
+
+\begin{enumerate}
+  \setcounter{enumi}{5}
+  \item Update the parameters of the encoder, the generator and the discriminator using a learning rate of $\alpha$,
+\end{enumerate}
+$$
+\begin{aligned}
+&\boldsymbol{\theta} \leftarrow \boldsymbol{\theta}+\alpha\left(\Delta \boldsymbol{\theta}_{K L, i}+\Delta \boldsymbol{\theta}_{\mathcal{L}, i}\right), \\
+&\boldsymbol{\phi} \leftarrow \boldsymbol{\phi}+\alpha\left(\Delta \boldsymbol{\phi}_{\mathcal{L}, i}+\Delta \boldsymbol{\phi}_{\hat{V}, i j}\right) \\
+&\boldsymbol{\psi} \leftarrow \boldsymbol{\psi}+\alpha \Delta \boldsymbol{\psi}_{\hat{V}, i j}
+\end{aligned}
+$$
+The training process can be easily generalized to mini-batch training to obtain a faster convergence rate. Several training techniques that stabilize or accelerate the training process are also applicable in this problem (Radford et al. 2015 ; Salimans et al. 2016; Sønderby et al. 2017 ; Mescheder et al. 2018).
+
+The encoder consists of four 1-D convolutional layers and two dense layers. Each layer is followed by a batch renormalization layer (Ioffe 2017) and an activation layer with Leaky Rectified Linear Unit (a simple variant of ReLULNair \& Hinton 2010), except the last layer which acts as the output. The input of the encoder has a size of 580 which is the number of distance moduli in the Union $2.1$ dataset, a compilation of SNeIa, later introduced in Section4 The dimension of the latent variable should be no less than the number of parameters in the physical models used in the problem, and we set it 20 . The size of the convolutional kernel is fixed to 7 and the stride is 4 except for the input layer whose convolutional kernel and stride are of size 69 and 1 respectively. The generator consists of one dense layer and four 1-D fractional convolutional layers. The sizes of the convolutional kernel and stride are the same as the encoder (because it is the inverse process of the encoder), except that the output of the last layer has a dimension of 2048 . The discriminator consists of four 1-D convolutional layers and one dense layer. The configuration is similar to the encoder, except that the sizes of the input and output are 2048 and $K+1$ respectively.
+
+\section{TESTS ON TOY MODELS}
+This section creates two toy models to test the data reconstruction and model comparison ability of the
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-06}
+
+Fig. 2: The distribution of the outputs of the toy models.
+
+Model 1,
+$$
+\begin{aligned}
+&y=A z^{2}+(-A+B) z+C \\
+&\text { where, } A \sim \mathcal{N}(-4,0.1), B \sim \mathcal{N}(0,0.01), C \sim \mathcal{N}(0,0.1)
+\end{aligned}
+$$
+Model 2,
+$$
+\begin{aligned}
+&y=A \sin (\omega z)+C \\
+&\text { where, } A \sim \mathcal{N}(1,0.1), \omega \sim \mathcal{N}(\pi, 0.01), C \sim \mathcal{N}(0,0.1)
+\end{aligned}
+$$
+Model 1 and Model 2 have similar distributions as shown in Figure 2 Given the observations $\boldsymbol{x}_{\text {obs,real }}$ which are generated by the underlying model $y_{\text {true }}=-3.5 z^{2}+3.6 z-0.1$ on $\boldsymbol{z}_{\text {obs }}=\left\{z_{1}, z_{2}, \cdots, z_{580}\right\}$ with an error matrix $\Sigma_{o b s}$, we would like to fit the two toy models to the observations to tell which one is most probable to be the true model, and interpolate the data with the model at $\boldsymbol{z}^{*}=\left\{z_{1}^{*}, \cdots, z_{M}^{*}\right\}$, for example, $\boldsymbol{z}^{*}$ even staying in the interval $[0,1]$ with $M=1468$.
+
+First we concatenate and sort $\boldsymbol{z}$ and $\boldsymbol{z}^{*}$, and call the new one $\boldsymbol{z}$. Then sample $\left\{A_{i}, B_{i}, C_{i}, \omega_{i}\right\}$ from the priors of the toy models and generate the training samples $\boldsymbol{x}_{i}=M_{k}\left(\boldsymbol{z} \mid A_{i}, B_{i}, C_{i}, \omega_{i}\right.$ ) (Note that which set of parameters should be used depends on the toy model). Here 12800 samples for each model are generated as the training dataset. Finally, the training set $\{\boldsymbol{x}\}_{i=1}^{25600}$ together with the observation error $\Sigma_{o b s}$ is fed into the network. Once the training converges, one can put the observations $\boldsymbol{x}_{o b s, r e a l}$ into the network to tell which toy model is most probable and get the interpolation, see Figure 3 In this task, the discriminator has a classification accuracy of almost 1. It assigns a probability of $97 \%$ to the parabolic model (Model 1), which is indeed the case.
+
+\section{THE DATASET}
+\subsection{The Observations}
+The observations are from the Union2.1 compilation (Suzuki et al. 2012) which contains 580 SNeIa.
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-07}
+
+Fig. 3: Reconstruction of the data. The red dots represent the observed data with noise characterized by $\Sigma_{\text {obs }}$. The blue line shows the true model where the observations are generated from. The black line is the reconstruction of the data by the network given the observations.
+
+580 SNeIa, and $\boldsymbol{x}_{o b s, \text { real }}$ signify the measured distance moduli, $\Sigma_{\text {obs }}$ represents the covariance of the distance moduli with systematics.
+
+\subsection{The Training Set}
+We study the model comparison problem among three dark energy models: $(1) \omega(z)=-1(\Lambda \mathrm{CDM}) ;(2)$ $\omega(z)=\omega_{D E}(\omega \mathrm{CDM}) ;(3) \omega(z)=\omega_{0}+\omega_{a} \frac{z}{1+z}$ (CPL), given a set of observations of distance moduli at different redshifts. The expansion rate of a spatially flat FRW universe is determined by the matter and dark energy,
+$$
+H^{2}(z)=H_{0}^{2}\left\{\Omega_{m 0}(1+z)^{3}+\left(1-\Omega_{m 0}\right) \exp \left[3 \int \frac{1+\omega\left(z^{\prime}\right)}{1+z^{\prime}} d z^{\prime}\right]\right\}
+$$
+The luminosity distance is closely related to the Hubble expansion rate (Eq.12), and the distance modulus is given by $\mathrm{Eq} 13$
+$$
+\begin{gathered}
+D_{L}(z)=c(1+z) \int_{0}^{z} d z^{\prime} \frac{1}{H\left(z^{\prime}\right)} \\
+\mu(z)=5 \log _{10} D_{L}(z)+25
+\end{gathered}
+$$
+For each dark energy model, 12800 samples are generated at the redshift $\boldsymbol{z}=\operatorname{sort}\left\{\boldsymbol{z}_{\text {obs }}, \boldsymbol{z}^{*}\right\}$, given the priors of the parameters as,
+$$
+\begin{aligned}
+\Omega_{m 0} & \sim \mathcal{U}(0.1,0.9) \\
+H_{0} & \sim \mathcal{U}(50,90) \\
+\omega_{D E} & \sim \mathcal{U}(-1.8,-0.4) \\
+\omega_{0} & \sim \mathcal{U}(-1.9,-0.4) \\
+\omega_{a} & \sim \mathcal{U}(-4.0,4.0)
+\end{aligned}
+$$
+$\boldsymbol{z}^{*}$ has 1468 elements evenly located in the interval, $\left[0.8 \min \left(\boldsymbol{z}_{o b s}\right), 1.2 \max \left(\boldsymbol{z}_{o b s}\right)\right]$. The $12800 \times 3$ samples
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-08}
+
+Fig. 4: Reconstruction of the distance modulus by the network.
+
+\section{RESULTS AND DISCUSSIONS}
+Figure 4 shows the reconstruction of the distance modulus produced by the network. Given the observed distance modulus $\boldsymbol{\mu}_{o b s}$, the discriminator $\mathcal{D}$ assigns probability to each model with,
+$$
+\begin{aligned}
+\mathcal{D}\left(\Lambda C D M \mid \boldsymbol{\mu}_{o b s}\right) &=56.2 \% \\
+\mathcal{D}\left(\omega C D M \mid \boldsymbol{\mu}_{o b s}\right) &=28.6 \% \\
+\mathcal{D}\left(C P L \mid \boldsymbol{\mu}_{o b s}\right) &=15.1 \%
+\end{aligned}
+$$
+We conclude that $\Lambda \mathrm{CDM}$ is slightly more favoured than the other two models while CPL is the least favoured in light of the observations. This result is consistent with the one derived by the Bayesian evidence method in Lonappan et al. 2018 that finds the $\log$ evidence of each model to be $\log \mathcal{Z}_{\Lambda C D M}=$ $-68.11, \log \mathcal{Z}_{\omega C D M}=-69.27$ and $\log \mathcal{Z}_{C P L}=-69.73$. These evidences can be interpreted into probabilities $66.2 \%, 20.7 \%$ and $13.1 \%$, respectively, given the non-informative prior $p(\Lambda C D M)=$ $p(\omega C D M)=p(C P L) .$
+
+The classification accuracy of the three models with the associated observation error is reported as $47.9 \%$. The accuracy is subjectively low, although it is not unexpected. The integration operations in Eq. 11 and Eq. 12 which act as low-pass filters smooth out the local high frequency features that are useful for model comparison. Thus, the convolutional kernel in the network needs to search for useful low frequency features which are less informative once the output distributions of the models overlap each other. This is the case that we meet in this problem. If one uses $p\left(x \mid M_{i}\right)$ to represent the model's prediction of the distribution of the data (it is the evidence of the model), then the theoretical optimal discriminator assigns each model $M_{i}$ with a probability of $p\left(\boldsymbol{x} \mid M_{i}\right) / \sum_{i} p\left(\boldsymbol{x} \mid M_{i}\right)$. Once $\boldsymbol{x}_{o b s}$ drops in the overlapped region where $p\left(\boldsymbol{x}_{o b s} \mid M_{i}\right) \approx p\left(\boldsymbol{x}_{o b s} \mid M_{j}\right), \forall i, j$, the discriminator loses its ability to discriminate the models confidently.
+
+Note that $\Lambda \mathrm{CDM}$ is a special case of $\omega \mathrm{CDM}$ while the latter is a special case of the CPL model, which means there is always a region overlapped among the data distributions of the three models. If the measurements of the distance moduli are accurate enough, the region covered by $p(\boldsymbol{x} \mid \Lambda C D M)$ is negligible compared to $p(\boldsymbol{x} \mid \omega C D M)$, and the latter is negligible compared to $p(\boldsymbol{x} \mid C P L)$. Thus $\boldsymbol{x}$ randomly gen-
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-09}
+
+(a)
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-09(1)}
+
+(c)
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-09(2)}
+
+(b)
+
+\includegraphics[max width=\textwidth]{2022_04_28_9be604c658276336b08cg-09(3)}
+
+(d)
+
+Fig. 5: Normalized distributions of the projections of training data onto the 1st and 4th PCs. The red dashed line represents the projection of the Union2.1 data to the PCs. (a) The distribution of projection onto the 1 st PC with no observation errors; (b) The distribution of the projection onro the 1 st $\mathrm{PC}$ with the covariance matrix from the Union2.1; (c) The distribution of projection onto the 4th PC with no observation errors; (d) The distribution of the projection onto the 4th PC with the covariance matrix from the Union2.1. (a) and (c) share the same set of PCs, while (b) and (d) share another set of PCs.
+
+a high probability is assigned to $\boldsymbol{x}$ that it comes from $\Lambda C D M$ if it falls in the region of $p(\boldsymbol{x} \mid \Lambda C D M)$. This situation is also applicable to the comparison between $\omega C D M$ and $C P L$. Then the discriminator has a great confidence to tell from which model $\boldsymbol{x}$ comes.
+
+Figure 5 is an illustration of the discussion above. The left column shows the normalized histograms of projections of the training samples to their $1 \mathrm{st}$ and 4th principal components (PCs) with no observation errors. The upper left panel reveals that the low frequency part (1st PC) of the model contributes little to the model discrimination, because the projection of the Union2.1 data to the 1 st PC drops in the region where all the models have similar probabilities. The lower left panel demonstrates that the high frequency part (4th $\mathrm{PC})$ of the model is useful for model discrimination, because the projection of the Union2.1 data to the 4th $\mathrm{PC}$ is located in the region where the model hasobviously different probabilities.
+
+The discriminator degrades, however, if a non-zero observation error $\Sigma_{o b s}$ is involved in the problem. The overlapped region expands due to the errors so that it is not negligible anymore. An extreme limit discriminator can only make a random guess about which model is true. In this situation the accuracy degrades to $1 / 3$. Finite observation errors lead to a non-negligible intersection where the discriminator lose the ability to tell confidently from which model the data comes. This is illustrated in the bottom row of Figure 5 The lower right panel shows the distribution of 4-th PC scores of the training samples with the covariance matrix of Union2.1. The projection of the Union $2.1$ data to the 4 th $P C$ now locates in the region where the different models have similar probabilities. This explains why the network yields a result that is in good concordance with the standard Bayesian analysis but has a subjectively low classification accuracy - the model classification accuracy is intrinsically determined by the nested structure of the three models as well as the observation noise. The variational network successfully learns the posterior distribution and the likelihood distribution to produce a consistent result.
+
+Although this work uses the distance modulus for model comparison and data reconstruction, it is easy to extend the scenario to Hubble parameters or another dataset. The framework should be further considered to include not only $\boldsymbol{x}_{o b s}$ but also its $n$-th derivatives $\boldsymbol{x}_{o b s}^{(n)}$, e.g., both the angular diameter distance and the Hubble parameter measured by BAO, to let the encoder and discriminator benefit from different datasets. Another improvement of the framework is to allow the reconstruction of the data to implicitly include a model averaging process which will enhance the generalization of the reconstruction, for example, extend the VAE-GAN to its more powerful variant CVAE-GAN (Bao et al. 2017). These are left to future works.
+
+\section{References}
+Aghanim, N., Akrami, Y., Ashdown, M., et al. 2018, arXiv preprint arXiv: $1807.06209$
+
+Alam, S., Ata, M., Bailey, S., et al. 2017, Monthly Notices of the Royal Astronomical Society, 470,2617
+
+Bao, J., Chen, D., Wen, F., Li, H., \& Hua, G. 2017, in Proceedings of the IEEE International Conference on Computer Vision, 2745
+
+Basilakos, S., et al. 2018, The European Physical Journal C, 78, 889
+
+Betoule, M., Kessler, R., Guy, J., et al. 2014, Astronomy \& Astrophysics, 568, A22
+
+Caldwell, R. R., Dave, R., \& Steinhardt, P. J. 1998, Physical Review Letters, 80,1582
+
+Caldwell, R. R., Kamionkowski, M., \& Weinberg, N. N. 2003, Physical Review Letters, 91, 071301
+
+Chevallier, M., \& Polarski, D. 2001, International Journal of Modern Physics D, 10,213
+
+Delubac, T., Bautista, J. E., Rich, J., et al. 2015, Astronomy \& Astrophysics, 574, A59
+
+Elizalde, E., Nojiri, S., \& Odintsov, S. D. 2004, Physical Review D, 70,043539
+
+Goodfellow, I., Pouget-Abadie, J., Mirza, M., et al. 2014, in Advances in Neural Information Processing Systems 27, ed. Z. Ghahramani, M. Welling, C. Cortes, N. D. Lawrence, \& K. Q. Weinberger (Curran Associates, Inc.), 2672
+
+Ioffe, S. 2017, in Advances in neural information processing systems, 1945 Larsen, A. B. L., S?nderby, S. K., Larochelle, H., \& Winther, O. 2016, in Proceedings of Machine Learning Research, Vol. 48, Proceedings of The 33 rd International Conference on Machine Learning, ed. M. F. Balcan \& K. Q. Weinberger (New York, New York, USA: PMLR), 1558
+
+Lonappan, A. I., Kumar, S., Dinda, B. R., Sen, A. A., et al. 2018, Physical Review D, 97, 043524
+
+Macaulay, E., Wehus, I. K., \& Eriksen, H. K. 2013, Physical review letters, 111,161301
+
+MacKay, D. J. 1992, Neural computation, 4, 415
+
+Martin, J., Ringeval, C., \& Trotta, R. 2011, Physical Review D, 83, 063524
+
+Mescheder, L., Nowozin, S., \& Geiger, A. 2018, in International Conference on Machine Learning (ICML)
+
+Nair, V., \& Hinton, G. E. 2010, in Proceedings of the 27th international conference on machine learning (ICML-10), 807
+
+Peebles, P. J. E., \& Ratra, B. 2003, Reviews of modern physics, 75,559
+
+Penny, W., Mattout, J., \& Trujillo-Barreto, N. 2006, Statistical Parametric Mapping: The analysis of functional brain images. London: Elsevier
+
+Radford, A., Metz, L., \& Chintala, S. 2015, arXiv preprint arXiv:1511.06434
+
+Rissanen, J. 1978, Automatica, 14, 465
+
+Sahni, V. 2002, Classical and Quantum Gravity, 19, 3435
+
+Salimans, T., Goodfellow, I., Zaremba, W., et al. 2016, in Advances in Neural Information Processing Systems 29 , ed. D. D. Lee, M. Sugiyama, U. V. Luxburg, I. Guyon, \& R. Garnett (Curran Associates, Inc.), 2234
+
+Scherrer, R. J., \& Sen, A. 2008, Physical Review D, 78, 067303
+
+Sønderby, C. K., Caballero, J., Theis, L., Shi, W., \& Huszár, F. 2017
+
+Suzuki, N., Rubin, D., Lidman, C., et al. 2012, The Astrophysical Journal, 746, 85
+
+Thakur, S., Nautiyal, A., Sen, A. A., \& Seshadri, T. 2012, Monthly Notices of the Royal Astronomical Society, 427, 988
+
+Trotta, R. 2008, Contemporary Physics, 49,71
+
+
+\end{document}

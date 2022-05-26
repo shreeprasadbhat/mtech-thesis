@@ -1,9 +1,7 @@
 import os
 import sys
-from shutil import copyfile
 import json
 import numpy as np
-from sklearn.model_selection import train_test_split 
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -51,7 +49,7 @@ vae.load_weights(checkpoint_path)
 vae_test = vae.predict(np.reshape(mu, (1,580)))
 
 plt.scatter(z_obs, mu, s=4, color='r', label='observed')
-plt.plot(z, np.reshape(vae_test, 2048), color='b',label='reconstructed')
+plt.scatter(z, np.reshape(vae_test, 2048), s=4, color='b',label='reconstructed')
 
 plt.xlabel('redshift z')
 plt.ylabel('Distance modulus')

@@ -42,4 +42,4 @@ class Decoder(layers.Layer):
         return x 
 
 if __name__ == "__main__":
-    generator = Generator(2)
+    decoder = Decoder(20)

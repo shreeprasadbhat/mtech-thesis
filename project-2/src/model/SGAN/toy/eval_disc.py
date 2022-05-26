@@ -11,10 +11,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(
 from src.model.VAE.VariationalAutoEncoder import VariationalAutoEncoder
 from src.model.SGAN.Discriminator import Discriminator
 from src.model.SGAN.SupervisedDiscriminator import SupervisedDiscriminator
-from src.data.toy_models.ParabolicModel import ParabolicModel
-from src.data.toy_models.SineModel import SineModel 
 from src.data.toy_models.TrueModel import TrueModel
-
 
 readlines = ""
 with open('Params.json') as file:
@@ -35,16 +32,12 @@ n_classes = Params['n_classes']
 train_size = Params['train_size']
 buffer_size = train_size 
 outdir = Params['outdir'] 
-prng = np.random.RandomState(123)
-z = prng.uniform(0, 1, output_dim)
-z.sort()
-idx = prng.randint(0, output_dim, input_dim)
-z_580 = z[idx]
 
+z = np.genfromtxt('../../../data/toy_models/z.csv')
+z_580 = np.genfromtxt('../../../data/toy_models/z_obs.csv')
 
 trueModelObj = TrueModel()
-x_obs = trueModelObj.sample(z_580)
-
+x_obs = trueModelObj.sample(z_580, 580)
 
 vae = VariationalAutoEncoder(input_dim, latent_dim)
 vae.compile(
@@ -52,7 +45,6 @@ vae.compile(
         loss='mse', 
         metrics=['mse']
 )
-
 
 checkpoint_path = os.path.join(os.path.join('../../VAE/toy', outdir),"ckpt/cp.ckpt")
 
@@ -72,9 +64,11 @@ checkpoint_path = os.path.join(outdir,"ckpt/cp.ckpt")
 
 # load the best model
 sup_discriminator.load_weights(checkpoint_path)
-vae_test = np.load('vae_test.npy', allow_pickle=True)
-out = tf.nn.softmax(sup_discriminator.predict(vae_test))
 
-print(out)
+predictions = sup_discriminator.predict(vae.predict(np.reshape(x_obs, (1, 580))))
+pred_class = tf.argmax(predictions, axis=-1)
+pred_prob = tf.nn.softmax(predictions)
+print(pred_class)
+print(pred_prob)
 
 input("Press Enter to continue...")

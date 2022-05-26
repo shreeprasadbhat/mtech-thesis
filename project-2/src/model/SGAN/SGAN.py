@@ -125,4 +125,4 @@ if __name__ == "__main__":
     from SupervisedDiscriminator import SupervisedDiscriminator
     from UnsupervisedDiscriminator import UnsupervisedDiscriminator
     discriminator = Discriminator(2048)
-    sgan = SGAN(16, Generator(2), SupervisedDiscriminator(discriminator), UnsupervisedDiscriminator(discriminator))
+    sgan = SGAN(16, Generator(2), SupervisedDiscriminator(3, discriminator), UnsupervisedDiscriminator(discriminator))
