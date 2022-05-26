@@ -9,21 +9,22 @@
 \BOOKMARK [2][-]{subsection.1.3.1}{GRB}{section.1.3}% 9
 \BOOKMARK [2][-]{subsection.1.3.2}{Pantheon}{section.1.3}% 10
 \BOOKMARK [2][-]{subsection.1.3.3}{Union}{section.1.3}% 11
-\BOOKMARK [1][-]{section.1.4}{Model Architecture}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{Methodology}{chapter.1}% 12
 \BOOKMARK [2][-]{subsection.1.4.1}{Gaussian Processes}{section.1.4}% 13
 \BOOKMARK [2][-]{subsection.1.4.2}{Reccurent Neural Networks}{section.1.4}% 14
-\BOOKMARK [1][-]{section.1.5}{Reconstruction of distance modulus}{chapter.1}% 15
-\BOOKMARK [1][-]{section.1.6}{Testing redshift dependence of luminosity correlations}{chapter.1}% 16
-\BOOKMARK [1][-]{section.1.7}{Calibrating distance modulus from Epeak-Egamma relation}{chapter.1}% 17
-\BOOKMARK [1][-]{section.1.8}{Constraints on the dark energy}{chapter.1}% 18
-\BOOKMARK [1][-]{section.1.9}{Redoing analysis with Union Data}{chapter.1}% 19
-\BOOKMARK [1][-]{section.1.10}{Conclusion}{chapter.1}% 20
-\BOOKMARK [0][-]{chapter.2}{Dark Energy Model}{}% 21
-\BOOKMARK [0][-]{chapter.3}{Figures}{}% 22
-\BOOKMARK [1][-]{section.3.1}{Referencing figures}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.2}{File formats}{chapter.3}% 24
-\BOOKMARK [0][-]{chapter.4}{Tables}{}% 25
-\BOOKMARK [1][-]{section.4.1}{Referencing tables}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Compiling the .tex file }{}% 27
-\BOOKMARK [1][-]{section.5.1}{Options}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.2}{Compilation sequence}{chapter.5}% 29
+\BOOKMARK [1][-]{section.1.5}{Reconstruction and calibration of distance modulus using Gaussian Processes}{chapter.1}% 15
+\BOOKMARK [2][-]{subsection.1.5.1}{Training}{section.1.5}% 16
+\BOOKMARK [2][-]{subsection.1.5.2}{Testing redshift dependence of luminosity correlations}{section.1.5}% 17
+\BOOKMARK [2][-]{subsection.1.5.3}{Calibrating distance modulus from Epeak-Egamma relation}{section.1.5}% 18
+\BOOKMARK [2][-]{subsection.1.5.4}{Constraints on the dark energy}{section.1.5}% 19
+\BOOKMARK [1][-]{section.1.6}{Reconstruction and calibration of distance modulus using Deep Learning}{chapter.1}% 20
+\BOOKMARK [2][-]{subsection.1.6.1}{Training}{section.1.6}% 21
+\BOOKMARK [2][-]{subsection.1.6.2}{Testing redshift dependence of luminosity correlations}{section.1.6}% 22
+\BOOKMARK [2][-]{subsection.1.6.3}{Calibrating distance modulus from Epeak-Egamma relation}{section.1.6}% 23
+\BOOKMARK [2][-]{subsection.1.6.4}{Constraints on dark energy}{section.1.6}% 24
+\BOOKMARK [1][-]{section.1.7}{Redoing analysis with Union Data}{chapter.1}% 25
+\BOOKMARK [2][-]{subsection.1.7.1}{using Gaussian Processes}{section.1.7}% 26
+\BOOKMARK [2][-]{subsection.1.7.2}{using Deep Learning}{section.1.7}% 27
+\BOOKMARK [1][-]{section.1.8}{Conclusion}{chapter.1}% 28
+\BOOKMARK [0][-]{chapter.2}{Model comparison of dark energy models}{}% 29
+\BOOKMARK [0][-]{chapter.3}{Photometric redshift estimation using Symbolic Regression}{}% 30

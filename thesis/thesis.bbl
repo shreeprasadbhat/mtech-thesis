@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname bibinfo\endcsname\relax\def\bibinfo#1#2{#2}\fi
 
 \bibitem{riess1998observational}
@@ -61,5 +61,49 @@
   correlations of gamma-ray bursts using deep learning}.
 \newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
   \bibinfo{volume}{907}, (\bibinfo{year}{2021}) \bibinfo{pages}{121}.
+
+\bibitem{scikit-learn}
+\bibinfo{author}{F.~Pedregosa}, \bibinfo{author}{G.~Varoquaux},
+  \bibinfo{author}{A.~Gramfort}, \bibinfo{author}{V.~Michel},
+  \bibinfo{author}{B.~Thirion}, \bibinfo{author}{O.~Grisel},
+  \bibinfo{author}{M.~Blondel}, \bibinfo{author}{P.~Prettenhofer},
+  \bibinfo{author}{R.~Weiss}, \bibinfo{author}{V.~Dubourg},
+  \bibinfo{author}{J.~Vanderplas}, \bibinfo{author}{A.~Passos},
+  \bibinfo{author}{D.~Cournapeau}, \bibinfo{author}{M.~Brucher},
+  \bibinfo{author}{M.~Perrot}, and \bibinfo{author}{E.~Duchesnay}.
+\newblock \bibinfo{title}{Scikit-learn: Machine Learning in {P}ython}.
+\newblock {\em \bibinfo{journal}{Journal of Machine Learning Research}\/}
+  \bibinfo{volume}{12}, (\bibinfo{year}{2011}) \bibinfo{pages}{2825--2830}.
+
+\bibitem{d2005fits}
+\bibinfo{author}{G.~D'Agostini}.
+\newblock \bibinfo{title}{Fits, and especially linear fits, with errors on both
+  axes, extra variance of the data points and other complications}.
+\newblock {\em \bibinfo{journal}{arXiv preprint physics/0511182}\/} .
+
+\bibitem{tensorflow2015-whitepaper}
+\bibinfo{author}{M.~Abadi}, \bibinfo{author}{A.~Agarwal},
+  \bibinfo{author}{P.~Barham}, \bibinfo{author}{E.~Brevdo},
+  \bibinfo{author}{Z.~Chen}, \bibinfo{author}{C.~Citro}, \bibinfo{author}{G.~S.
+  Corrado}, \bibinfo{author}{A.~Davis}, \bibinfo{author}{J.~Dean},
+  \bibinfo{author}{M.~Devin}, \bibinfo{author}{S.~Ghemawat},
+  \bibinfo{author}{I.~Goodfellow}, \bibinfo{author}{A.~Harp},
+  \bibinfo{author}{G.~Irving}, \bibinfo{author}{M.~Isard},
+  \bibinfo{author}{Y.~Jia}, \bibinfo{author}{R.~Jozefowicz},
+  \bibinfo{author}{L.~Kaiser}, \bibinfo{author}{M.~Kudlur},
+  \bibinfo{author}{J.~Levenberg}, \bibinfo{author}{D.~Man\'{e}},
+  \bibinfo{author}{R.~Monga}, \bibinfo{author}{S.~Moore},
+  \bibinfo{author}{D.~Murray}, \bibinfo{author}{C.~Olah},
+  \bibinfo{author}{M.~Schuster}, \bibinfo{author}{J.~Shlens},
+  \bibinfo{author}{B.~Steiner}, \bibinfo{author}{I.~Sutskever},
+  \bibinfo{author}{K.~Talwar}, \bibinfo{author}{P.~Tucker},
+  \bibinfo{author}{V.~Vanhoucke}, \bibinfo{author}{V.~Vasudevan},
+  \bibinfo{author}{F.~Vi\'{e}gas}, \bibinfo{author}{O.~Vinyals},
+  \bibinfo{author}{P.~Warden}, \bibinfo{author}{M.~Wattenberg},
+  \bibinfo{author}{M.~Wicke}, \bibinfo{author}{Y.~Yu}, and
+  \bibinfo{author}{X.~Zheng}.
+\newblock \bibinfo{title}{{TensorFlow}: Large-Scale Machine Learning on
+  Heterogeneous Systems} \bibinfo{year}{2015}.
+\newblock \bibinfo{note}{Software available from tensorflow.org}.
 
 \end{thebibliography}

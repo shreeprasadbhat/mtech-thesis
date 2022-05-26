@@ -1,0 +1,6 @@
+\section{Reconstruction and calibration of distance modulus using Deep Learning}
+We construct the RNN+BNN network and train it with the package TensorFlow2\cite{tensorflow2015-whitepaper}. For clarity, we present the corresponding hyperparameters in Figure 1 and list the steps to reconstruct data with our network as follow: (a) Data processing. The scale of data has an effect on training. Hence, we normalize the distance moduli of the sorted Pantheon data and re-arrange $\mu-z$ as sequences with the step number t = 4. (b) Building RNN. We build RNN with three layers, i.e. an input layer, a hidden layer and an output layer as described in Figure 1. The first two layers are constructed with the LSTM cells of 100 neurons. The redshifts $z_{<t>}$ and the corresponding distance moduli $\mu_{<t>}$ are the input and output vectors, respectively. We employ the Adam optimizer to minimize the cost function MSE and train the network 1000 times. (c) Building BNN. We set the dropout rate to 0 in the input layer to avoid the lost of information, and to 0.2 in the second layer as well as the output layer (Bonjean 2020; Mangena et al. 2020). We execute the trained network 1000 times to obtain the distribution of distance moduli
+\input{061_training_lstm}
+\input{062_testing_correlations}
+\input{063_calibration}
+\input{064_constrain_dark_energy}

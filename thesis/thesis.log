@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  25 MAY 2022 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  26 MAY 2022 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -232,12 +232,53 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2009/03/23  v 5.1
 )
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2019/04/09 version 1.21 LaTeX CSV file processing
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks16
+\pgfutil@tempdima=\dimen143
+\pgfutil@tempdimb=\dimen144
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box47
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks17
+\pgfkeys@temptoks=\toks18
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks19
+))) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count191
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\csv@file=\read2
+\c@csvinputline=\count192
+\c@csvrow=\count193
+\c@csvcol=\count194
+\csv@out=\write3
+)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks16
+\@emptytoks=\toks20
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -254,73 +295,73 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks17
-\ex@=\dimen143
+\@emptytoks=\toks21
+\ex@=\dimen145
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen144
+\pmbraise@=\dimen146
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count191
+\inf@bad=\count195
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count192
-\leftroot@=\count193
+\uproot@=\count196
+\leftroot@=\count197
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count194
-\DOTSCASE@=\count195
+\classnum@=\count198
+\DOTSCASE@=\count199
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box47
-\strutbox@=\box48
-\big@size=\dimen145
+\Mathstrutbox@=\box48
+\strutbox@=\box49
+\big@size=\dimen147
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count196
-\c@MaxMatrixCols=\count197
+\macc@depth=\count266
+\c@MaxMatrixCols=\count267
 \dotsspace@=\muskip17
-\c@parentequation=\count198
-\dspbrk@lvl=\count199
-\tag@help=\toks18
-\row@=\count266
-\column@=\count267
-\maxfields@=\count268
-\andhelp@=\toks19
-\eqnshift@=\dimen146
-\alignsep@=\dimen147
-\tagshift@=\dimen148
-\tagwidth@=\dimen149
-\totwidth@=\dimen150
-\lineht@=\dimen151
-\@envbody=\toks20
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks22
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks23
+\eqnshift@=\dimen148
+\alignsep@=\dimen149
+\tagshift@=\dimen150
+\tagwidth@=\dimen151
+\totwidth@=\dimen152
+\lineht@=\dimen153
+\@envbody=\toks24
 \multlinegap=\skip56
 \multlinetaggap=\skip57
-\mathdisplay@stack=\toks21
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen152
-\lightrulewidth=\dimen153
-\cmidrulewidth=\dimen154
-\belowrulesep=\dimen155
-\belowbottomsep=\dimen156
-\aboverulesep=\dimen157
-\abovetopsep=\dimen158
-\cmidrulesep=\dimen159
-\cmidrulekern=\dimen160
-\defaultaddspace=\dimen161
-\@cmidla=\count269
-\@cmidlb=\count270
-\@aboverulesep=\dimen162
-\@belowrulesep=\dimen163
-\@thisruleclass=\count271
-\@lastruleclass=\count272
-\@thisrulewidth=\dimen164
+\heavyrulewidth=\dimen154
+\lightrulewidth=\dimen155
+\cmidrulewidth=\dimen156
+\belowrulesep=\dimen157
+\belowbottomsep=\dimen158
+\aboverulesep=\dimen159
+\abovetopsep=\dimen160
+\cmidrulesep=\dimen161
+\cmidrulekern=\dimen162
+\defaultaddspace=\dimen163
+\@cmidla=\count273
+\@cmidlb=\count274
+\@aboverulesep=\dimen164
+\@belowrulesep=\dimen165
+\@thisruleclass=\count275
+\@lastruleclass=\count276
+\@thisrulewidth=\dimen166
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -328,42 +369,42 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen165
-\captionmargin@=\dimen166
-\captionwidth=\dimen167
-\caption@tempdima=\dimen168
-\caption@indent=\dimen169
-\caption@parindent=\dimen170
-\caption@hangindent=\dimen171
+\captionmargin=\dimen167
+\captionmargin@=\dimen168
+\captionwidth=\dimen169
+\caption@tempdima=\dimen170
+\caption@indent=\dimen171
+\caption@parindent=\dimen172
+\caption@hangindent=\dimen173
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count273
-\c@continuedfloat=\count274
+\c@caption@flags=\count277
+\c@continuedfloat=\count278
 Package caption Info: hyperref package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count275
-\FV@InFile=\read2
-\FV@TabBox=\box49
-\c@FancyVerbLine=\count276
-\FV@StepNumber=\count277
-\FV@OutFile=\write3
+\FV@CodeLineNo=\count279
+\FV@InFile=\read3
+\FV@TabBox=\box50
+\c@FancyVerbLine=\count280
+\FV@StepNumber=\count281
+\FV@OutFile=\write4
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen172
-\Gin@req@width=\dimen173
+\Gin@req@height=\dimen174
+\Gin@req@width=\dimen175
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-\TX@col@width=\dimen174
-\TX@old@table=\dimen175
-\TX@old@col=\dimen176
-\TX@target=\dimen177
-\TX@delta=\dimen178
-\TX@cols=\count278
-\TX@ftn=\toks22
+\TX@col@width=\dimen176
+\TX@old@table=\dimen177
+\TX@old@col=\dimen178
+\TX@target=\dimen179
+\TX@delta=\dimen180
+\TX@cols=\count282
+\TX@ftn=\toks26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2020/01/17 v1.23 mathematical typesetting tools
@@ -375,65 +416,65 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count279
-\l_MT_multwidth_dim=\dimen179
+\g_MT_multlinerow_int=\count283
+\l_MT_multwidth_dim=\dimen181
 \origjot=\skip58
-\l_MT_shortvdotswithinadjustabove_dim=\dimen180
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen181
-\l_MT_above_intertext_sep=\dimen182
-\l_MT_below_intertext_sep=\dimen183
-\l_MT_above_shortintertext_sep=\dimen184
-\l_MT_below_shortintertext_sep=\dimen185
+\l_MT_shortvdotswithinadjustabove_dim=\dimen182
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen183
+\l_MT_above_intertext_sep=\dimen184
+\l_MT_below_intertext_sep=\dimen185
+\l_MT_above_shortintertext_sep=\dimen186
+\l_MT_below_shortintertext_sep=\dimen187
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip59
-\multirow@cntb=\count280
+\multirow@cntb=\count284
 \multirow@dima=\skip60
-\bigstrutjot=\dimen186
+\bigstrutjot=\dimen188
 )
 (/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
 Package: arydshln 2019/02/21 v1.76 
-\dashlinedash=\dimen187
-\dashlinegap=\dimen188
-\adl@box=\box50
-\adl@height=\dimen189
-\adl@heightsave=\dimen190
-\adl@depth=\dimen191
-\adl@depthsave=\dimen192
-\adl@finaldepth=\dimen193
-\adl@columns=\count281
-\adl@ncol=\count282
-\adl@currentcolumn=\count283
-\adl@currentcolumnsave=\count284
-\adl@totalheight=\count285
-\adl@totalheightsave=\count286
-\adl@dash=\count287
-\adl@gap=\count288
-\adl@cla=\count289
-\adl@clb=\count290
-\adl@everyvbox=\toks23
-\adl@LTpagetotal=\dimen194
+\dashlinedash=\dimen189
+\dashlinegap=\dimen190
+\adl@box=\box51
+\adl@height=\dimen191
+\adl@heightsave=\dimen192
+\adl@depth=\dimen193
+\adl@depthsave=\dimen194
+\adl@finaldepth=\dimen195
+\adl@columns=\count285
+\adl@ncol=\count286
+\adl@currentcolumn=\count287
+\adl@currentcolumnsave=\count288
+\adl@totalheight=\count289
+\adl@totalheightsave=\count290
+\adl@dash=\count291
+\adl@gap=\count292
+\adl@cla=\count293
+\adl@clb=\count294
+\adl@everyvbox=\toks27
+\adl@LTpagetotal=\dimen196
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count291
-\lst@gtempboxa=\box51
-\lst@token=\toks24
-\lst@length=\count292
-\lst@currlwidth=\dimen195
-\lst@column=\count293
-\lst@pos=\count294
-\lst@lostspace=\dimen196
-\lst@width=\dimen197
-\lst@newlines=\count295
-\lst@lineno=\count296
-\lst@maxwidth=\dimen198
+\lst@mode=\count295
+\lst@gtempboxa=\box52
+\lst@token=\toks28
+\lst@length=\count296
+\lst@currlwidth=\dimen197
+\lst@column=\count297
+\lst@pos=\count298
+\lst@lostspace=\dimen198
+\lst@width=\dimen199
+\lst@newlines=\count299
+\lst@lineno=\count300
+\lst@maxwidth=\dimen256
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count297
-\lst@skipnumbers=\count298
-\lst@framebox=\box52
+\c@lstnumber=\count301
+\lst@skipnumbers=\count302
+\lst@framebox=\box53
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
@@ -457,10 +498,10 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks25
-\XKV@tempa@toks=\toks26
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
 )
-\XKV@depth=\count299
+\XKV@depth=\count303
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
@@ -602,23 +643,23 @@ File: ly1enc.dfu 2019/11/14 v1.2k UTF-8 support for inputenc
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip61
-\enit@outerparindent=\dimen199
-\enit@toks=\toks27
-\enit@inbox=\box53
-\enit@count@id=\count300
-\enitdp@description=\count301
+\enit@outerparindent=\dimen257
+\enit@toks=\toks31
+\enit@inbox=\box54
+\enit@count@id=\count304
+\enitdp@description=\count305
 )
 (/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box54
-\UL@hyphenbox=\box55
+\UL@box=\box55
+\UL@hyphenbox=\box56
 \UL@skip=\skip62
-\UL@hook=\toks28
-\UL@height=\dimen256
-\UL@pe=\count302
-\UL@pixel=\dimen257
-\ULC@box=\box56
+\UL@hook=\toks32
+\UL@height=\dimen258
+\UL@pe=\count306
+\UL@pixel=\dimen259
+\ULC@box=\box57
 Package: ulem 2019/11/18
-\ULdepth=\dimen258
+\ULdepth=\dimen260
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
@@ -626,14 +667,14 @@ nment
 
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count303
-\float@exts=\toks29
-\float@box=\box57
-\@float@everytoks=\toks30
-\@floatcapt=\box58
+\c@float@type=\count307
+\float@exts=\toks33
+\float@box=\box58
+\@float@everytoks=\toks34
+\@floatcapt=\box59
 )
-\@float@every@algorithm=\toks31
-\c@algorithm=\count304
+\@float@every@algorithm=\toks35
+\c@algorithm=\count308
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -642,15 +683,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count305
-\c@ALG@rem=\count306
-\c@ALG@nested=\count307
+\c@ALG@line=\count309
+\c@ALG@rem=\count310
+\c@ALG@nested=\count311
 \ALG@tlm=\skip63
 \ALG@thistlm=\skip64
-\c@ALG@Lnr=\count308
-\c@ALG@blocknr=\count309
-\c@ALG@storecount=\count310
-\c@ALG@tmpcounter=\count311
+\c@ALG@Lnr=\count312
+\c@ALG@blocknr=\count313
+\c@ALG@storecount=\count314
+\c@ALG@tmpcounter=\count315
 \ALG@tmplength=\skip65
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -660,22 +701,6 @@ Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks32
-\pgfutil@tempdima=\dimen259
-\pgfutil@tempdimb=\dimen260
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
-ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box59
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-))
 Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
@@ -683,14 +708,7 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks33
-\pgfkeys@temptoks=\toks34
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
-ex
-\pgfkeys@tmptoks=\toks35
-))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
 \pgf@x=\dimen261
 \pgf@y=\dimen262
 \pgf@xa=\dimen263
@@ -701,17 +719,18 @@ ex
 \pgf@yc=\dimen268
 \pgf@xd=\dimen269
 \pgf@yd=\dimen270
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count312
-\c@pgf@countb=\count313
-\c@pgf@countc=\count314
-\c@pgf@countd=\count315
+\w@pgf@writea=\write5
+\r@pgf@reada=\read4
+\c@pgf@counta=\count316
+\c@pgf@countb=\count317
+\c@pgf@countc=\count318
+\c@pgf@countd=\count319
 \t@pgf@toka=\toks36
 \t@pgf@tokb=\toks37
 \t@pgf@tokc=\toks38
-\pgf@sys@id@count=\count316
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+\pgf@sys@id@count=\count320
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
 Driver file for pgf: pgfsys-pdftex.def
@@ -726,8 +745,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count317
-\pgfsyssoftpath@bigbuffer@items=\count318
+\pgfsyssoftpath@smallbuffer@items=\count321
+\pgfsyssoftpath@bigbuffer@items=\count322
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -741,7 +760,7 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen271
-\pgfmath@count=\count319
+\pgfmath@count=\count323
 \pgfmath@box=\box60
 \pgfmath@toks=\toks39
 \pgfmath@stack@operand=\toks40
@@ -765,7 +784,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count320
+\c@pgfmathroundto@lastzeros=\count324
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
@@ -804,7 +823,7 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfpic=\box61
 \pgf@hbox=\box62
 \pgf@layerbox@main=\box63
-\pgf@picture@serial@count=\count321
+\pgf@picture@serial@count=\count325
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -837,8 +856,8 @@ File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen295
-\pgf@sys@shading@range@num=\count322
-\pgf@shadingcount=\count323
+\pgf@sys@shading@range@num=\count326
+\pgf@shadingcount=\count327
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -879,8 +898,6 @@ Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
 .sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
@@ -898,7 +915,7 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count324
+\pgf@plot@mark@count=\count328
 \pgfplotmarksize=\dimen300
 )
 \tikz@lastx=\dimen301
@@ -913,18 +930,18 @@ File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \tikz@figbox@bg=\box67
 \tikz@tempbox=\box68
 \tikz@tempbox@bg=\box69
-\tikztreelevel=\count325
-\tikznumberofchildren=\count326
-\tikznumberofcurrentchild=\count327
-\tikz@fig@count=\count328
+\tikztreelevel=\count329
+\tikznumberofchildren=\count330
+\tikznumberofcurrentchild=\count331
+\tikz@fig@count=\count332
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count329
-\pgfmatrixcurrentcolumn=\count330
-\pgf@matrix@numberofcolumns=\count331
+\pgfmatrixcurrentrow=\count333
+\pgfmatrixcurrentcolumn=\count334
+\pgf@matrix@numberofcolumns=\count335
 )
-\tikz@expandcount=\count332
+\tikz@expandcount=\count336
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -936,8 +953,8 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \t@pgfplots@tokb=\toks45
 \t@pgfplots@tokc=\toks46
 \pgfplots@tmpa=\dimen309
-\c@pgfplots@coordindex=\count333
-\c@pgfplots@scanlineindex=\count334
+\c@pgfplots@coordindex=\count337
+\c@pgfplots@scanlineindex=\count338
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -954,13 +971,13 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count335
+\c@pgfplotsarray@tmp=\count339
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count336
+\c@pgfplotstable@counta=\count340
 \t@pgfplotstable@a=\toks47
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
@@ -973,7 +990,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count337
+\c@pgfplotslibrarysurf@no=\count341
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-pdftex.def)))
@@ -1005,7 +1022,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen312
 \pgfdecoratedinputsegmentremainingdistance=\dimen313
 \pgf@decorate@distancetomove=\dimen314
-\pgf@decorate@repeatstate=\count338
+\pgf@decorate@repeatstate=\count342
 \pgfdecorationsegmentamplitude=\dimen315
 \pgfdecorationsegmentlength=\dimen316
 )
@@ -1019,7 +1036,7 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count339
+\pgfplots@numplots=\count343
 \pgfplots@xmin@reg=\dimen317
 \pgfplots@xmax@reg=\dimen318
 \pgfplots@ymin@reg=\dimen319
@@ -1054,8 +1071,8 @@ File: pgflibraryarrows.meta.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/gra
 phs/tikzlibrarygraphs.code.tex
 File: tikzlibrarygraphs.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\tikz@lib@auto@number=\count340
-\tikz@qnode@count=\count341
+\tikz@lib@auto@number=\count344
+\tikz@qnode@count=\count345
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypatterns.code.tex
@@ -1082,37 +1099,37 @@ Package: everypage 2007/06/20 1.1 Hooks to run on every page
 )
 (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count342
+\c@KVtest=\count346
 \sf@farskip=\skip69
 \sf@captopadj=\dimen327
 \sf@capskip=\skip70
 \sf@nearskip=\skip71
-\c@subfigure=\count343
-\c@subfigure@save=\count344
-\c@lofdepth=\count345
-\c@subtable=\count346
-\c@subtable@save=\count347
-\c@lotdepth=\count348
+\c@subfigure=\count347
+\c@subfigure@save=\count348
+\c@lofdepth=\count349
+\c@subtable=\count350
+\c@subtable@save=\count351
+\c@lotdepth=\count352
 \sf@top=\skip72
 \sf@bottom=\skip73
 )
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count349
-\c@@ppsavesec=\count350
-\c@@ppsaveapp=\count351
+\c@@pps=\count353
+\c@@ppsavesec=\count354
+\c@@ppsaveapp=\count355
 )
-\c@definition=\count352
+\c@definition=\count356
 )
 (./abstract.tex) (./acknowledgements.tex) (./dedication.tex)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count353
+\l__kernel_color_stack_int=\count357
 \l__pdf_internal_box=\box71
 )
 (./thesis.aux
 
-LaTeX Warning: Label `fig:lstm_re' multiply defined.
+LaTeX Warning: Label `fig:HD_GRB_GP' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
@@ -1143,16 +1160,16 @@ LaTeX Font Info:    ... okay on input line 24.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count354
+\scratchcounter=\count358
 \scratchdimen=\dimen328
 \scratchbox=\box72
-\nofMPsegments=\count355
-\nofMParguments=\count356
+\nofMPsegments=\count359
+\nofMParguments=\count360
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count357
+\MPscratchCnt=\count361
 \MPscratchDim=\dimen329
-\MPnumerator=\count358
-\makeMPintoPDFobject=\count359
+\MPnumerator=\count362
+\makeMPintoPDFobject=\count363
 \everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1183,15 +1200,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count360
+\c@section@level=\count364
 )
 LaTeX Info: Redefining \ref on input line 24.
 LaTeX Info: Redefining \pageref on input line 24.
 LaTeX Info: Redefining \nameref on input line 24.
 
 (./thesis.out) (./thesis.out)
-\@outlinefile=\write5
-\openout5 = `thesis.out'.
+\@outlinefile=\write6
+\openout6 = `thesis.out'.
 
 Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)                    date: 2022-05-23 23:32:38
@@ -1203,7 +1220,7 @@ Package epstopdf Info: Source file: <logo.eps>
 logo.eps>
 (epstopdf)             \includegraphics on input line 24.
 Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=121, 118.4425pt x 121.45375pt>
+<logo-eps-converted-to.pdf, id=125, 118.4425pt x 121.45375pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
 Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 24.
@@ -1230,27 +1247,27 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-\tf@toc=\write6
-\openout6 = `thesis.toc'.
+\tf@toc=\write7
+\openout7 = `thesis.toc'.
 
  [5
 
 
 ]
+ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count361
+\c@lstlisting=\count365
 
-ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.14).
 
 (./thesis.toc)
-\tf@toc=\write7
-\openout7 = `thesis.toc'.
+\tf@toc=\write8
+\openout8 = `thesis.toc'.
 
  (./chapter-1/chapter-1.tex
 
@@ -1265,11 +1282,10 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <56.9055> not available
 
 ]
 Chapter 1.
-(./chapter-1/./01_introduction.tex [2
+(./chapter-1/./010_introduction.tex [2
 
-]) (./chapter-1/./02_survey.tex)
-(./chapter-1/./03_observational_data.tex)
-(./chapter-1/./04_model_architecture.tex
+]) (./chapter-1/./020_survey.tex)
+(./chapter-1/./030_observational_data.tex) (./chapter-1/./040_methodology.tex
 Overfull \hbox (9.82727pt too wide) in paragraph at lines 7--1
 \T1/cmr/m/n/10 The up-dated su-per-nova Union2.1 com-pi-la-tion of 580 SNe is a
 vail-able at http://supernova.lbl.gov/Union
@@ -1280,112 +1296,304 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--1
 
  []
 
-) (./chapter-1/./05_reconstruction.tex
-<./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png, id=207, 433.62pt x 28
+) (./chapter-1/./050_reconstruction_gp.tex [3]
+(./chapter-1/./051_training_gp.tex
+<./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png, id=227, 4
+33.62pt x 289.08pt>
+File: ./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png Graph
+ic file (type png)
+<use ./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/gp/02_Sample_posterior_dis
+tibutions.png  used on input line 6.
+(pdftex.def)             Requested size: 433.62pt x 289.09251pt.
+<./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png, id=229, 433.62pt x 28
 9.08pt>
 File: ./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png Graphic file (typ
 e png)
 <use ./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png>
 Package pdftex.def Info: ./chapter-1/images/pantheon/gp/03_Reconstruction_GP.pn
-g  used on input line 5.
+g  used on input line 14.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
-<./chapter-1/images/pantheon/lstm/07_sample_reconstruction_with_uncertainity.pn
-g, id=209, 433.62pt x 289.08pt>
-File: ./chapter-1/images/pantheon/lstm/07_sample_reconstruction_with_uncertaini
-ty.png Graphic file (type png)
-<use ./chapter-1/images/pantheon/lstm/07_sample_reconstruction_with_uncertainit
-y.png>
-Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/07_sample_reconstruct
-ion_with_uncertainity.png  used on input line 11.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapter-1/./052_testing_correlations.tex [4 <./chapter-1/images/pantheon/g
+p/02_Sample_posterior_distibutions.png>]
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
+ [5 <./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png>] [6]
+<./chapter-1/images/pantheon/gp/15_correlatin.png, id=264, 1084.05pt x 1445.4pt
+>
+File: ./chapter-1/images/pantheon/gp/15_correlatin.png Graphic file (type png)
+<use ./chapter-1/images/pantheon/gp/15_correlatin.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/gp/15_correlatin.png  used
+ on input line 56.
+(pdftex.def)             Requested size: 433.62pt x 578.14977pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapter-1/./053_calibration.tex [7]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+<./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png, id=272, 722.7pt x 57
+8.16pt>
+File: ./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png Graphic file (ty
+pe png)
+<use ./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/gp/16_GRB_reconstruction.p
+ng  used on input line 5.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+) (./chapter-1/./054_constrain_dark_energy.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png, id=273, 361.35pt x 
+361.35pt>
+File: ./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png Graphic file (t
+ype png)
+<use ./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.
+png  used on input line 5.
+(pdftex.def)             Requested size: 433.62pt x 433.62335pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)) (./chapter-1/./060_reconstruction_lstm.tex
+(./chapter-1/./061_training_lstm.tex
+<./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png, id=275, 1084.05pt x 361
+.35pt>
+File: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png Graphic file (type 
+png)
+<use ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png 
+ used on input line 5.
+(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
+<./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png, id=276, 433.62p
+t x 289.08pt>
+File: ./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png Graphic fil
+e (type png)
+<use ./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/06_sample_reconstruct
+ion.png  used on input line 11.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
 )
-(./chapter-1/./06_testing_correlations.tex [3] [4 <./chapter-1/images/pantheon/
-gp/03_Reconstruction_GP.png> <./chapter-1/images/pantheon/lstm/07_sample_recons
-truction_with_uncertainity.png>]
+(./chapter-1/./062_testing_correlations.tex [8]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./chapter-1/images/pantheon/lstm/15_correlatin.png, id=285, 1084.05pt x 1445.4
+pt>
+File: ./chapter-1/images/pantheon/lstm/15_correlatin.png Graphic file (type png
+)
+<use ./chapter-1/images/pantheon/lstm/15_correlatin.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/15_correlatin.png  us
+ed on input line 4.
+(pdftex.def)             Requested size: 433.62pt x 578.14977pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapter-1/./063_calibration.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1.
+
+<./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png, id=286, 722.7pt x 
+578.16pt>
+File: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png Graphic file (
+type png)
+<use ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction
+.png  used on input line 4.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapter-1/./064_constrain_dark_energy.tex
+<./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png, id=287, 361.35pt 
+x 361.35pt>
+File: ./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png Graphic file 
+(type png)
+<use ./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/18_omega_M_corner_plo
+t.png  used on input line 4.
+(pdftex.def)             Requested size: 433.62pt x 433.62335pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)) (./chapter-1/./070_analysis_union.tex (./chapter-1/././071_union_gp.tex
+<./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png, id=288, 433.
+62pt x 289.08pt>
+File: ./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png Graphic 
+file (type png)
+<use ./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png>
+Package pdftex.def Info: ./chapter-1/images/union/gp/02_Sample_posterior_distib
+utions.png  used on input line 7.
+(pdftex.def)             Requested size: 433.62pt x 289.09251pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./chapter-1/images/union/gp/03_Reconstruction_GP.png, id=289, 433.62pt x 289.0
+8pt>
+File: ./chapter-1/images/union/gp/03_Reconstruction_GP.png Graphic file (type p
+ng)
+<use ./chapter-1/images/union/gp/03_Reconstruction_GP.png>
+Package pdftex.def Info: ./chapter-1/images/union/gp/03_Reconstruction_GP.png  
+used on input line 15.
+(pdftex.def)             Requested size: 433.62pt x 289.09251pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./chapter-1/images/union/gp/15_correlatin.png, id=290, 1084.05pt x 1445.4pt>
+File: ./chapter-1/images/union/gp/15_correlatin.png Graphic file (type png)
+<use ./chapter-1/images/union/gp/15_correlatin.png>
+Package pdftex.def Info: ./chapter-1/images/union/gp/15_correlatin.png  used on
+ input line 26.
+(pdftex.def)             Requested size: 433.62pt x 578.14977pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./chapter-1/images/union/gp/16_GRB_reconstruction.png, id=291, 722.7pt x 578.1
+6pt>
+File: ./chapter-1/images/union/gp/16_GRB_reconstruction.png Graphic file (type 
+png)
+<use ./chapter-1/images/union/gp/16_GRB_reconstruction.png>
+Package pdftex.def Info: ./chapter-1/images/union/gp/16_GRB_reconstruction.png 
+ used on input line 33.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./chapter-1/images/union/gp/18_omega_M_corner_plot.png, id=292, 361.35pt x 361
+.35pt>
+File: ./chapter-1/images/union/gp/18_omega_M_corner_plot.png Graphic file (type
+ png)
+<use ./chapter-1/images/union/gp/18_omega_M_corner_plot.png>
+Package pdftex.def Info: ./chapter-1/images/union/gp/18_omega_M_corner_plot.png
+  used on input line 40.
+(pdftex.def)             Requested size: 433.62pt x 433.62335pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./chapter-1/././072_union_lstm.tex
+File: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png Graphic file (type 
+png)
+<use ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png 
+ used on input line 5.
+(pdftex.def)             Requested size: 433.62pt x 144.53743pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png Graphic fil
+e (type png)
+<use ./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/06_sample_reconstruct
+ion.png  used on input line 11.
+(pdftex.def)             Requested size: 433.62pt x 289.09251pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./chapter-1/images/pantheon/lstm/15_correlatin.png Graphic file (type png
+)
+<use ./chapter-1/images/pantheon/lstm/15_correlatin.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/15_correlatin.png  us
+ed on input line 18.
+(pdftex.def)             Requested size: 433.62pt x 578.14977pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5])
-(./chapter-1/./07_calibration.tex
+ [9]
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+File: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png Graphic file (
+type png)
+<use ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png>
+Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction
+.png  used on input line 25.
+(pdftex.def)             Requested size: 433.62pt x 346.89867pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+<./chapter-1/images/union/lstm/18_omega_M_corner_plot.png, id=299, 361.35pt x 3
+61.35pt>
+File: ./chapter-1/images/union/lstm/18_omega_M_corner_plot.png Graphic file (ty
+pe png)
+<use ./chapter-1/images/union/lstm/18_omega_M_corner_plot.png>
+Package pdftex.def Info: ./chapter-1/images/union/lstm/18_omega_M_corner_plot.p
+ng  used on input line 32.
+(pdftex.def)             Requested size: 433.62pt x 433.62335pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 1.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+)) (./chapter-1/./080_conclusion.tex) (./thesis.bbl [10] [11] [12 <./chapter-1/
+images/pantheon/gp/15_correlatin.png>] [13 <./chapter-1/images/pantheon/gp/16_G
+RB_reconstruction.png>] [14 <./chapter-1/images/pantheon/gp/18_omega_M_corner_p
+lot.png> <./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png>] [15 <./chapte
+r-1/images/pantheon/lstm/06_sample_reconstruction.png>] [16 <./chapter-1/images
+/pantheon/lstm/15_correlatin.png>] [17 <./chapter-1/images/pantheon/lstm/16_GRB
+_reconstruction.png>] [18 <./chapter-1/images/pantheon/lstm/18_omega_M_corner_p
+lot.png>] [19 <./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png
+> <./chapter-1/images/union/gp/03_Reconstruction_GP.png>] [20 <./chapter-1/imag
+es/union/gp/15_correlatin.png>] [21 <./chapter-1/images/union/gp/16_GRB_reconst
+ruction.png>] [22 <./chapter-1/images/union/gp/18_omega_M_corner_plot.png>]
+[23] [24] [25] [26 <./chapter-1/images/union/lstm/18_omega_M_corner_plot.png>]
+[27
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-) (./chapter-1/./08_constrain_dark_energy.tex)
-(./chapter-1/./09_analysis_union.tex) (./chapter-1/./10_conclusion.tex)
-(./thesis.bbl [6])) [7
-
-]
+])) [28]
 Chapter 2.
-[8
+[29
 
 ]
 Chapter 3.
-Package epstopdf Info: Source file: <logo.eps>
-(epstopdf)                    date: 2022-05-23 23:32:38
-(epstopdf)                    size: 111376 bytes
-(epstopdf)             Output file: <logo-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-23 23:32:38
-(epstopdf)                    size: 9702 bytes
-(epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf 
-logo.eps>
-(epstopdf)             \includegraphics on input line 49.
-Package epstopdf Info: Output file is already uptodate.
-File: logo-eps-converted-to.pdf Graphic file (type pdf)
-<use logo-eps-converted-to.pdf>
-Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 49.
-(pdftex.def)             Requested size: 59.2211pt x 60.72672pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
-
- []
-
-[9
-
-]
-Chapter 4.
-[10
-
-]
-Chapter 5.
-LaTeX Font Info:    Trying to load font information for T1+SourceCodePro-TLF on
- input line 101.
-(/usr/share/texlive/texmf-dist/tex/latex/sourcecodepro/T1SourceCodePro-TLF.fd
-File: T1SourceCodePro-TLF.fd 2018/02/18 (autoinst) Font definitions for T1/Sour
-ceCodePro-TLF.
-)
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 101.
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
-
- []
-
-[11
+[30
 
 ]
 
-Package caption Warning: Unused \captionsetup[lstlisting] on input line 17.
+Package caption Warning: Unused \captionsetup[lstlisting] on input line 18.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E9D510E2C29C44D0E11A780D3A7EB5B4;1893.
+(rerunfilecheck)             Checksum: 8D8F178E4C2F83830A6C446336DFB0BA;2294.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1394,40 +1602,37 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
  ) 
 Here is how much of TeX's memory you used:
- 34278 strings out of 481239
- 792925 string characters out of 5920377
- 1162072 words of memory out of 5000000
- 48770 multiletter control sequences out of 15000+600000
- 549861 words of font info for 59 fonts, out of 8000000 for 9000
+ 35216 strings out of 481239
+ 813505 string characters out of 5920377
+ 1206941 words of memory out of 5000000
+ 49607 multiletter control sequences out of 15000+600000
+ 550945 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,113p,2145b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{/u
-sr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/tex
-mf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfbi2488.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-bx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-super/sft
-i1000.pfb>
-Output written on thesis.pdf (16 pages, 406213 bytes).
+ 69i,13n,113p,2176b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfti1000.pfb>
+Output written on thesis.pdf (35 pages, 910552 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 63 named destinations out of 1000 (max. 500000)
- 260 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 521 PDF objects out of 1000 (max. 8388607)
+ 425 compressed objects within 5 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

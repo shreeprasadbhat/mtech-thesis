@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
 Database file #1: sofc.bib
-You've used 7 entries,
+You've used 10 entries,
             2642 wiz_defined-function locations,
-            619 strings with 5925 characters,
-and the built_in function-call counts, 5095 in all, are:
-= -- 571
-> -- 111
+            635 strings with 7327 characters,
+and the built_in function-call counts, 7900 in all, are:
+= -- 737
+> -- 287
 < -- 0
-+ -- 70
-- -- 33
-* -- 473
-:= -- 413
-add.period$ -- 21
-call.type$ -- 7
-change.case$ -- 0
++ -- 138
+- -- 90
+* -- 890
+:= -- 684
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 567
-empty$ -- 254
-format.name$ -- 38
-if$ -- 970
+cite$ -- 10
+duplicate$ -- 826
+empty$ -- 387
+format.name$ -- 97
+if$ -- 1455
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 75
-newline$ -- 39
-num.names$ -- 7
-pop$ -- 118
+int.to.str$ -- 10
+missing$ -- 145
+newline$ -- 54
+num.names$ -- 10
+pop$ -- 164
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 294
+skip$ -- 374
 stack$ -- 0
-substring$ -- 231
-swap$ -- 683
+substring$ -- 294
+swap$ -- 1062
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 24
-width$ -- 8
-write$ -- 73
+while$ -- 30
+width$ -- 12
+write$ -- 102
