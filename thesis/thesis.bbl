@@ -62,6 +62,30 @@
 \newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
   \bibinfo{volume}{907}, (\bibinfo{year}{2021}) \bibinfo{pages}{121}.
 
+\bibitem{scolnic2018complete}
+\bibinfo{author}{D.~M. Scolnic}, \bibinfo{author}{D.~Jones},
+  \bibinfo{author}{A.~Rest}, \bibinfo{author}{Y.~Pan},
+  \bibinfo{author}{R.~Chornock}, \bibinfo{author}{R.~Foley},
+  \bibinfo{author}{M.~Huber}, \bibinfo{author}{R.~Kessler},
+  \bibinfo{author}{G.~Narayan}, \bibinfo{author}{A.~Riess} et~al.
+\newblock \bibinfo{title}{The complete light-curve sample of spectroscopically
+  confirmed SNe Ia from Pan-STARRS1 and cosmological constraints from the
+  combined pantheon sample}.
+\newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
+  \bibinfo{volume}{859}, (\bibinfo{year}{2018}) \bibinfo{pages}{101}.
+
+\bibitem{suzuki2012hubble}
+\bibinfo{author}{N.~Suzuki}, \bibinfo{author}{D.~Rubin},
+  \bibinfo{author}{C.~Lidman}, \bibinfo{author}{G.~Aldering},
+  \bibinfo{author}{R.~Amanullah}, \bibinfo{author}{K.~Barbary},
+  \bibinfo{author}{L.~Barrientos}, \bibinfo{author}{J.~Botyanszki},
+  \bibinfo{author}{M.~Brodwin}, \bibinfo{author}{N.~Connolly} et~al.
+\newblock \bibinfo{title}{The Hubble Space Telescope cluster supernova survey.
+  V. Improving the dark-energy constraints above z> 1 and building an
+  early-type-hosted supernova sample}.
+\newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
+  \bibinfo{volume}{746}, (\bibinfo{year}{2012}) \bibinfo{pages}{85}.
+
 \bibitem{scikit-learn}
 \bibinfo{author}{F.~Pedregosa}, \bibinfo{author}{G.~Varoquaux},
   \bibinfo{author}{A.~Gramfort}, \bibinfo{author}{V.~Michel},
@@ -80,6 +104,13 @@
 \newblock \bibinfo{title}{Fits, and especially linear fits, with errors on both
   axes, extra variance of the data points and other complications}.
 \newblock {\em \bibinfo{journal}{arXiv preprint physics/0511182}\/} .
+
+\bibitem{emcee}
+\bibinfo{author}{D.~{Foreman-Mackey}}, \bibinfo{author}{D.~W. {Hogg}},
+  \bibinfo{author}{D.~{Lang}}, and \bibinfo{author}{J.~{Goodman}}.
+\newblock \bibinfo{title}{emcee: The MCMC Hammer}.
+\newblock {\em \bibinfo{journal}{PASP}\/} \bibinfo{volume}{125},
+  (\bibinfo{year}{2013}) \bibinfo{pages}{306--312}.
 
 \bibitem{tensorflow2015-whitepaper}
 \bibinfo{author}{M.~Abadi}, \bibinfo{author}{A.~Agarwal},

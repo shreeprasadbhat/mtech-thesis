@@ -2,45 +2,62 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
+Illegal, another \bibstyle command---line 137 of file thesis.aux
+ : \bibstyle
+ :          {iiththesis}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 138 of file thesis.aux
+ : \bibdata
+ :         {sofc}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 166 of file thesis.aux
+ : \bibstyle
+ :          {iiththesis}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 167 of file thesis.aux
+ : \bibdata
+ :         {sofc}
+I'm skipping whatever remains of this command
 Database file #1: sofc.bib
-You've used 10 entries,
+You've used 13 entries,
             2642 wiz_defined-function locations,
-            635 strings with 7327 characters,
-and the built_in function-call counts, 7900 in all, are:
-= -- 737
-> -- 287
+            654 strings with 8128 characters,
+and the built_in function-call counts, 10110 in all, are:
+= -- 930
+> -- 371
 < -- 0
-+ -- 138
-- -- 90
-* -- 890
-:= -- 684
-add.period$ -- 30
-call.type$ -- 10
++ -- 178
+- -- 116
+* -- 1154
+:= -- 881
+add.period$ -- 39
+call.type$ -- 13
 change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 826
-empty$ -- 387
-format.name$ -- 97
-if$ -- 1455
+cite$ -- 13
+duplicate$ -- 1055
+empty$ -- 500
+format.name$ -- 126
+if$ -- 1864
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 145
-newline$ -- 54
-num.names$ -- 10
-pop$ -- 164
+int.to.str$ -- 13
+missing$ -- 189
+newline$ -- 69
+num.names$ -- 13
+pop$ -- 200
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 374
+skip$ -- 473
 stack$ -- 0
-substring$ -- 294
-swap$ -- 1062
+substring$ -- 366
+swap$ -- 1359
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 30
-width$ -- 12
-write$ -- 102
+while$ -- 39
+width$ -- 15
+write$ -- 132
+(There were 4 error messages)
