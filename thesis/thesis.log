@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  28 MAY 2022 13:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  28 MAY 2022 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1142,7 +1142,227 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count357
 \l__pdf_internal_box=\box71
 )
-(./thesis.aux)
+(./thesis.aux
+
+LaTeX Warning: Label `fig:HD_GRB_GP' multiply defined.
+
+
+LaTeX Warning: Label `collister2007megaz' multiply defined.
+
+
+LaTeX Warning: Label `bilicki2013two' multiply defined.
+
+
+LaTeX Warning: Label `benitez2000bayesian' multiply defined.
+
+
+LaTeX Warning: Label `brammer2008eazy' multiply defined.
+
+
+LaTeX Warning: Label `kotulla2009impact' multiply defined.
+
+
+LaTeX Warning: Label `dahlen2010detailed' multiply defined.
+
+
+LaTeX Warning: Label `bolzonella2000photometric' multiply defined.
+
+
+LaTeX Warning: Label `arnouts1999measuring' multiply defined.
+
+
+LaTeX Warning: Label `ilbert2006accurate' multiply defined.
+
+
+LaTeX Warning: Label `assef2008low' multiply defined.
+
+
+LaTeX Warning: Label `assef2010low' multiply defined.
+
+
+LaTeX Warning: Label `feldmann2006zurich' multiply defined.
+
+
+LaTeX Warning: Label `collister2004annz' multiply defined.
+
+
+LaTeX Warning: Label `gerdes2010arborz' multiply defined.
+
+
+LaTeX Warning: Label `wolf2009bayesian' multiply defined.
+
+
+LaTeX Warning: Label `csabai2007multidimensional' multiply defined.
+
+
+LaTeX Warning: Label `carliles2010random' multiply defined.
+
+
+LaTeX Warning: Label `brescia2014catalogue' multiply defined.
+
+
+LaTeX Warning: Label `elliott2015overlooked' multiply defined.
+
+
+LaTeX Warning: Label `abdalla2011comparison' multiply defined.
+
+
+LaTeX Warning: Label `hildebrandt2010phat' multiply defined.
+
+
+LaTeX Warning: Label `dahlen2013critical' multiply defined.
+
+
+LaTeX Warning: Label `accetta2022seventeenth' multiply defined.
+
+
+LaTeX Warning: Label `gunn20062' multiply defined.
+
+
+LaTeX Warning: Label `smith2002ugriz' multiply defined.
+
+
+LaTeX Warning: Label `eisenstein2011sdss' multiply defined.
+
+
+LaTeX Warning: Label `li2008casjobs' multiply defined.
+
+
+LaTeX Warning: Label `schmidt2009distilling' multiply defined.
+
+
+LaTeX Warning: Label `udrescu2020ai' multiply defined.
+
+
+LaTeX Warning: Label `wu2019toward' multiply defined.
+
+
+LaTeX Warning: Label `cranmer2020discovering' multiply defined.
+
+
+LaTeX Warning: Label `villaescusa2021camels' multiply defined.
+
+
+LaTeX Warning: Label `kim2020integration' multiply defined.
+
+
+LaTeX Warning: Label `liu2021machine' multiply defined.
+
+
+LaTeX Warning: Label `wilstrup2021symbolic' multiply defined.
+
+
+LaTeX Warning: Label `pysr' multiply defined.
+
+
+LaTeX Warning: Label `collister2007megaz' multiply defined.
+
+
+LaTeX Warning: Label `bilicki2013two' multiply defined.
+
+
+LaTeX Warning: Label `benitez2000bayesian' multiply defined.
+
+
+LaTeX Warning: Label `brammer2008eazy' multiply defined.
+
+
+LaTeX Warning: Label `kotulla2009impact' multiply defined.
+
+
+LaTeX Warning: Label `dahlen2010detailed' multiply defined.
+
+
+LaTeX Warning: Label `bolzonella2000photometric' multiply defined.
+
+
+LaTeX Warning: Label `arnouts1999measuring' multiply defined.
+
+
+LaTeX Warning: Label `ilbert2006accurate' multiply defined.
+
+
+LaTeX Warning: Label `assef2008low' multiply defined.
+
+
+LaTeX Warning: Label `assef2010low' multiply defined.
+
+
+LaTeX Warning: Label `feldmann2006zurich' multiply defined.
+
+
+LaTeX Warning: Label `collister2004annz' multiply defined.
+
+
+LaTeX Warning: Label `gerdes2010arborz' multiply defined.
+
+
+LaTeX Warning: Label `wolf2009bayesian' multiply defined.
+
+
+LaTeX Warning: Label `csabai2007multidimensional' multiply defined.
+
+
+LaTeX Warning: Label `carliles2010random' multiply defined.
+
+
+LaTeX Warning: Label `brescia2014catalogue' multiply defined.
+
+
+LaTeX Warning: Label `elliott2015overlooked' multiply defined.
+
+
+LaTeX Warning: Label `abdalla2011comparison' multiply defined.
+
+
+LaTeX Warning: Label `hildebrandt2010phat' multiply defined.
+
+
+LaTeX Warning: Label `dahlen2013critical' multiply defined.
+
+
+LaTeX Warning: Label `accetta2022seventeenth' multiply defined.
+
+
+LaTeX Warning: Label `gunn20062' multiply defined.
+
+
+LaTeX Warning: Label `smith2002ugriz' multiply defined.
+
+
+LaTeX Warning: Label `eisenstein2011sdss' multiply defined.
+
+
+LaTeX Warning: Label `li2008casjobs' multiply defined.
+
+
+LaTeX Warning: Label `schmidt2009distilling' multiply defined.
+
+
+LaTeX Warning: Label `udrescu2020ai' multiply defined.
+
+
+LaTeX Warning: Label `wu2019toward' multiply defined.
+
+
+LaTeX Warning: Label `cranmer2020discovering' multiply defined.
+
+
+LaTeX Warning: Label `villaescusa2021camels' multiply defined.
+
+
+LaTeX Warning: Label `kim2020integration' multiply defined.
+
+
+LaTeX Warning: Label `liu2021machine' multiply defined.
+
+
+LaTeX Warning: Label `wilstrup2021symbolic' multiply defined.
+
+
+LaTeX Warning: Label `pysr' multiply defined.
+
+)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -1231,7 +1451,7 @@ Package epstopdf Info: Source file: <logo.eps>
 logo.eps>
 (epstopdf)             \includegraphics on input line 26.
 Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=57, 118.4425pt x 121.45375pt>
+<logo-eps-converted-to.pdf, id=206, 118.4425pt x 121.45375pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
 Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 26.
@@ -1265,14 +1485,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [5
+
+
+])
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
- [5
-
-
-]
+ [6]
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -1347,21 +1567,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--1
  []
 
 ) (./chapter-1/./050_reconstruction_gp.tex [2]
-
-LaTeX Warning: Reference `eq_kernel' on page 3 undefined on input line 6.
-
 (./chapter-1/./051_training_gp.tex
 
 LaTeX Warning: Citation `scikit-learn' on page 3 undefined on input line 2.
 
-
-LaTeX Warning: Reference `fig:gp_re' on page 3 undefined on input line 2.
-
-
-LaTeX Warning: Reference `fig:posterior_pantheon' on page 3 undefined on input 
-line 2.
-
-<./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png, id=119, 4
+<./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png, id=311, 4
 33.62pt x 289.08pt>
 File: ./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png Graph
 ic file (type png)
@@ -1369,7 +1579,7 @@ ic file (type png)
 Package pdftex.def Info: ./chapter-1/images/pantheon/gp/02_Sample_posterior_dis
 tibutions.png  used on input line 6.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
-<./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png, id=121, 433.62pt x 28
+<./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png, id=313, 433.62pt x 28
 9.08pt>
 File: ./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png Graphic file (typ
 e png)
@@ -1388,11 +1598,7 @@ Underfull \vbox (badness 1215) has occurred while \output is active []
 
 LaTeX Warning: Citation `d2005fits' on page 6 undefined on input line 43.
 
-
-LaTeX Warning: Reference `table_pantheon_gp' on page 6 undefined on input line 
-51.
-
-<./chapter-1/images/pantheon/gp/15_correlatin.png, id=157, 1084.05pt x 1445.4pt
+<./chapter-1/images/pantheon/gp/15_correlatin.png, id=347, 1084.05pt x 1445.4pt
 >
 File: ./chapter-1/images/pantheon/gp/15_correlatin.png Graphic file (type png)
 <use ./chapter-1/images/pantheon/gp/15_correlatin.png>
@@ -1419,7 +1625,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-<./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png, id=164, 722.7pt x 57
+<./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png, id=354, 722.7pt x 57
 8.16pt>
 File: ./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png Graphic file (ty
 pe png)
@@ -1434,7 +1640,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: Citation `emcee' on page 7 undefined on input line 10.
 
-<./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png, id=165, 361.35pt x 
+<./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png, id=355, 361.35pt x 
 361.35pt>
 File: ./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png Graphic file (t
 ype png)
@@ -1453,7 +1659,7 @@ t line 2.
 
 (./chapter-1/./061_training_lstm.tex [8 <./chapter-1/images/pantheon/gp/18_omeg
 a_M_corner_plot.png>]
-<./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png, id=183, 1084.05pt x 361
+<./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png, id=371, 1084.05pt x 361
 .35pt>
 File: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png Graphic file (type 
 png)
@@ -1461,7 +1667,7 @@ png)
 Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png 
  used on input line 5.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
-<./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png, id=184, 433.62p
+<./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png, id=372, 433.62p
 t x 289.08pt>
 File: ./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png Graphic fil
 e (type png)
@@ -1476,7 +1682,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/pantheon/lstm/15_correlatin.png, id=185, 1084.05pt x 1445.4
+<./chapter-1/images/pantheon/lstm/15_correlatin.png, id=373, 1084.05pt x 1445.4
 pt>
 File: ./chapter-1/images/pantheon/lstm/15_correlatin.png Graphic file (type png
 )
@@ -1504,7 +1710,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-<./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png, id=186, 722.7pt x 
+<./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png, id=374, 722.7pt x 
 578.16pt>
 File: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png Graphic file (
 type png)
@@ -1516,7 +1722,7 @@ Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./chapter-1/./064_constrain_dark_energy.tex
-<./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png, id=187, 361.35pt 
+<./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png, id=375, 361.35pt 
 x 361.35pt>
 File: ./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png Graphic file 
 (type png)
@@ -1529,7 +1735,7 @@ t.png  used on input line 4.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )) (./chapter-1/./070_analysis_union.tex (./chapter-1/././071_union_gp.tex
-<./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png, id=188, 433.
+<./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png, id=376, 433.
 62pt x 289.08pt>
 File: ./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png Graphic 
 file (type png)
@@ -1541,7 +1747,7 @@ utions.png  used on input line 7.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/03_Reconstruction_GP.png, id=189, 433.62pt x 289.0
+<./chapter-1/images/union/gp/03_Reconstruction_GP.png, id=377, 433.62pt x 289.0
 8pt>
 File: ./chapter-1/images/union/gp/03_Reconstruction_GP.png Graphic file (type p
 ng)
@@ -1553,7 +1759,7 @@ used on input line 15.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/15_correlatin.png, id=202, 1084.05pt x 1445.4pt>
+<./chapter-1/images/union/gp/15_correlatin.png, id=384, 1084.05pt x 1445.4pt>
 File: ./chapter-1/images/union/gp/15_correlatin.png Graphic file (type png)
 <use ./chapter-1/images/union/gp/15_correlatin.png>
 Package pdftex.def Info: ./chapter-1/images/union/gp/15_correlatin.png  used on
@@ -1562,7 +1768,7 @@ Package pdftex.def Info: ./chapter-1/images/union/gp/15_correlatin.png  used on
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/16_GRB_reconstruction.png, id=203, 722.7pt x 578.1
+<./chapter-1/images/union/gp/16_GRB_reconstruction.png, id=385, 722.7pt x 578.1
 6pt>
 File: ./chapter-1/images/union/gp/16_GRB_reconstruction.png Graphic file (type 
 png)
@@ -1573,7 +1779,7 @@ Package pdftex.def Info: ./chapter-1/images/union/gp/16_GRB_reconstruction.png
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/18_omega_M_corner_plot.png, id=204, 361.35pt x 361
+<./chapter-1/images/union/gp/18_omega_M_corner_plot.png, id=386, 361.35pt x 361
 .35pt>
 File: ./chapter-1/images/union/gp/18_omega_M_corner_plot.png Graphic file (type
  png)
@@ -1622,7 +1828,7 @@ Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/lstm/18_omega_M_corner_plot.png, id=205, 361.35pt x 3
+<./chapter-1/images/union/lstm/18_omega_M_corner_plot.png, id=387, 361.35pt x 3
 61.35pt>
 File: ./chapter-1/images/union/lstm/18_omega_M_corner_plot.png Graphic file (ty
 pe png)
@@ -1646,18 +1852,18 @@ hapter-1/images/union/gp/15_correlatin.png>] [20 <./chapter-1/images/union/gp/1
 lot.png>] [22] [23] [24] [25 <./chapter-1/images/union/lstm/18_omega_M_corner_p
 lot.png>] [26
 
-] [27])) (./chapter-2/chapter-2.tex [28]
+])) (./chapter-2/chapter-2.tex [27]
 Chapter 2.
 (./chapter-2/./010_introduction.tex) (./chapter-2/./020_survey.tex)
 (./chapter-2/./030_observational_data.tex
 
-LaTeX Warning: Citation `suzuki2012hubble' on page 29 undefined on input line 3
+LaTeX Warning: Citation `suzuki2012hubble' on page 28 undefined on input line 3
 .
 
 ) (./chapter-2/./040_methodology.tex
 Underfull \vbox (badness 1052) has occurred while \output is active []
 
- [29
+ [28
 
 ]
 (./chapter-2/./041_vae.tex) (./chapter-2/./042_gan.tex)
@@ -1669,220 +1875,83 @@ gy mod-els: $\OT1/cmr/m/n/10 (1)\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 (\OML/cmm/m/i
 t/10 z\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1(^^C[]); (2)$
  []
 
-[30]) (./chapter-2/./070_conclusion.tex) (./thesis.bbl [31]pdfTeX warning (ext4
-): destination with the same identifier (name{cite.collister2007megaz}) has bee
-n already used, duplicate ignored
+[29]) (./chapter-2/./070_conclusion.tex) (./thesis.bbl [30]pdfTeX warning (ext4
+): destination with the same identifier (name{cite.riess1998observational}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \bibitem{collister2007megaz}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.bilicki2013two}) has been already used, duplicate ignor
-ed
-<to be read again> 
-                   \relax 
-l.16 \bibitem{bilicki2013two}
-                             pdfTeX warning (ext4): destination with the same i
-dentifier (name{cite.benitez2000bayesian}) has been already used, duplicate ign
-ored
-<to be read again> 
-                   \relax 
-l.25 \bibitem{benitez2000bayesian}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.brammer2008eazy}) has been already used, duplicate ig
-nored
-<to be read again> 
-                   \relax 
-l.31 \bibitem{brammer2008eazy}
-                              pdfTeX warning (ext4): destination with the same 
-identifier (name{cite.kotulla2009impact}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.38 \bibitem{kotulla2009impact}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.dahlen2010detailed}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.46 \bibitem{dahlen2010detailed}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{cite.bolzonella2000photometric}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.57 \bibitem{bolzonella2000photometric}
-                                        pdfTeX warning (ext4): destination with
- the same identifier (name{cite.arnouts1999measuring}) has been already used, d
-uplicate ignored
-<to be read again> 
-                   \relax 
-l.64 \bibitem{arnouts1999measuring}
-                                   pdfTeX warning (ext4): destination with the 
-same identifier (name{cite.ilbert2006accurate}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.75 \bibitem{ilbert2006accurate}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{cite.assef2008low}) has been already used, duplicate ignore
-d
-<to be read again> 
-                   \relax 
-l.86 \bibitem{assef2008low}
-                           pdfTeX warning (ext4): destination with the same ide
-ntifier (name{cite.assef2010low}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.97 \bibitem{assef2010low}
-                           pdfTeX warning (ext4): destination with the same ide
-ntifier (name{cite.feldmann2006zurich}) has been already used, duplicate ignore
-d
-<to be read again> 
-                   \relax 
-l.108 \bibitem{feldmann2006zurich}
-                                   [32
-
-]pdfTeX warning (ext4): destination with the same identifier (name{cite.collist
-er2004annz}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.120 \bibitem{collister2004annz}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{cite.gerdes2010arborz}) has been already used, duplicate ig
-nored
-<to be read again> 
-                   \relax 
-l.128 \bibitem{gerdes2010arborz}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.wolf2009bayesian}) has been already used, duplicate ign
-ored
-<to be read again> 
-                   \relax 
-l.138 \bibitem{wolf2009bayesian}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.csabai2007multidimensional}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.146 \bibitem{csabai2007multidimensional}
-                                          pdfTeX warning (ext4): destination wi
-th the same identifier (name{cite.carliles2010random}) has been already used, d
-uplicate ignored
-<to be read again> 
-                   \relax 
-l.157 \bibitem{carliles2010random}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.brescia2014catalogue}) has been already used, duplica
-te ignored
-<to be read again> 
-                   \relax 
-l.165 \bibitem{brescia2014catalogue}
+l.4 \bibitem{riess1998observational}
                                     pdfTeX warning (ext4): destination with the
- same identifier (name{cite.elliott2015overlooked}) has been already used, dupl
-icate ignored
+ same identifier (name{cite.perlmutter1999measurements}) has been already used,
+ duplicate ignored
 <to be read again> 
                    \relax 
-l.173 \bibitem{elliott2015overlooked}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.abdalla2011comparison}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.183 \bibitem{abdalla2011comparison}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.hildebrandt2010phat}) has been already used, dupli
-cate ignored
-<to be read again> 
-                   \relax 
-l.192 \bibitem{hildebrandt2010phat}
-                                   pdfTeX warning (ext4): destination with the 
-same identifier (name{cite.dahlen2013critical}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.202 \bibitem{dahlen2013critical}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.accetta2022seventeenth}) has been already used, dupli
-cate ignored
-<to be read again> 
-                   \relax 
-l.213 \bibitem{accetta2022seventeenth}
-                                      pdfTeX warning (ext4): destination with t
-he same identifier (name{cite.gunn20062}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.224 \bibitem{gunn20062}
-                         pdfTeX warning (ext4): destination with the same ident
-ifier (name{cite.smith2002ugriz}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.234 \bibitem{smith2002ugriz}
-                               [33]pdfTeX warning (ext4): destination with the 
-same identifier (name{cite.eisenstein2011sdss}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.244 \bibitem{eisenstein2011sdss}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.li2008casjobs}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.255 \bibitem{li2008casjobs}
-                             pdfTeX warning (ext4): destination with the same i
-dentifier (name{cite.schmidt2009distilling}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.261 \bibitem{schmidt2009distilling}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.udrescu2020ai}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.268 \bibitem{udrescu2020ai}
-                             pdfTeX warning (ext4): destination with the same i
-dentifier (name{cite.wu2019toward}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.275 \bibitem{wu2019toward}
-                            pdfTeX warning (ext4): destination with the same id
-entifier (name{cite.cranmer2020discovering}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.282 \bibitem{cranmer2020discovering}
-                                      pdfTeX warning (ext4): destination with t
-he same identifier (name{cite.villaescusa2021camels}) has been already used, du
+l.15 \bibitem{perlmutter1999measurements}
+                                         pdfTeX warning (ext4): destination wit
+h the same identifier (name{cite.schaefer2007hubble}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.291 \bibitem{villaescusa2021camels}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.kim2020integration}) has been already used, duplic
-ate ignored
-<to be read again> 
-                   \relax 
-l.303 \bibitem{kim2020integration}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.liu2021machine}) has been already used, duplicate ign
+l.26 \bibitem{schaefer2007hubble}
+                                 pdfTeX warning (ext4): destination with the sa
+me identifier (name{cite.li2007variation}) has been already used, duplicate ign
 ored
 <to be read again> 
                    \relax 
-l.314 \bibitem{liu2021machine}
+l.33 \bibitem{li2007variation}
                               pdfTeX warning (ext4): destination with the same 
-identifier (name{cite.wilstrup2021symbolic}) has been already used, duplicate i
+identifier (name{cite.basilakos2008testing}) has been already used, duplicate i
 gnored
 <to be read again> 
                    \relax 
-l.321 \bibitem{wilstrup2021symbolic}
-                                    pdfTeX warning (ext4): destination with the
- same identifier (name{cite.pysr}) has been already used, duplicate ignored
+l.41 \bibitem{basilakos2008testing}
+                                   pdfTeX warning (ext4): destination with the 
+same identifier (name{cite.wang2011updated}) has been already used, duplicate i
+gnored
 <to be read again> 
                    \relax 
-l.327 \bibitem{pysr}
-                    )) (./chapter-3/chapter-3.tex [34]
+l.48 \bibitem{wang2011updated}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{cite.tang2021model}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.57 \bibitem{tang2021model}
+                            pdfTeX warning (ext4): destination with the same id
+entifier (name{cite.scolnic2018complete}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.65 \bibitem{scolnic2018complete}
+                                  pdfTeX warning (ext4): destination with the s
+ame identifier (name{cite.suzuki2012hubble}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.77 \bibitem{suzuki2012hubble}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{cite.scikit-learn}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 \bibitem{scikit-learn}
+                            [31
+
+]pdfTeX warning (ext4): destination with the same identifier (name{cite.d2005fi
+ts}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.102 \bibitem{d2005fits}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{cite.emcee}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.108 \bibitem{emcee}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.tensorflow2015-whitepaper}) has been already used, duplicate ignor
+ed
+<to be read again> 
+                   \relax 
+l.115 \bibitem{tensorflow2015-whitepaper}
+                                         )) (./chapter-3/chapter-3.tex [32]
 Chapter 3.
 (./chapter-3/./010_introduction.tex) (./chapter-3/./020_survey.tex)
 (./chapter-3/./030_observational_data.tex
@@ -1896,7 +1965,7 @@ ceCodePro-TLF.
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 3.
 
-[35
+[33
 
 ] (./chapter-3/././031_SDSS_DR17.tex
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
@@ -1919,272 +1988,100 @@ Overfull \hbox (95.57642pt too wide) in paragraph at lines 49--49
  bands) to ensure that you don't get junk objects.[] 
  []
 
-[36])) (./chapter-3/./040_methodology.tex (./chapter-3/./041_SR.tex
-
-LaTeX Warning: Citation `schmidt2009distilling' on page 37 undefined on input l
-ine 3.
-
-
-LaTeX Warning: Citation `udrescu2020ai' on page 37 undefined on input line 3.
-
-
-LaTeX Warning: Citation `wu2019toward' on page 37 undefined on input line 3.
-
-
-LaTeX Warning: Citation `cranmer2020discovering' on page 37 undefined on input 
-line 3.
-
-
-LaTeX Warning: Citation `villaescusa2021camels' on page 37 undefined on input l
-ine 3.
-
-
-LaTeX Warning: Citation `kim2020integration' on page 37 undefined on input line
- 3.
-
-
-LaTeX Warning: Citation `liu2021machine' on page 37 undefined on input line 3.
-
-
-LaTeX Warning: Citation `wilstrup2021symbolic' on page 37 undefined on input li
-ne 3.
-
-)) (./chapter-3/./050_estimation.tex
+[34])) (./chapter-3/./040_methodology.tex (./chapter-3/./041_SR.tex))
+(./chapter-3/./050_estimation.tex
 Underfull \vbox (badness 1616) has occurred while \output is active []
 
- [37])
-(./chapter-3/./060_conclusion.tex) (./thesis.bbl [38]pdfTeX warning (ext4): des
-tination with the same identifier (name{cite.collister2007megaz}) has been alre
-ady used, duplicate ignored
+ [35])
+(./chapter-3/./060_conclusion.tex) (./thesis.bbl [36]pdfTeX warning (ext4): des
+tination with the same identifier (name{cite.riess1998observational}) has been 
+already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 \bibitem{collister2007megaz}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.bilicki2013two}) has been already used, duplicate ignor
-ed
-<to be read again> 
-                   \relax 
-l.16 \bibitem{bilicki2013two}
-                             pdfTeX warning (ext4): destination with the same i
-dentifier (name{cite.benitez2000bayesian}) has been already used, duplicate ign
-ored
-<to be read again> 
-                   \relax 
-l.25 \bibitem{benitez2000bayesian}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.brammer2008eazy}) has been already used, duplicate ig
-nored
-<to be read again> 
-                   \relax 
-l.31 \bibitem{brammer2008eazy}
-                              pdfTeX warning (ext4): destination with the same 
-identifier (name{cite.kotulla2009impact}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.38 \bibitem{kotulla2009impact}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.dahlen2010detailed}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.46 \bibitem{dahlen2010detailed}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{cite.bolzonella2000photometric}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.57 \bibitem{bolzonella2000photometric}
-                                        pdfTeX warning (ext4): destination with
- the same identifier (name{cite.arnouts1999measuring}) has been already used, d
-uplicate ignored
-<to be read again> 
-                   \relax 
-l.64 \bibitem{arnouts1999measuring}
-                                   pdfTeX warning (ext4): destination with the 
-same identifier (name{cite.ilbert2006accurate}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.75 \bibitem{ilbert2006accurate}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{cite.assef2008low}) has been already used, duplicate ignore
-d
-<to be read again> 
-                   \relax 
-l.86 \bibitem{assef2008low}
-                           pdfTeX warning (ext4): destination with the same ide
-ntifier (name{cite.assef2010low}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.97 \bibitem{assef2010low}
-                           pdfTeX warning (ext4): destination with the same ide
-ntifier (name{cite.feldmann2006zurich}) has been already used, duplicate ignore
-d
-<to be read again> 
-                   \relax 
-l.108 \bibitem{feldmann2006zurich}
-                                   [39
-
-]pdfTeX warning (ext4): destination with the same identifier (name{cite.collist
-er2004annz}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.120 \bibitem{collister2004annz}
-                                 pdfTeX warning (ext4): destination with the sa
-me identifier (name{cite.gerdes2010arborz}) has been already used, duplicate ig
-nored
-<to be read again> 
-                   \relax 
-l.128 \bibitem{gerdes2010arborz}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.wolf2009bayesian}) has been already used, duplicate ign
-ored
-<to be read again> 
-                   \relax 
-l.138 \bibitem{wolf2009bayesian}
-                                pdfTeX warning (ext4): destination with the sam
-e identifier (name{cite.csabai2007multidimensional}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.146 \bibitem{csabai2007multidimensional}
-                                          pdfTeX warning (ext4): destination wi
-th the same identifier (name{cite.carliles2010random}) has been already used, d
-uplicate ignored
-<to be read again> 
-                   \relax 
-l.157 \bibitem{carliles2010random}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.brescia2014catalogue}) has been already used, duplica
-te ignored
-<to be read again> 
-                   \relax 
-l.165 \bibitem{brescia2014catalogue}
+l.4 \bibitem{riess1998observational}
                                     pdfTeX warning (ext4): destination with the
- same identifier (name{cite.elliott2015overlooked}) has been already used, dupl
-icate ignored
+ same identifier (name{cite.perlmutter1999measurements}) has been already used,
+ duplicate ignored
 <to be read again> 
                    \relax 
-l.173 \bibitem{elliott2015overlooked}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.abdalla2011comparison}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.183 \bibitem{abdalla2011comparison}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.hildebrandt2010phat}) has been already used, dupli
-cate ignored
-<to be read again> 
-                   \relax 
-l.192 \bibitem{hildebrandt2010phat}
-                                   pdfTeX warning (ext4): destination with the 
-same identifier (name{cite.dahlen2013critical}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.202 \bibitem{dahlen2013critical}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.accetta2022seventeenth}) has been already used, dupli
-cate ignored
-<to be read again> 
-                   \relax 
-l.213 \bibitem{accetta2022seventeenth}
-                                      pdfTeX warning (ext4): destination with t
-he same identifier (name{cite.gunn20062}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.224 \bibitem{gunn20062}
-                         pdfTeX warning (ext4): destination with the same ident
-ifier (name{cite.smith2002ugriz}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.234 \bibitem{smith2002ugriz}
-                               [40]pdfTeX warning (ext4): destination with the 
-same identifier (name{cite.eisenstein2011sdss}) has been already used, duplicat
-e ignored
-<to be read again> 
-                   \relax 
-l.244 \bibitem{eisenstein2011sdss}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.li2008casjobs}) has been already used, duplicate igno
-red
-<to be read again> 
-                   \relax 
-l.255 \bibitem{li2008casjobs}
-                             pdfTeX warning (ext4): destination with the same i
-dentifier (name{cite.schmidt2009distilling}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.261 \bibitem{schmidt2009distilling}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.udrescu2020ai}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.268 \bibitem{udrescu2020ai}
-                             pdfTeX warning (ext4): destination with the same i
-dentifier (name{cite.wu2019toward}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.275 \bibitem{wu2019toward}
-                            pdfTeX warning (ext4): destination with the same id
-entifier (name{cite.cranmer2020discovering}) has been already used, duplicate i
-gnored
-<to be read again> 
-                   \relax 
-l.282 \bibitem{cranmer2020discovering}
-                                      pdfTeX warning (ext4): destination with t
-he same identifier (name{cite.villaescusa2021camels}) has been already used, du
+l.15 \bibitem{perlmutter1999measurements}
+                                         pdfTeX warning (ext4): destination wit
+h the same identifier (name{cite.schaefer2007hubble}) has been already used, du
 plicate ignored
 <to be read again> 
                    \relax 
-l.291 \bibitem{villaescusa2021camels}
-                                     pdfTeX warning (ext4): destination with th
-e same identifier (name{cite.kim2020integration}) has been already used, duplic
-ate ignored
-<to be read again> 
-                   \relax 
-l.303 \bibitem{kim2020integration}
-                                  pdfTeX warning (ext4): destination with the s
-ame identifier (name{cite.liu2021machine}) has been already used, duplicate ign
+l.26 \bibitem{schaefer2007hubble}
+                                 pdfTeX warning (ext4): destination with the sa
+me identifier (name{cite.li2007variation}) has been already used, duplicate ign
 ored
 <to be read again> 
                    \relax 
-l.314 \bibitem{liu2021machine}
+l.33 \bibitem{li2007variation}
                               pdfTeX warning (ext4): destination with the same 
-identifier (name{cite.wilstrup2021symbolic}) has been already used, duplicate i
+identifier (name{cite.basilakos2008testing}) has been already used, duplicate i
 gnored
 <to be read again> 
                    \relax 
-l.321 \bibitem{wilstrup2021symbolic}
-                                    pdfTeX warning (ext4): destination with the
- same identifier (name{cite.pysr}) has been already used, duplicate ignored
+l.41 \bibitem{basilakos2008testing}
+                                   pdfTeX warning (ext4): destination with the 
+same identifier (name{cite.wang2011updated}) has been already used, duplicate i
+gnored
 <to be read again> 
                    \relax 
-l.327 \bibitem{pysr}
-                    )) [41]
+l.48 \bibitem{wang2011updated}
+                              pdfTeX warning (ext4): destination with the same 
+identifier (name{cite.tang2021model}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.57 \bibitem{tang2021model}
+                            pdfTeX warning (ext4): destination with the same id
+entifier (name{cite.scolnic2018complete}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.65 \bibitem{scolnic2018complete}
+                                  pdfTeX warning (ext4): destination with the s
+ame identifier (name{cite.suzuki2012hubble}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.77 \bibitem{suzuki2012hubble}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{cite.scikit-learn}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 \bibitem{scikit-learn}
+                            [37
+
+]pdfTeX warning (ext4): destination with the same identifier (name{cite.d2005fi
+ts}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.102 \bibitem{d2005fits}
+                         pdfTeX warning (ext4): destination with the same ident
+ifier (name{cite.emcee}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.108 \bibitem{emcee}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{cite.tensorflow2015-whitepaper}) has been already used, duplicate ignor
+ed
+<to be read again> 
+                   \relax 
+l.115 \bibitem{tensorflow2015-whitepaper}
+                                         )) [38]
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 18.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 2C108F84EF44C6D1C3D837C4CBF9AD7C;3578.
 
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: CB09262E21B22D74B0622A9BB1CE9746;800
-(rerunfilecheck)             After:  2C108F84EF44C6D1C3D837C4CBF9AD7C;3578.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 21.0755pt have occurred.
@@ -2193,43 +2090,151 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  ) 
 Here is how much of TeX's memory you used:
- 35451 strings out of 481239
- 818663 string characters out of 5920377
- 1206240 words of memory out of 5000000
- 49702 multiletter control sequences out of 15000+600000
+ 35512 strings out of 481239
+ 819747 string characters out of 5920377
+ 1208281 words of memory out of 5000000
+ 49752 multiletter control sequences out of 15000+600000
  556460 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,115p,2176b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}</usr/share/texlive/tex
-mf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfti1000.pfb>
-Output written on thesis.pdf (46 pages, 1040322 bytes).
+pdfTeX warning (dest): name{cite.pysr} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.wilstrup2021symbolic} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.liu2021machine} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.kim2020integration} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.villaescusa2021camels} has been referenced but
+ does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.cranmer2020discovering} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.wu2019toward} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.udrescu2020ai} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.schmidt2009distilling} has been referenced but
+ does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.li2008casjobs} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.eisenstein2011sdss} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.smith2002ugriz} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.gunn20062} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.accetta2022seventeenth} has been referenced bu
+t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.dahlen2013critical} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.hildebrandt2010phat} has been referenced but d
+oes not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.abdalla2011comparison} has been referenced but
+ does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.elliott2015overlooked} has been referenced but
+ does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.brescia2014catalogue} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.carliles2010random} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.csabai2007multidimensional} has been reference
+d but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.wolf2009bayesian} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.gerdes2010arborz} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.collister2004annz} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.feldmann2006zurich} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.assef2010low} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.assef2008low} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.ilbert2006accurate} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.arnouts1999measuring} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.bolzonella2000photometric} has been referenced
+ but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.dahlen2010detailed} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.kotulla2009impact} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.brammer2008eazy} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.benitez2000bayesian} has been referenced but d
+oes not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.bilicki2013two} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.collister2007megaz} has been referenced but do
+es not exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
+texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}</usr/share/texlive/texmf
+-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfti1000.pfb>
+Output written on thesis.pdf (44 pages, 1025802 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 491 compressed objects within 5 object streams
- 188 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 771 PDF objects out of 1000 (max. 8388607)
+ 661 compressed objects within 7 object streams
+ 199 named destinations out of 1000 (max. 500000)
+ 498 words of extra memory for PDF output out of 10000 (max. 10000000)
 

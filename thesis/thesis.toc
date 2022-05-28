@@ -1,7 +1,7 @@
 \contentsline {section}{Declaration}{ii}{Doc-Start}%
 \contentsline {section}{Approval Sheet}{iii}{Doc-Start}%
 \contentsline {section}{Abstract}{iv}{Doc-Start}%
-\contentsline {chapter}{Nomenclature}{v}{chapter*.1}%
+\contentsline {chapter}{Nomenclature}{vi}{chapter*.1}%
 \contentsline {chapter}{\numberline {1}Model-independently calibrating the luminosity correlations of GRBs using deep learning}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Literature Survey}{2}{section.1.2}%
@@ -34,28 +34,28 @@
 \contentsline {subsubsection}{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}{10}{section*.29}%
 \contentsline {subsubsection}{Constraints on dark energy}{10}{section*.31}%
 \contentsline {section}{\numberline {1.8}Conclusion}{10}{section.1.8}%
-\contentsline {chapter}{\numberline {2}Model Comparison of Dark Energy models Using Deep Network}{29}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{29}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Dark energy models}{29}{subsection.2.1.1}%
-\contentsline {subsubsection}{$\Lambda $CDM}{29}{section*.35}%
-\contentsline {subsubsection}{$\Omega $CDM}{29}{section*.36}%
-\contentsline {subsubsection}{CPL}{29}{section*.37}%
-\contentsline {section}{\numberline {2.2}Literature Survey}{29}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Observational Data}{30}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Union2.1}{30}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2.4}Methodology}{30}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}VAE}{30}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}GAN}{30}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}VAEGAN}{30}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Test on toy model}{30}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Dark enrgy models}{31}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Conclusion}{31}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Photometric redshift estimation using Symbolic Regression}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Literature Survey}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Observation Data}{35}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}SDSS DR17 photometry}{36}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Methodology}{37}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Symbolic Regression}{37}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Photometric redshift estimation}{37}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Conclusion}{38}{section.3.6}%
+\contentsline {chapter}{\numberline {2}Model Comparison of Dark Energy models Using Deep Network}{28}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{28}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Dark energy models}{28}{subsection.2.1.1}%
+\contentsline {subsubsection}{$\Lambda $CDM}{28}{section*.35}%
+\contentsline {subsubsection}{$\Omega $CDM}{28}{section*.36}%
+\contentsline {subsubsection}{CPL}{28}{section*.37}%
+\contentsline {section}{\numberline {2.2}Literature Survey}{28}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Observational Data}{29}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Union2.1}{29}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Methodology}{29}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}VAE}{29}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}GAN}{29}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}VAEGAN}{29}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Test on toy model}{29}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Dark enrgy models}{30}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Conclusion}{30}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Photometric redshift estimation using Symbolic Regression}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{33}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Literature Survey}{33}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Observation Data}{33}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}SDSS DR17 photometry}{34}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Methodology}{35}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Symbolic Regression}{35}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Photometric redshift estimation}{35}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Conclusion}{36}{section.3.6}%

@@ -2,19 +2,19 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
-Illegal, another \bibstyle command---line 177 of file thesis.aux
+Illegal, another \bibstyle command---line 154 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 178 of file thesis.aux
+Illegal, another \bibdata command---line 155 of file thesis.aux
  : \bibdata
  :         {./references/chapter-2}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 264 of file thesis.aux
+Illegal, another \bibstyle command---line 218 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 265 of file thesis.aux
+Illegal, another \bibdata command---line 219 of file thesis.aux
  : \bibdata
  :         {./references/chapter-3}
 I'm skipping whatever remains of this command
