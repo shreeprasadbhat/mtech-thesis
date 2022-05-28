@@ -15,25 +15,20 @@
 \addrexternal{Dept. of Chem Eng \\ IITH}
 \internal{----------}
 \addrinternal{Dept. Math \\ IITH}
-\input{preamble}
-\input{abstract}
-\input{acknowledgements}
-\input{dedication}
+\include{common/preamble}
+\include{acknowledgments/acknowledgments}
+\include{dedication/dedication}
+\include{abstract/abstract}
 \graphicspath{ {./chapter-1/images/} }
 \renewcommand{\bibname}{References}
+
+
 \begin{document}
-
 \import{./chapter-1/}{chapter-1}
-
 \import{./chapter-2/}{chapter-2}
-
 \import{./chapter-3/}{chapter-3}
-
-
 
 \clearpage
 \newpage
 \addcontentsline{toc}{chapter}{References} % Please do not remove this
-
-
 \end{document}
