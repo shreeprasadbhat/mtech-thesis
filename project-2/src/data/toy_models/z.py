@@ -1,7 +1,6 @@
 import numpy as np
 prng = np.random.RandomState(123)
-z = prng.uniform(0, 1, 2048)
-z.sort()
+z = np.sort(prng.uniform(0, 1, 2048))
 idx = prng.randint(0, 2048, 580)
 z_obs = z[idx]
 

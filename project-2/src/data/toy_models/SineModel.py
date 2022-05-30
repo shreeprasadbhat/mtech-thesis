@@ -44,19 +44,23 @@ class SineModel:
             ((A_err / A)**2 + ((z * np.cos(w*z) * w_err) / (np.sin(w*z)))**2) 
             + C_err**2)
         
-    def sample(self, z, size=(1,)):
-        A = self.sample_A(size)
-        w = self.sample_w(size)
-        C = self.sample_C(size)
+    def sample(self, z):
+        A = self.sample_A(z.shape[0])
+        w = self.sample_w(z.shape[0])
+        C = self.sample_C(z.shape[0])
         return self.out(z, A, w, C)
 
 if __name__ == '__main__':
-    obj = SineModel()
-    prng = np.random.RandomState(123)
-    z = prng.uniform(0, 1, 2048)
-    x = obj.sample(z, 2048)
-    
     import matplotlib.pyplot as plt
 
-    plt.scatter(z, x, s=4)
+    z = np.sort(np.random.uniform(0,1,580))
+
+    obj = SineModel()
+
+    y = obj.out(z)
+    plt.plot(z, y, color='r')
+
+    y = obj.sample(z)
+    plt.scatter(z, y, s=4)
+
     plt.show()

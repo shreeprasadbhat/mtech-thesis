@@ -3,12 +3,14 @@ from tensorflow import keras
 from keras import layers 
 
 class SGAN(keras.Model):
-    def __init__(self, latent_dim, generator, s_discriminator, u_discriminator):
+    def __init__(self, latent_dim, generator, s_discriminator, u_discriminator, z=None, scaler=None):
         super().__init__()
         self.latent_dim = latent_dim
         self.generator = generator
         self.s_discriminator = s_discriminator
         self.u_discriminator = u_discriminator
+        self.z = z # redshift, required in GANMonitor
+        self.scaler = scaler
 
     def compile(self, 
             s_optimizer, 
@@ -45,13 +47,12 @@ class SGAN(keras.Model):
         self.s_acc.update_state(y_real, y_pred)
 
         z = tf.random.normal(shape=(batch_size, self.latent_dim))
-        print(z)
         x = tf.concat([x_real, self.generator(z)], axis=0)
         y = tf.concat([tf.ones(shape=(batch_size)), tf.zeros(shape=(batch_size))], axis=0)
-        y += 0.05 * tf.random.uniform(tf.shape(y))
+        y_noisy = y + 0.05 * tf.random.uniform(tf.shape(y))
         with tf.GradientTape() as tape:
             y_pred = self.u_discriminator(x)
-            u_loss = self.binary_cross_entropy_loss_fn(y, y_pred)
+            u_loss = self.binary_cross_entropy_loss_fn(y_noisy, y_pred)
         
         grads = tape.gradient(u_loss, self.u_discriminator.trainable_weights)
         self.u_optimizer.apply_gradients(zip(grads, self.u_discriminator.trainable_weights))

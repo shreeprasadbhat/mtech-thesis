@@ -16,21 +16,28 @@ class TrueModel:
             B = self.B_mean
         if C is None:
             C = self.C_mean
-        return A * z**2 + B * z + C
+        return A * (z**2) + B * z + C
 
-    def sample(self, z, size=(1,), A=None, B=None, C=None):
+    def sample(self, z, A=None, B=None, C=None):
         if A is None:
-            A = np.random.normal(self.A_mean, self.A_err, size)
+            A = np.random.normal(self.A_mean, self.A_err, z.shape[0])
         if B is None:
-            B = np.random.normal(self.B_mean, self.B_err, size)
+            B = np.random.normal(self.B_mean, self.B_err, z.shape[0])
         if C is None:
-            C = np.random.normal(self.C_mean, self.C_err, size)
+            C = np.random.normal(self.C_mean, self.C_err, z.shape[0])
         return self.out(z, A, B, C)
 
 if __name__ == "__main__":
-    obj = TrueModel()
-    z = np.random.uniform(0,1,580)
-    y = obj.sample(z, 580)
     import matplotlib.pyplot as plt
-    plt.scatter(z, y, s=4, color='r')
+
+    z = np.sort(np.random.uniform(0,1,580))
+
+    obj = TrueModel()
+
+    y = obj.out(z)
+    plt.plot(z, y, color='r')
+
+    y = obj.sample(z)
+    plt.scatter(z, y, s=4)
+
     plt.show()

@@ -41,20 +41,23 @@ class ParabolicModel:
         
         return np.sqrt(z**4 * A_err**2 + (z**2 * (z**2 * (A_err**2 + B_err**2)) + C_err**2))
     
-    def sample(self, z, size=(1,)):
-        A = self.sample_A(size)
-        B = self.sample_B(size)
-        C = self.sample_C(size)
+    def sample(self, z):
+        A = self.sample_A(z.shape[0])
+        B = self.sample_B(z.shape[0])
+        C = self.sample_C(z.shape[0])
         return self.out(z, A, B, C)
 
 if __name__ == '__main__':
-
-    obj = ParabolicModel()
-    prng = np.random.RandomState(123)
-    z = prng.uniform(0, 1, 580)
-    x = obj.sample(z, 580)
-    
     import matplotlib.pyplot as plt
 
-    plt.scatter(z, x, s=4)
+    z = np.sort(np.random.uniform(0,1,580))
+
+    obj = ParabolicModel()
+
+    y = obj.out(z)
+    plt.plot(z, y, color='r')
+
+    y = obj.sample(z)
+    plt.scatter(z, y, s=4)
+
     plt.show()

@@ -20,6 +20,7 @@ from src.model.SGAN.Discriminator import Discriminator
 from src.model.SGAN.UnsupervisedDiscriminator import UnsupervisedDiscriminator
 from src.model.SGAN.SupervisedDiscriminator import SupervisedDiscriminator
 from src.model.SGAN.SGAN import SGAN
+from src.model.SGAN.toy.GANMonitor import GANMonitor
 
 readlines = ""
 with open('Params.json') as file:
@@ -57,12 +58,12 @@ def generate_real_samples(train_size, z, input_dim):
     parabolicModelObj = ParabolicModel()
     x1 = np.zeros([half_train_size, input_dim], dtype='float32')
     for i in range(half_train_size):
-        x1[i] = parabolicModelObj.sample(z, input_dim)
+        x1[i] = parabolicModelObj.sample(z)
     y1 = np.zeros(half_train_size)
     sineModelObj = SineModel()
     x2 = np.zeros([half_train_size, input_dim], dtype='float32')
     for i in range(half_train_size):
-        x2[i] = sineModelObj.sample(z, input_dim)
+        x2[i] = sineModelObj.sample(z)
     y2 = np.ones(half_train_size)
     x_real = np.concatenate([x1, x2])
     y_real = np.concatenate([y1, y2])
@@ -74,8 +75,8 @@ x_real, y_real = generate_real_samples(train_size, z, output_dim)
 y_real = y_real[:, np.newaxis]
 
 # split into test, validation, and training sets
-x_train, x_test, y_train, y_test = train_test_split(x_real, y_real, test_size=0.05)
-x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=0.1)
+x_train, x_test, y_train, y_test = train_test_split(x_real, y_real, test_size=0.2)
+x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, test_size=0.2)
 
 train_dataset = ( 
     tf.data.Dataset
@@ -102,7 +103,7 @@ discriminator = Discriminator(output_dim)
 sup_discriminator = SupervisedDiscriminator(n_classes, discriminator)
 unsup_discriminator = UnsupervisedDiscriminator(discriminator)
 
-sgan = SGAN(latent_dim, generator, sup_discriminator, unsup_discriminator)
+sgan = SGAN(latent_dim, generator, sup_discriminator, unsup_discriminator, z)
 sgan.compile(
     tf.keras.optimizers.Adam(learning_rate=lr_gen, beta_1=beta_1_gen),
     tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
@@ -111,13 +112,17 @@ sgan.compile(
     tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 )
 
-checkpoint_path = os.path.join(outdir,"ckpt/cp.ckpt")
+sgan_checkpoint_path = os.path.join(outdir,"ckpt/sgan.ckpt")
+g_checkpoint_path = os.path.join(outdir,"ckpt/generator.ckpt")
+d_checkpoint_path = os.path.join(outdir,"ckpt/discriminator.ckpt")
+
 csvlogger_path = os.path.join(outdir,"log/log.txt")
 
 callbacks = [
-    ModelCheckpoint(checkpoint_path, monitor='val_s_loss', save_best_only=True, save_weights_only=True, verbose=1),
-    EarlyStopping(monitor='val_s_loss', patience=patience, verbose=1),
-    CSVLogger(csvlogger_path, separator=',', append=True)   
+    #ModelCheckpoint(checkpoint_path, monitor='val_s_loss', save_best_only=True, save_weights_only=True, verbose=1),
+    #EarlyStopping(monitor='val_s_loss', patience=patience, verbose=1),
+    CSVLogger(csvlogger_path, separator=',', append=True),
+    GANMonitor()
 ]
 
 history = sgan.fit(
@@ -127,8 +132,12 @@ history = sgan.fit(
     callbacks = callbacks
 )
 
+generator.save_weights(g_checkpoint_path)
+discriminator.save_weights(d_checkpoint_path)
+sgan.save_weights(sgan_checkpoint_path)
+
 # load the best model
-sgan.load_weights(checkpoint_path)
+sgan.load_weights(sgan_checkpoint_path)
 
 # number of epochs, early stopped or not
 epochs = len(history.history['s_loss'])
@@ -179,15 +188,21 @@ plt.draw()
 plt.pause(0.001)
 #plt.show()
 
-x = generator(tf.random.normal((1,latent_dim)))
+x = sgan.generator(tf.random.normal((1,latent_dim)))
 plt.figure()
 plt.scatter(z, np.reshape(x, (output_dim) ), s=2)
 plt.title('Generated output')
 plt.xlabel('z')
 plt.ylabel('x')
+plt.xlim(0,1.2)
+plt.ylim(0,1.2)
 plt.savefig(os.path.join(outdir, 'fig/sample_out.png'))
 plt.draw()
 plt.pause(0.001)
-#plt.show()
+plt.show()
+
+# get the class label assigned
+print(sgan.s_discriminator(x))
+print('Class :', tf.argmax(sgan.s_discriminator(x), axis=-1))
 
 input('Press enter to continue...')

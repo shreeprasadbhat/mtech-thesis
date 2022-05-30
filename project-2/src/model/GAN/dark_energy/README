@@ -1,0 +1,3 @@
+train.py and train.ipynb are same code, ipython is helpful during gan training since observe the data generated using plots, train.py cannot since I am running code on remote machine plot generation would take very longer time.
+
+eval.py and eval.iynb are also same code

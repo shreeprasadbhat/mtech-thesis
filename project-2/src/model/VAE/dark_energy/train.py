@@ -50,8 +50,8 @@ x_real = np.genfromtxt('../../../data/dark_energy_models/x_real.csv')
 y_real = np.genfromtxt('../../../data/dark_energy_models/y_real.csv')
 
 # split into test, validation, and training sets
-x_train_580, x_test_580, x_train, x_test = train_test_split(x_real_580, x_real, test_size=0.05)
-x_train_580, x_val_580, x_train, x_val = train_test_split(x_train_580, x_train, test_size=0.1)
+x_train_580, x_test_580, x_train, x_test = train_test_split(x_real_580, x_real, test_size=0.2)
+x_train_580, x_val_580, x_train, x_val = train_test_split(x_train_580, x_train, test_size=0.2)
 
 train_dataset = ( 
     tf.data.Dataset
@@ -105,8 +105,9 @@ vae_test = vae.predict(x_test_580, batch_size=512)
 epochs = len(history.history['loss'])
 
 plt.figure()
-plt.plot(np.arange(1, epochs+1, 1), history.history['loss'], label='train loss')
-plt.plot(np.arange(1, epochs+1, 1), history.history['val_loss'], label='val loss')
+# ignore large initial large loss values, else plot is not insightfull
+plt.plot(np.arange(11, epochs+1, 1), history.history['loss'][10:], label='train loss')
+plt.plot(np.arange(11, epochs+1, 1), history.history['val_loss'][10:], label='val loss')
 plt.xlabel('epochs')
 plt.ylabel('loss')
 plt.legend()
@@ -117,8 +118,9 @@ plt.pause(0.001)
 #plt.show()
 
 plt.figure()
-plt.plot(np.arange(1, epochs+1, 1), history.history['mse'], label='train mse')
-plt.plot(np.arange(1, epochs+1, 1), history.history['val_mse'], label='val mse')
+# ignore large initial large loss values, else plot is not insightfull
+plt.plot(np.arange(11, epochs+1, 1), history.history['mse'][10:], label='train mse')
+plt.plot(np.arange(11, epochs+1, 1), history.history['val_mse'][10:], label='val mse')
 plt.xlabel('epochs')
 plt.ylabel('mse')
 plt.legend()

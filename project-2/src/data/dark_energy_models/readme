@@ -1,0 +1,10 @@
+# Data should be generated before running model
+# Run  following commands to generate data
+
+python3 z.py
+python3 z_obs.py
+python3 LambdaCDM.py
+python3 OmegaCDM.py
+python3 CPL.py
+python3 merge.py
+
