@@ -1,1 +1,23 @@
 \section{Dark enrgy models}
+We study the model comparison problem among three dark energy models: $(1) \omega(z)=-1(\Lambda \mathrm{CDM}) ;(2)$ $\omega(z)=\omega_{D E}(\omega \mathrm{CDM}) ;(3) \omega(z)=\omega_{0}+\omega_{a} \frac{z}{1+z}$ (CPL), given a set of observations of distance moduli at different redshifts. The expansion rate of a spatially flat FRW universe is determined by the matter and dark energy,
+$$
+H^{2}(z)=H_{0}^{2}\left\{\Omega_{m 0}(1+z)^{3}+\left(1-\Omega_{m 0}\right) \exp \left[3 \int \frac{1+\omega\left(z^{\prime}\right)}{1+z^{\prime}} d z^{\prime}\right]\right\}
+$$
+The luminosity distance is closely related to the Hubble expansion rate (Eq.12), and the distance modulus is given by $\mathrm{Eq} 13$
+$$
+\begin{gathered}
+D_{L}(z)=c(1+z) \int_{0}^{z} d z^{\prime} \frac{1}{H\left(z^{\prime}\right)} \\
+\mu(z)=5 \log _{10} D_{L}(z)+25
+\end{gathered}
+$$
+For each dark energy model, 12800 samples are generated at the redshift $\boldsymbol{z}=\operatorname{sort}\left\{\boldsymbol{z}_{\text {obs }}, \boldsymbol{z}^{*}\right\}$, given the priors of the parameters as,
+$$
+\begin{aligned}
+\Omega_{m 0} & \sim \mathcal{U}(0.1,0.9) \\
+H_{0} & \sim \mathcal{U}(50,90) \\
+\omega_{D E} & \sim \mathcal{U}(-1.8,-0.4) \\
+\omega_{0} & \sim \mathcal{U}(-1.9,-0.4) \\
+\omega_{a} & \sim \mathcal{U}(-4.0,4.0)
+\end{aligned}
+$$
+$\boldsymbol{z}^{*}$ has 1468 elements evenly located in the interval, $\left[0.8 \min \left(\boldsymbol{z}_{o b s}\right), 1.2 \max \left(\boldsymbol{z}_{o b s}\right)\right]$. The $12800 \times 3$ samples

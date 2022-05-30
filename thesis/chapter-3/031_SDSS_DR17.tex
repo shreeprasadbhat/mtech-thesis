@@ -1,0 +1,51 @@
+\subsection{SDSS DR17 photometry}\
+The SDSS is well suited to the analysis presented in this paper due to the enormous number of photometrically selected galaxies with spectroscopic redshifts to use as training, cross-validation and test samples. We select 1,958,727 galaxies from CasJobs with both spectroscopic redshifts and photometric properties. In detail we run the following MySQL query in the DR17 schema:
+\begin{verbatim}
+-- Goto http://skyserver.sdss.org/casjobs/, create an account run the following sql query
+-- http://skyserver.sdss.org/dr17/SearchTools/sql cannot be used to bulk data (only 500000)
+-- SQL qeury
+-- =========
+-- only select galaxies that have a photometric galaxy classification type = 3, 
+-- and spectscopic redshifts, r band magnitudes, -- and radii greater than 0
+-- make a magnitude error cut of < 0.3 (in all 5 bands) to ensure that you don't get junk objects.
+-- dered_ is simplified mag, corrected for extinction: modelMag - extinction	
+
+
+
+SELECT
+    q.dered_u as u, q.dered_g as g, q.dered_r as r, 
+    q.dered_i as i, q.dered_z as z, q.modelMagErr_u as u_err, 
+    q.modelMagErr_g as g_err, q.modelMagErr_r as r_err, 
+    q.modelMagErr_i as i_err, q.modelMagErr_z as z_err,
+    s.z AS specz, s.zerr AS specz_err,
+    p.z AS photoz, p.zerr AS photoz_err
+INTO mydb.specPhotoDR10v2 FROM 
+	SpecPhotoAll AS s JOIN photoObjAll AS q ON s.objid=q.objid
+	AND q.dered_u>0
+	AND q.dered_g>0
+	AND q.dered_r>0
+	AND q.dered_z>0
+	AND q.dered_i>0
+	AND q.expAB_r>0
+	AND q.modelMagErr_u < 0.3
+	AND q.modelMagErr_g < 0.3
+	AND q.modelMagErr_r < 0.3
+	AND q.modelMagErr_i < 0.3
+	AND q.modelMagErr_z < 0.3
+	AND q.type=3
+	AND s.z > 0
+	--AND s.zerr > -0.3 AND s.zerr < 0.3
+	--AND q.petroRad_u > 0 -- has no effect
+	--AND q.petroRad_g > 0
+	--AND q.petroRad_r > 0
+	--AND q.petroRad_i > 0
+	--AND q.petroRad_z > 0
+	AND q.CLEAN=1 		-- Clean photometry flag
+							-- (1=clean, 0=unclean)
+	AND s.zWarning = 0 	-- Bitmask of warning
+							-- vaules; 0 means all
+							-- is well
+	LEFT OUTER JOIN Photoz AS p ON s.objid=p.objid
+\end{verbatim}
+
+We apply the SDSS extinction corrections to the psf and fiber magnitudes, and further only select galaxies that have a photometric galaxy classification type = 3, have spectroscopic redshifts, r band magnitudes, and radii greater than zero. This reduces the sample size to 1,922,231 galaxies.
