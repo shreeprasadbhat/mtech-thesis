@@ -46,16 +46,16 @@
 \contentsline {section}{\numberline {2.4}Methodology}{29}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}VAE}{29}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}GAN}{29}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}VAEGAN}{29}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Test on toy model}{29}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Dark enrgy models}{30}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Conclusion}{30}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Photometric redshift estimation using Symbolic Regression}{33}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{33}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Literature Survey}{33}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Observation Data}{33}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}SDSS DR17 photometry}{34}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Methodology}{35}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Symbolic Regression}{35}{subsection.3.4.1}%
-\contentsline {section}{\numberline {3.5}Photometric redshift estimation}{35}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Conclusion}{36}{section.3.6}%
+\contentsline {subsection}{\numberline {2.4.3}VAEGAN}{30}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Test on toy model}{30}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Dark enrgy models}{31}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Conclusion}{34}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Photometric redshift estimation using Symbolic Regression}{38}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{38}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Literature Survey}{38}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Observation Data}{38}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}SDSS DR17 photometry}{39}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Methodology}{40}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Symbolic Regression}{40}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Photometric redshift estimation}{40}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Conclusion}{41}{section.3.6}%
