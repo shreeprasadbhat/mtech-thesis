@@ -99,8 +99,8 @@ test_dataset = (
 )
 
 generator = Generator(latent_dim)
-discriminator = Discriminator(output_dim)
-sup_discriminator = SupervisedDiscriminator(n_classes, discriminator)
+discriminator = Discriminator(output_dim, n_classes)
+sup_discriminator = SupervisedDiscriminator(discriminator)
 unsup_discriminator = UnsupervisedDiscriminator(discriminator)
 
 sgan = SGAN(latent_dim, generator, sup_discriminator, unsup_discriminator, z)
@@ -108,8 +108,8 @@ sgan.compile(
     tf.keras.optimizers.Adam(learning_rate=lr_gen, beta_1=beta_1_gen),
     tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc), 
     tf.keras.optimizers.Adam(learning_rate=lr_disc, beta_1=beta_1_disc),
-    tf.keras.losses.BinaryCrossentropy(from_logits=True),
-    tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+    tf.keras.losses.BinaryCrossentropy(from_logits=False),
+    tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False)
 )
 
 sgan_checkpoint_path = os.path.join(outdir,"ckpt/sgan.ckpt")

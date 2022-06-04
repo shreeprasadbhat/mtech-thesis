@@ -49,7 +49,7 @@ class SGAN(keras.Model):
         z = tf.random.normal(shape=(batch_size, self.latent_dim))
         x = tf.concat([x_real, self.generator(z)], axis=0)
         y = tf.concat([tf.ones(shape=(batch_size)), tf.zeros(shape=(batch_size))], axis=0)
-        y_noisy = y + 0.05 * tf.random.uniform(tf.shape(y))
+        y_noisy = y #+ 0.05 * tf.random.uniform(tf.shape(y))
         with tf.GradientTape() as tape:
             y_pred = self.u_discriminator(x)
             u_loss = self.binary_cross_entropy_loss_fn(y_noisy, y_pred)

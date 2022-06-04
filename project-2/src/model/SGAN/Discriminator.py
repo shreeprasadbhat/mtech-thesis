@@ -5,6 +5,7 @@ from tensorflow.keras import regularizers
 class Discriminator(keras.Model):
     def __init__(self, 
             input_dim, 
+            n_classes,
             filter_size=32, 
             kernel_size=7, 
             strides=4, 
@@ -60,7 +61,7 @@ class Discriminator(keras.Model):
         self.leakyrelu4 = layers.LeakyReLU(alpha)
         self.dropout4 = layers.Dropout(dropout)
 
-        self.flatten = layers.Flatten()
+        self.flatten1 = layers.Flatten()
 
         self.dense1 = layers.Dense(
                                 1024, 
@@ -72,6 +73,9 @@ class Discriminator(keras.Model):
 
         self.dense2 = layers.Dense(512, kernel_regularizer=kernel_regularizer)
         self.leakyrelu6 = layers.LeakyReLU(alpha)
+        
+        self.flatten2 = layers.Flatten()
+        self.dense3 = layers.Dense(n_classes)
 
     def call(self, inputs):
         x = self.reshape(inputs)
@@ -91,15 +95,17 @@ class Discriminator(keras.Model):
         x = self.bn4(x)
         x = self.leakyrelu4(x)
         x = self.dropout4(x)
-        x = self.flatten(x)
+        x = self.flatten1(x)
         x = self.dense1(x)
         x = self.bn5(x)
         x = self.leakyrelu5(x)
         x = self.dropout5(x)
         x = self.dense2(x)
         x = self.leakyrelu6(x)
+        x = self.flatten2(x)
+        x = self.dense3(x)
 
         return x 
 
 if __name__ == "__main__":
-    discrminator = Discriminator(2048)
+    discrminator = Discriminator(2048,2)
