@@ -1,1 +1,15 @@
 \subsection{VAE}
+A VAE\cite{kingma2013auto} consists of two networks that encode a data sample x to a latent representation z and decode the latent representation back to data space, respectively:
+\begin{equation}
+	z = Enc(x) = q(z|x), x' \approx Dec(z) = p(x|z)
+\end{equation}
+The VAE regularizes the encoder by imposing a prior over the latent distribution $p(z)$. Typically $z \approx N (0, I)$ is chosen. The VAE loss is minus the sum of the expected log likelihood (the reconstruction error) and a prior regularization term:
+\begin{equation}
+	L_{VAE} = - \mathbb{E}_{q}\left[ log \frac{p(x|z)p(z)}{q(z|x)}\right] = L_{like} + L_{prior}
+\end{equation}
+with
+\begin{align}
+	L_{like} = - \mathbb{E}\left[log\frac{p(x|z)}{•}\right]\\
+	L_{prior} = - D_{KL}\left(q(z|x)||p(z)\right)
+\end{align}
+where $D_{KL}$ is the Kullback-Leibler divergence

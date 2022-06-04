@@ -1,1 +1,16 @@
 \subsection{VAEGAN}
+\cite{larsen2016autoencoding} proposes a combination of VAE and GAN, that outperforms traditional VAEs. A property of GAN is that its discriminator network implicitly has to learn a rich similarity metric for inputs, so as to discriminate them from generated data. They exploit this observation so as to transfer the properties of input learned by the discriminator into a more abstract reconstruction error for the VAE. The end result will be a method that combines the advantage of GAN as a high quality generative model and VAE as a method that produces an encoder of data into the latent space $z$.
+
+Specifically, since element-wise reconstruction errors are not adequate for images and other signals with invariances, we propose replacing the VAE reconstruction (expected log likelihood) error term from Eq. 3 with a reconstruction error expressed in the GAN discriminator. To achieve this, let $Dis_{l}(x)$ denote the hidden representation of the $l$th layer of the discriminator. We introduce a Gaussian observation model for $Dis_{l}(x)$ with mean $Dis_{l}(x')$ and identity covariance:
+\begin{equation}
+	p(Dis_{l}(x)|z) = N(Dis_{l}(x)| Dis_{l}(x'), I)
+\end{equation}
+where $x' \approx Dec(z)$ is the sample from the decoder of x. We can now replace the VAE error of Eq. 3 with 
+\begin{equation}
+	L^{Dis_l}_{llike} = - E_{q(z|x)}[log p(Dis_{l}(x)|z)]
+\end{equation}
+We train our combined model with the triple criterion
+\begin{equation}
+	L = L_{prior} + L^{Dis_l}_{llike} + L_{GAN}
+\end{equation}
+Notably, we optimize the VAE wrt. $L_{GAN}$ which we regard as a style error in addition to the reconstruction error which can be interpreted as a content error using the terminology from Gatys et al. (2015). Moreover, since both Dec and Gen map from z to x, we share the parameters between the two (or in other words, we use Dec instead of Gen in Eq. 5). In practice, we have observed the devil in the details during development and training of this model. We therefore provide a list of practical considerations in this section. We refer to Fig. 2 and Alg. 1 for overviews of the training procedure.

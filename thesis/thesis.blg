@@ -2,23 +2,27 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
-Illegal, another \bibstyle command---line 154 of file thesis.aux
+Illegal, another \bibstyle command---line 165 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 155 of file thesis.aux
+Illegal, another \bibdata command---line 166 of file thesis.aux
  : \bibdata
  :         {./references/chapter-2}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 218 of file thesis.aux
+Illegal, another \bibstyle command---line 231 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 219 of file thesis.aux
+Illegal, another \bibdata command---line 232 of file thesis.aux
  : \bibdata
  :         {./references/chapter-3}
 I'm skipping whatever remains of this command
 Database file #1: ./references/chapter-1.bib
+Warning--I didn't find a database entry for "li2019model"
+Warning--I didn't find a database entry for "kingma2013auto"
+Warning--I didn't find a database entry for "goodfellow2014generative"
+Warning--I didn't find a database entry for "larsen2016autoencoding"
 Warning--I didn't find a database entry for "collister2007megaz"
 Warning--I didn't find a database entry for "bilicki2013two"
 Warning--I didn't find a database entry for "benitez2000bayesian"
@@ -41,6 +45,7 @@ Warning--I didn't find a database entry for "elliott2015overlooked"
 Warning--I didn't find a database entry for "abdalla2011comparison"
 Warning--I didn't find a database entry for "hildebrandt2010phat"
 Warning--I didn't find a database entry for "dahlen2013critical"
+Warning--I didn't find a database entry for "hogan2015gaz"
 Warning--I didn't find a database entry for "accetta2022seventeenth"
 Warning--I didn't find a database entry for "gunn20062"
 Warning--I didn't find a database entry for "smith2002ugriz"
@@ -57,7 +62,7 @@ Warning--I didn't find a database entry for "wilstrup2021symbolic"
 Warning--I didn't find a database entry for "pysr"
 You've used 13 entries,
             2642 wiz_defined-function locations,
-            690 strings with 8765 characters,
+            695 strings with 8848 characters,
 and the built_in function-call counts, 10110 in all, are:
 = -- 930
 > -- 371

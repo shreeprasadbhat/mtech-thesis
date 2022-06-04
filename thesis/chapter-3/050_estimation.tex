@@ -17,3 +17,21 @@ The normalization factor baseline is the MSE between the data and the constant u
 	p = exp\left( - \frac{score_{new} - score_{old}}{alpha\times T} \right)
 \end{equation}
 The parameter T is referred to as temperature. It linearly decreases with each cycle or generation, starting with 1 in the first cycle and 0 in the last. The hyperparameter ncyclesperiterations = 200 sets the amount of cycles. We choose alpha = 1. If the new function describes the data better than the reference tree, $score_{new}$ $score_{old}$, the exponent has a positive sign and the new function is accepted. If the new sore is larger than the old score, the acceptance of the new function is given by p and hence exponentially suppressed. We use this default PySR form for our simple example and discuss a bettersuited form for our application in Sec. 3. The hyperparameter niterations = 300 defines the number of iterations of a full simulated annealing process. After each iteration the best formulas are compared to the hall of fame (HoF). For each complexity the best equation is chosen and saved in the output file. An equation of higher complexity is only added if its MSE is smaller than for previous formulas. Equations from different populations or the hall of fame can migrate to other populations. This process is affected by the parameters fractionReplaced = 0.5 and fractionReplacedHof = 0.2.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{density_plot.png}
+	\caption{Photometric redshift prediction and errorbars for a representative subsample of 300 galaxies. The errorbars are due to errors in the photometric data and so depend on the particular model chosen for $z_{phot}$}
+	\label{fig:density_plot}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{predictions.png}
+	\caption{Predictions for test data}
+	\label{fig:predictions}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{predictions_with_error.png}
+	\caption{Photometric redshift prediction and errorbars for a representative subsample of 300 galaxies. The errorbars are due to errors in the photometric data and so depend on the particular model chosen for $z_{phot}$}
+	\label{fig:predictions_with_error}
+\end{figure}

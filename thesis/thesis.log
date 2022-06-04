@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  28 MAY 2022 14:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  31 MAY 2022 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1213,6 +1213,9 @@ LaTeX Warning: Label `hildebrandt2010phat' multiply defined.
 LaTeX Warning: Label `dahlen2013critical' multiply defined.
 
 
+LaTeX Warning: Label `hogan2015gaz' multiply defined.
+
+
 LaTeX Warning: Label `accetta2022seventeenth' multiply defined.
 
 
@@ -1319,6 +1322,9 @@ LaTeX Warning: Label `hildebrandt2010phat' multiply defined.
 
 
 LaTeX Warning: Label `dahlen2013critical' multiply defined.
+
+
+LaTeX Warning: Label `hogan2015gaz' multiply defined.
 
 
 LaTeX Warning: Label `accetta2022seventeenth' multiply defined.
@@ -1854,8 +1860,11 @@ lot.png>] [26
 
 ])) (./chapter-2/chapter-2.tex [27]
 Chapter 2.
-(./chapter-2/./010_introduction.tex) (./chapter-2/./020_survey.tex)
-(./chapter-2/./030_observational_data.tex
+(./chapter-2/./010_introduction.tex) (./chapter-2/./020_survey.tex
+
+LaTeX Warning: Citation `li2019model' on page 28 undefined on input line 2.
+
+) (./chapter-2/./030_observational_data.tex
 
 LaTeX Warning: Citation `suzuki2012hubble' on page 28 undefined on input line 3
 .
@@ -1866,18 +1875,85 @@ Underfull \vbox (badness 1052) has occurred while \output is active []
  [28
 
 ]
-(./chapter-2/./041_vae.tex) (./chapter-2/./042_gan.tex)
-(./chapter-2/./043_vaegan.tex)) (./chapter-2/./050_toy_model.tex)
+(./chapter-2/./041_vae.tex
+
+LaTeX Warning: Citation `kingma2013auto' on page 29 undefined on input line 2.
+
+
+LaTeX Warning: Command \textbullet invalid in math mode on input line 14.
+
+
+LaTeX Warning: Command \textbullet invalid in math mode on input line 14.
+
+Missing character: There is no ˆ in font cmr10!
+
+LaTeX Warning: Command \textbullet invalid in math mode on input line 14.
+
+
+LaTeX Warning: Command \textbullet invalid in math mode on input line 14.
+
+Missing character: There is no ˆ in font cmr10!
+) (./chapter-2/./042_gan.tex
+
+LaTeX Warning: Citation `goodfellow2014generative' on page 29 undefined on inpu
+t line 2.
+
+) (./chapter-2/./043_vaegan.tex
+
+LaTeX Warning: Citation `larsen2016autoencoding' on page 29 undefined on input 
+line 2.
+
+
+Underfull \vbox (badness 1859) has occurred while \output is active []
+
+ [29]))
+(./chapter-2/./050_toy_model.tex [30]
+<./chapter-2/images/toy/dist_toy_models.png, id=544, 462.528pt x 346.896pt>
+File: ./chapter-2/images/toy/dist_toy_models.png Graphic file (type png)
+<use ./chapter-2/images/toy/dist_toy_models.png>
+Package pdftex.def Info: ./chapter-2/images/toy/dist_toy_models.png  used on in
+put line 23.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+<./chapter-2/images/toy/true_vs_reconstructed.png, id=545, 462.528pt x 346.896p
+t>
+File: ./chapter-2/images/toy/true_vs_reconstructed.png Graphic file (type png)
+<use ./chapter-2/images/toy/true_vs_reconstructed.png>
+Package pdftex.def Info: ./chapter-2/images/toy/true_vs_reconstructed.png  used
+ on input line 32.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+)
 (./chapter-2/./060_dark_energy_models.tex
-Overfull \hbox (2.86389pt too wide) in paragraph at lines 2--3
+<./chapter-2/images/dark_energy/samples.png, id=546, 462.528pt x 346.896pt>
+File: ./chapter-2/images/dark_energy/samples.png Graphic file (type png)
+<use ./chapter-2/images/dark_energy/samples.png>
+Package pdftex.def Info: ./chapter-2/images/dark_energy/samples.png  used on in
+put line 4.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+
+Overfull \hbox (2.86389pt too wide) in paragraph at lines 8--9
 \T1/cmr/m/n/10 We study the model com-par-i-son prob-lem among three dark en-er
 gy mod-els: $\OT1/cmr/m/n/10 (1)\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 (\OML/cmm/m/i
 t/10 z\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1(^^C[]); (2)$
  []
 
-[29]) (./chapter-2/./070_conclusion.tex) (./thesis.bbl [30]pdfTeX warning (ext4
-): destination with the same identifier (name{cite.riess1998observational}) has
- been already used, duplicate ignored
+
+Underfull \vbox (badness 2753) has occurred while \output is active []
+
+ [31 <./chapter-2/images/toy/dist_toy_models.png>] [32 <./chapter-2/images/toy/
+true_vs_reconstructed.png>] [33 <./chapter-2/images/dark_energy/samples.png>]
+<./chapter-2/images/dark_energy/true_vs_reconstructed.png, id=566, 462.528pt x 
+346.896pt>
+File: ./chapter-2/images/dark_energy/true_vs_reconstructed.png Graphic file (ty
+pe png)
+<use ./chapter-2/images/dark_energy/true_vs_reconstructed.png>
+Package pdftex.def Info: ./chapter-2/images/dark_energy/true_vs_reconstructed.p
+ng  used on input line 32.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+)
+(./chapter-2/./070_conclusion.tex) (./thesis.bbl [34] [35 <./chapter-2/images/d
+ark_energy/true_vs_reconstructed.png>]pdfTeX warning (ext4): destination with t
+he same identifier (name{cite.riess1998observational}) has been already used, d
+uplicate ignored
 <to be read again> 
                    \relax 
 l.4 \bibitem{riess1998observational}
@@ -1933,7 +2009,7 @@ l.77 \bibitem{suzuki2012hubble}
 <to be read again> 
                    \relax 
 l.89 \bibitem{scikit-learn}
-                            [31
+                            [36
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cite.d2005fi
 ts}) has been already used, duplicate ignored
@@ -1951,7 +2027,7 @@ ed
 <to be read again> 
                    \relax 
 l.115 \bibitem{tensorflow2015-whitepaper}
-                                         )) (./chapter-3/chapter-3.tex [32]
+                                         )) (./chapter-3/chapter-3.tex [37]
 Chapter 3.
 (./chapter-3/./010_introduction.tex) (./chapter-3/./020_survey.tex)
 (./chapter-3/./030_observational_data.tex
@@ -1965,7 +2041,7 @@ ceCodePro-TLF.
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 3.
 
-[33
+[38
 
 ] (./chapter-3/././031_SDSS_DR17.tex
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
@@ -1988,14 +2064,31 @@ Overfull \hbox (95.57642pt too wide) in paragraph at lines 49--49
  bands) to ensure that you don't get junk objects.[] 
  []
 
-[34])) (./chapter-3/./040_methodology.tex (./chapter-3/./041_SR.tex))
-(./chapter-3/./050_estimation.tex
-Underfull \vbox (badness 1616) has occurred while \output is active []
-
- [35])
-(./chapter-3/./060_conclusion.tex) (./thesis.bbl [36]pdfTeX warning (ext4): des
-tination with the same identifier (name{cite.riess1998observational}) has been 
-already used, duplicate ignored
+[39])) (./chapter-3/./040_methodology.tex (./chapter-3/./041_SR.tex))
+(./chapter-3/./050_estimation.tex [40]
+<./chapter-3/images/density_plot.png, id=680, 462.528pt x 346.896pt>
+File: ./chapter-3/images/density_plot.png Graphic file (type png)
+<use ./chapter-3/images/density_plot.png>
+Package pdftex.def Info: ./chapter-3/images/density_plot.png  used on input lin
+e 22.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+<./chapter-3/images/predictions.png, id=681, 462.528pt x 346.896pt>
+File: ./chapter-3/images/predictions.png Graphic file (type png)
+<use ./chapter-3/images/predictions.png>
+Package pdftex.def Info: ./chapter-3/images/predictions.png  used on input line
+ 28.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+<./chapter-3/images/predictions_with_error.png, id=682, 462.528pt x 346.896pt>
+File: ./chapter-3/images/predictions_with_error.png Graphic file (type png)
+<use ./chapter-3/images/predictions_with_error.png>
+Package pdftex.def Info: ./chapter-3/images/predictions_with_error.png  used on
+ input line 34.
+(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
+) (./chapter-3/./060_conclusion.tex)
+(./thesis.bbl [41] [42 <./chapter-3/images/density_plot.png>] [43 <./chapter-3/
+images/predictions.png>] [44 <./chapter-3/images/predictions_with_error.png>]pd
+fTeX warning (ext4): destination with the same identifier (name{cite.riess1998o
+bservational}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.4 \bibitem{riess1998observational}
@@ -2051,7 +2144,7 @@ l.77 \bibitem{suzuki2012hubble}
 <to be read again> 
                    \relax 
 l.89 \bibitem{scikit-learn}
-                            [37
+                            [45
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cite.d2005fi
 ts}) has been already used, duplicate ignored
@@ -2069,7 +2162,7 @@ ed
 <to be read again> 
                    \relax 
 l.115 \bibitem{tensorflow2015-whitepaper}
-                                         )) [38]
+                                         )) [46]
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 18.
 See the caption package documentation for explanation.
@@ -2095,11 +2188,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
  ) 
 Here is how much of TeX's memory you used:
- 35512 strings out of 481239
- 819747 string characters out of 5920377
- 1208281 words of memory out of 5000000
- 49752 multiletter control sequences out of 15000+600000
- 556460 words of font info for 82 fonts, out of 8000000 for 9000
+ 35600 strings out of 481239
+ 822104 string characters out of 5920377
+ 1209117 words of memory out of 5000000
+ 49797 multiletter control sequences out of 15000+600000
+ 556795 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,115p,2176b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.pysr} has been referenced but does not exist
@@ -2143,6 +2236,9 @@ ist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.accetta2022seventeenth} has been referenced bu
 t does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.hogan2015gaz} has been referenced but does not
+ exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{cite.dahlen2013critical} has been referenced but do
 es not exist, replaced by a fixed one
@@ -2216,25 +2312,27 @@ texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}</usr/share/texlive/texmf
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfti1000.pfb>
-Output written on thesis.pdf (44 pages, 1025802 bytes).
+nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfb
+x1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
+0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1
+000.pfb>
+Output written on thesis.pdf (52 pages, 1302993 bytes).
 PDF statistics:
- 771 PDF objects out of 1000 (max. 8388607)
- 661 compressed objects within 7 object streams
- 199 named destinations out of 1000 (max. 500000)
- 498 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 851 PDF objects out of 1000 (max. 8388607)
+ 716 compressed objects within 8 object streams
+ 223 named destinations out of 1000 (max. 500000)
+ 533 words of extra memory for PDF output out of 10000 (max. 10000000)
 
