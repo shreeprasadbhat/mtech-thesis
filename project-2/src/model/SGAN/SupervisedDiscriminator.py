@@ -3,16 +3,16 @@ from tensorflow.keras import layers
 
 class SupervisedDiscriminator(keras.Model):
 
-    def __init__(self, n_classes, discriminator):
+    def __init__(self, discriminator):
         super().__init__()
         self.discriminator = discriminator
-        self.dense = layers.Dense(n_classes)
+        self.softmax = layers.Softmax() 
 
     def call(self, inputs):
         x = self.discriminator(inputs)
-        x = self.dense(x)
+        x = self.softmax(x)
         return x
 
 if __name__ == '__main__':
     from Discriminator import Discriminator
-    SupervisedDiscriminator(3, Discriminator(2048))
+    SupervisedDiscriminator(Discriminator(2048, 2))

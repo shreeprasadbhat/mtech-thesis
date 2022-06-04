@@ -22,7 +22,6 @@ class Generator(keras.Model):
         self.linear = layers.Activation('linear')
          
     def call(self, inputs):
-        print(inputs)
         x = self.reshape(inputs)
         x = self.conv1(x)
         x = self.bn1(x)
@@ -39,7 +38,6 @@ class Generator(keras.Model):
         x = self.flatten(x)
         x = self.dense(x)
         x = self.linear(x)
-        print(x)
         return x 
 
 if __name__ == "__main__":
