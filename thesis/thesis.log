@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  31 MAY 2022 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  3 JUN 2022 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,253 +1147,109 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 LaTeX Warning: Label `fig:HD_GRB_GP' multiply defined.
 
 
-LaTeX Warning: Label `collister2007megaz' multiply defined.
+LaTeX Warning: Label `riess1998observational' multiply defined.
 
 
-LaTeX Warning: Label `bilicki2013two' multiply defined.
+LaTeX Warning: Label `perlmutter1999measurements' multiply defined.
 
 
-LaTeX Warning: Label `benitez2000bayesian' multiply defined.
+LaTeX Warning: Label `schaefer2007hubble' multiply defined.
 
 
-LaTeX Warning: Label `brammer2008eazy' multiply defined.
+LaTeX Warning: Label `li2007variation' multiply defined.
 
 
-LaTeX Warning: Label `kotulla2009impact' multiply defined.
+LaTeX Warning: Label `basilakos2008testing' multiply defined.
 
 
-LaTeX Warning: Label `dahlen2010detailed' multiply defined.
+LaTeX Warning: Label `wang2011updated' multiply defined.
 
 
-LaTeX Warning: Label `bolzonella2000photometric' multiply defined.
+LaTeX Warning: Label `tang2021model' multiply defined.
 
 
-LaTeX Warning: Label `arnouts1999measuring' multiply defined.
+LaTeX Warning: Label `scolnic2018complete' multiply defined.
 
 
-LaTeX Warning: Label `ilbert2006accurate' multiply defined.
+LaTeX Warning: Label `suzuki2012hubble' multiply defined.
 
 
-LaTeX Warning: Label `assef2008low' multiply defined.
+LaTeX Warning: Label `scikit-learn' multiply defined.
 
 
-LaTeX Warning: Label `assef2010low' multiply defined.
+LaTeX Warning: Label `d2005fits' multiply defined.
 
 
-LaTeX Warning: Label `feldmann2006zurich' multiply defined.
+LaTeX Warning: Label `emcee' multiply defined.
 
 
-LaTeX Warning: Label `collister2004annz' multiply defined.
+LaTeX Warning: Label `tensorflow2015-whitepaper' multiply defined.
 
 
-LaTeX Warning: Label `gerdes2010arborz' multiply defined.
+LaTeX Warning: Label `riess1998observational' multiply defined.
 
 
-LaTeX Warning: Label `wolf2009bayesian' multiply defined.
+LaTeX Warning: Label `perlmutter1999measurements' multiply defined.
 
 
-LaTeX Warning: Label `csabai2007multidimensional' multiply defined.
+LaTeX Warning: Label `schaefer2007hubble' multiply defined.
 
 
-LaTeX Warning: Label `carliles2010random' multiply defined.
+LaTeX Warning: Label `li2007variation' multiply defined.
 
 
-LaTeX Warning: Label `brescia2014catalogue' multiply defined.
+LaTeX Warning: Label `basilakos2008testing' multiply defined.
 
 
-LaTeX Warning: Label `elliott2015overlooked' multiply defined.
+LaTeX Warning: Label `wang2011updated' multiply defined.
 
 
-LaTeX Warning: Label `abdalla2011comparison' multiply defined.
+LaTeX Warning: Label `tang2021model' multiply defined.
 
 
-LaTeX Warning: Label `hildebrandt2010phat' multiply defined.
+LaTeX Warning: Label `scolnic2018complete' multiply defined.
 
 
-LaTeX Warning: Label `dahlen2013critical' multiply defined.
+LaTeX Warning: Label `suzuki2012hubble' multiply defined.
 
 
-LaTeX Warning: Label `hogan2015gaz' multiply defined.
+LaTeX Warning: Label `scikit-learn' multiply defined.
 
 
-LaTeX Warning: Label `accetta2022seventeenth' multiply defined.
+LaTeX Warning: Label `d2005fits' multiply defined.
 
 
-LaTeX Warning: Label `gunn20062' multiply defined.
+LaTeX Warning: Label `emcee' multiply defined.
 
 
-LaTeX Warning: Label `smith2002ugriz' multiply defined.
-
-
-LaTeX Warning: Label `eisenstein2011sdss' multiply defined.
-
-
-LaTeX Warning: Label `li2008casjobs' multiply defined.
-
-
-LaTeX Warning: Label `schmidt2009distilling' multiply defined.
-
-
-LaTeX Warning: Label `udrescu2020ai' multiply defined.
-
-
-LaTeX Warning: Label `wu2019toward' multiply defined.
-
-
-LaTeX Warning: Label `cranmer2020discovering' multiply defined.
-
-
-LaTeX Warning: Label `villaescusa2021camels' multiply defined.
-
-
-LaTeX Warning: Label `kim2020integration' multiply defined.
-
-
-LaTeX Warning: Label `liu2021machine' multiply defined.
-
-
-LaTeX Warning: Label `wilstrup2021symbolic' multiply defined.
-
-
-LaTeX Warning: Label `pysr' multiply defined.
-
-
-LaTeX Warning: Label `collister2007megaz' multiply defined.
-
-
-LaTeX Warning: Label `bilicki2013two' multiply defined.
-
-
-LaTeX Warning: Label `benitez2000bayesian' multiply defined.
-
-
-LaTeX Warning: Label `brammer2008eazy' multiply defined.
-
-
-LaTeX Warning: Label `kotulla2009impact' multiply defined.
-
-
-LaTeX Warning: Label `dahlen2010detailed' multiply defined.
-
-
-LaTeX Warning: Label `bolzonella2000photometric' multiply defined.
-
-
-LaTeX Warning: Label `arnouts1999measuring' multiply defined.
-
-
-LaTeX Warning: Label `ilbert2006accurate' multiply defined.
-
-
-LaTeX Warning: Label `assef2008low' multiply defined.
-
-
-LaTeX Warning: Label `assef2010low' multiply defined.
-
-
-LaTeX Warning: Label `feldmann2006zurich' multiply defined.
-
-
-LaTeX Warning: Label `collister2004annz' multiply defined.
-
-
-LaTeX Warning: Label `gerdes2010arborz' multiply defined.
-
-
-LaTeX Warning: Label `wolf2009bayesian' multiply defined.
-
-
-LaTeX Warning: Label `csabai2007multidimensional' multiply defined.
-
-
-LaTeX Warning: Label `carliles2010random' multiply defined.
-
-
-LaTeX Warning: Label `brescia2014catalogue' multiply defined.
-
-
-LaTeX Warning: Label `elliott2015overlooked' multiply defined.
-
-
-LaTeX Warning: Label `abdalla2011comparison' multiply defined.
-
-
-LaTeX Warning: Label `hildebrandt2010phat' multiply defined.
-
-
-LaTeX Warning: Label `dahlen2013critical' multiply defined.
-
-
-LaTeX Warning: Label `hogan2015gaz' multiply defined.
-
-
-LaTeX Warning: Label `accetta2022seventeenth' multiply defined.
-
-
-LaTeX Warning: Label `gunn20062' multiply defined.
-
-
-LaTeX Warning: Label `smith2002ugriz' multiply defined.
-
-
-LaTeX Warning: Label `eisenstein2011sdss' multiply defined.
-
-
-LaTeX Warning: Label `li2008casjobs' multiply defined.
-
-
-LaTeX Warning: Label `schmidt2009distilling' multiply defined.
-
-
-LaTeX Warning: Label `udrescu2020ai' multiply defined.
-
-
-LaTeX Warning: Label `wu2019toward' multiply defined.
-
-
-LaTeX Warning: Label `cranmer2020discovering' multiply defined.
-
-
-LaTeX Warning: Label `villaescusa2021camels' multiply defined.
-
-
-LaTeX Warning: Label `kim2020integration' multiply defined.
-
-
-LaTeX Warning: Label `liu2021machine' multiply defined.
-
-
-LaTeX Warning: Label `wilstrup2021symbolic' multiply defined.
-
-
-LaTeX Warning: Label `pysr' multiply defined.
+LaTeX Warning: Label `tensorflow2015-whitepaper' multiply defined.
 
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 27.
 LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 2
-6.
+7.
  (/usr/share/texlive/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    ... okay on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1426,7 +1282,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring ON on input line 26.
+Package hyperref Info: Link coloring ON on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1439,9 +1295,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count364
 )
-LaTeX Info: Redefining \ref on input line 26.
-LaTeX Info: Redefining \pageref on input line 26.
-LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write6
@@ -1455,12 +1311,12 @@ Package epstopdf Info: Source file: <logo.eps>
 (epstopdf)                    size: 9702 bytes
 (epstopdf)             Command: <repstopdf --outfile=logo-eps-converted-to.pdf 
 logo.eps>
-(epstopdf)             \includegraphics on input line 26.
+(epstopdf)             \includegraphics on input line 27.
 Package epstopdf Info: Output file is already uptodate.
-<logo-eps-converted-to.pdf, id=206, 118.4425pt x 121.45375pt>
+<logo-eps-converted-to.pdf, id=218, 118.4425pt x 121.45375pt>
 File: logo-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-eps-converted-to.pdf>
-Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 26.
+Package pdftex.def Info: logo-eps-converted-to.pdf  used on input line 27.
 (pdftex.def)             Requested size: 113.81102pt x 116.70729pt.
  [1
 Non-PDF special ignored!
@@ -1514,14 +1370,6 @@ enefit from \pgfplotsset{compat=1.16} (current compat level: 1.14).
 Chapter 1.
 (./chapter-1/./010_introduction.tex
 
-LaTeX Warning: Citation `riess1998observational' on page 1 undefined on input l
-ine 2.
-
-
-LaTeX Warning: Citation `perlmutter1999measurements' on page 1 undefined on inp
-ut line 2.
-
-
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <56.9055> not available
 (Font)              size <35.83> substituted on input line 6.
 
@@ -1531,38 +1379,9 @@ LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <56.9055> not available
 
 
 
-]) (./chapter-1/./020_survey.tex
-
-LaTeX Warning: Citation `schaefer2007hubble' on page 2 undefined on input line 
-2.
-
-
-LaTeX Warning: Citation `li2007variation' on page 2 undefined on input line 2.
-
-
-LaTeX Warning: Citation `basilakos2008testing' on page 2 undefined on input lin
-e 2.
-
-
-LaTeX Warning: Citation `wang2011updated' on page 2 undefined on input line 2.
-
-
-LaTeX Warning: Citation `tang2021model' on page 2 undefined on input line 2.
-
-) (./chapter-1/./030_observational_data.tex
-
-LaTeX Warning: Citation `wang2011updated' on page 2 undefined on input line 3.
-
-
-LaTeX Warning: Citation `scolnic2018complete' on page 2 undefined on input line
- 5.
-
-
-LaTeX Warning: Citation `suzuki2012hubble' on page 2 undefined on input line 7.
-
-
-) (./chapter-1/./040_methodology.tex
-Overfull \hbox (20.8107pt too wide) in paragraph at lines 7--1
+]) (./chapter-1/./020_survey.tex) (./chapter-1/./030_observational_data.tex)
+(./chapter-1/./040_methodology.tex
+Overfull \hbox (20.38025pt too wide) in paragraph at lines 7--1
 \T1/cmr/m/n/10 The up-dated su-per-nova Union2.1[[]] com-pi-la-tion of 580 SNe 
 is avail-able at http://supernova.lbl.gov/Union
  []
@@ -1572,12 +1391,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--1
 
  []
 
-) (./chapter-1/./050_reconstruction_gp.tex [2]
+[2]) (./chapter-1/./050_reconstruction_gp.tex
 (./chapter-1/./051_training_gp.tex
-
-LaTeX Warning: Citation `scikit-learn' on page 3 undefined on input line 2.
-
-<./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png, id=311, 4
+<./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png, id=346, 4
 33.62pt x 289.08pt>
 File: ./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png Graph
 ic file (type png)
@@ -1585,7 +1401,11 @@ ic file (type png)
 Package pdftex.def Info: ./chapter-1/images/pantheon/gp/02_Sample_posterior_dis
 tibutions.png  used on input line 6.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
-<./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png, id=313, 433.62pt x 28
+
+Underfull \vbox (badness 1394) has occurred while \output is active []
+
+ [3]
+<./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png, id=358, 433.62pt x 28
 9.08pt>
 File: ./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png Graphic file (typ
 e png)
@@ -1594,27 +1414,22 @@ Package pdftex.def Info: ./chapter-1/images/pantheon/gp/03_Reconstruction_GP.pn
 g  used on input line 14.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) (./chapter-1/./052_testing_correlations.tex [3 <./chapter-1/images/pantheon/g
-p/02_Sample_posterior_distibutions.png>]
-Underfull \vbox (badness 1215) has occurred while \output is active []
-
- [4 <./chapter-1/images/pantheon/gp/03_Reconstruction_GP.png>] [5]
-
-LaTeX Warning: Citation `d2005fits' on page 6 undefined on input line 43.
-
-<./chapter-1/images/pantheon/gp/15_correlatin.png, id=347, 1084.05pt x 1445.4pt
+ [4 <./chapter-1/images/pantheon/gp/02_Sample_posterior_distibutions.png>])
+(./chapter-1/./052_testing_correlations.tex [5 <./chapter-1/images/pantheon/gp/
+03_Reconstruction_GP.png>] [6] [7]
+<./chapter-1/images/pantheon/gp/15_correlatin.png, id=396, 1084.05pt x 1445.4pt
 >
 File: ./chapter-1/images/pantheon/gp/15_correlatin.png Graphic file (type png)
 <use ./chapter-1/images/pantheon/gp/15_correlatin.png>
 Package pdftex.def Info: ./chapter-1/images/pantheon/gp/15_correlatin.png  used
- on input line 56.
+ on input line 109.
 (pdftex.def)             Requested size: 433.62pt x 578.14977pt.
+) (./chapter-1/./053_calibration.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./chapter-1/./053_calibration.tex [6]
+ [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
@@ -1631,7 +1446,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-<./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png, id=354, 722.7pt x 57
+<./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png, id=401, 722.7pt x 57
 8.16pt>
 File: ./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png Graphic file (ty
 pe png)
@@ -1639,14 +1454,12 @@ pe png)
 Package pdftex.def Info: ./chapter-1/images/pantheon/gp/16_GRB_reconstruction.p
 ng  used on input line 5.
 (pdftex.def)             Requested size: 433.62pt x 346.89867pt.
-) (./chapter-1/./054_constrain_dark_energy.tex
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: Citation `emcee' on page 7 undefined on input line 10.
-
-<./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png, id=355, 361.35pt x 
+ [9 <./chapter-1/images/pantheon/gp/15_correlatin.png>])
+(./chapter-1/./054_constrain_dark_energy.tex
+<./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png, id=409, 361.35pt x 
 361.35pt>
 File: ./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png Graphic file (t
 ype png)
@@ -1655,17 +1468,12 @@ Package pdftex.def Info: ./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.
 png  used on input line 13.
 (pdftex.def)             Requested size: 433.62pt x 433.62335pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 2478) has occurred while \output is active []
 
- [7]))
-(./chapter-1/./060_reconstruction_lstm.tex
-
-LaTeX Warning: Citation `tensorflow2015-whitepaper' on page 8 undefined on inpu
-t line 2.
-
-(./chapter-1/./061_training_lstm.tex [8 <./chapter-1/images/pantheon/gp/18_omeg
-a_M_corner_plot.png>]
-<./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png, id=371, 1084.05pt x 361
+ [10 <./chapter-1/images/pantheon/gp/16_GRB_reconstruction.png>]))
+(./chapter-1/./060_reconstruction_lstm.tex (./chapter-1/./061_training_lstm.tex
+[11 <./chapter-1/images/pantheon/gp/18_omega_M_corner_plot.png>]
+<./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png, id=429, 1084.05pt x 361
 .35pt>
 File: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png Graphic file (type 
 png)
@@ -1673,7 +1481,7 @@ png)
 Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png 
  used on input line 5.
 (pdftex.def)             Requested size: 433.62pt x 144.53743pt.
-<./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png, id=372, 433.62p
+<./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png, id=430, 433.62p
 t x 289.08pt>
 File: ./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png Graphic fil
 e (type png)
@@ -1681,14 +1489,12 @@ e (type png)
 Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/06_sample_reconstruct
 ion.png  used on input line 11.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
-) (./chapter-1/./062_testing_correlations.tex
+)
+(./chapter-1/./062_testing_correlations.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./chapter-1/images/pantheon/lstm/15_correlatin.png, id=373, 1084.05pt x 1445.4
+<./chapter-1/images/pantheon/lstm/15_correlatin.png, id=431, 1084.05pt x 1445.4
 pt>
 File: ./chapter-1/images/pantheon/lstm/15_correlatin.png Graphic file (type png
 )
@@ -1716,7 +1522,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-<./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png, id=374, 722.7pt x 
+<./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png, id=432, 722.7pt x 
 578.16pt>
 File: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction.png Graphic file (
 type png)
@@ -1728,7 +1534,7 @@ Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./chapter-1/./064_constrain_dark_energy.tex
-<./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png, id=375, 361.35pt 
+<./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png, id=433, 361.35pt 
 x 361.35pt>
 File: ./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.png Graphic file 
 (type png)
@@ -1741,7 +1547,7 @@ t.png  used on input line 4.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )) (./chapter-1/./070_analysis_union.tex (./chapter-1/././071_union_gp.tex
-<./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png, id=376, 433.
+<./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png, id=434, 433.
 62pt x 289.08pt>
 File: ./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png Graphic 
 file (type png)
@@ -1753,7 +1559,7 @@ utions.png  used on input line 7.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/03_Reconstruction_GP.png, id=377, 433.62pt x 289.0
+<./chapter-1/images/union/gp/03_Reconstruction_GP.png, id=435, 433.62pt x 289.0
 8pt>
 File: ./chapter-1/images/union/gp/03_Reconstruction_GP.png Graphic file (type p
 ng)
@@ -1761,20 +1567,21 @@ ng)
 Package pdftex.def Info: ./chapter-1/images/union/gp/03_Reconstruction_GP.png  
 used on input line 15.
 (pdftex.def)             Requested size: 433.62pt x 289.09251pt.
-[9]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/15_correlatin.png, id=384, 1084.05pt x 1445.4pt>
+[12 <./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png>]
+<./chapter-1/images/union/gp/15_correlatin.png, id=443, 1084.05pt x 1445.4pt>
 File: ./chapter-1/images/union/gp/15_correlatin.png Graphic file (type png)
 <use ./chapter-1/images/union/gp/15_correlatin.png>
 Package pdftex.def Info: ./chapter-1/images/union/gp/15_correlatin.png  used on
  input line 26.
 (pdftex.def)             Requested size: 433.62pt x 578.14977pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/16_GRB_reconstruction.png, id=385, 722.7pt x 578.1
+<./chapter-1/images/union/gp/16_GRB_reconstruction.png, id=444, 722.7pt x 578.1
 6pt>
 File: ./chapter-1/images/union/gp/16_GRB_reconstruction.png Graphic file (type 
 png)
@@ -1785,7 +1592,7 @@ Package pdftex.def Info: ./chapter-1/images/union/gp/16_GRB_reconstruction.png
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/gp/18_omega_M_corner_plot.png, id=386, 361.35pt x 361
+<./chapter-1/images/union/gp/18_omega_M_corner_plot.png, id=445, 361.35pt x 361
 .35pt>
 File: ./chapter-1/images/union/gp/18_omega_M_corner_plot.png Graphic file (type
  png)
@@ -1834,7 +1641,7 @@ Package pdftex.def Info: ./chapter-1/images/pantheon/lstm/16_GRB_reconstruction
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./chapter-1/images/union/lstm/18_omega_M_corner_plot.png, id=387, 361.35pt x 3
+<./chapter-1/images/union/lstm/18_omega_M_corner_plot.png, id=446, 361.35pt x 3
 61.35pt>
 File: ./chapter-1/images/union/lstm/18_omega_M_corner_plot.png Graphic file (ty
 pe png)
@@ -1845,39 +1652,70 @@ ng  used on input line 32.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-)) (./chapter-1/./080_conclusion.tex) (./thesis.bbl [10] [11] [12 <./chapter-1/
-images/pantheon/gp/15_correlatin.png>] [13 <./chapter-1/images/pantheon/gp/16_G
-RB_reconstruction.png> <./chapter-1/images/pantheon/lstm/05_epoch_vs_loss.png>]
-[14 <./chapter-1/images/pantheon/lstm/06_sample_reconstruction.png>] [15 <./cha
-pter-1/images/pantheon/lstm/15_correlatin.png>] [16 <./chapter-1/images/pantheo
-n/lstm/16_GRB_reconstruction.png>] [17 <./chapter-1/images/pantheon/lstm/18_ome
-ga_M_corner_plot.png>] [18 <./chapter-1/images/union/gp/02_Sample_posterior_dis
-tibutions.png> <./chapter-1/images/union/gp/03_Reconstruction_GP.png>] [19 <./c
-hapter-1/images/union/gp/15_correlatin.png>] [20 <./chapter-1/images/union/gp/1
-6_GRB_reconstruction.png>] [21 <./chapter-1/images/union/gp/18_omega_M_corner_p
-lot.png>] [22] [23] [24] [25 <./chapter-1/images/union/lstm/18_omega_M_corner_p
-lot.png>] [26
+)) (./chapter-1/./080_conclusion.tex) (./thesis.bbl [13 <./chapter-1/images/pan
+theon/lstm/06_sample_reconstruction.png>] [14] [15] [16 <./chapter-1/images/pan
+theon/lstm/15_correlatin.png>] [17 <./chapter-1/images/pantheon/lstm/16_GRB_rec
+onstruction.png>] [18 <./chapter-1/images/pantheon/lstm/18_omega_M_corner_plot.
+png>] [19 <./chapter-1/images/union/gp/02_Sample_posterior_distibutions.png> <.
+/chapter-1/images/union/gp/03_Reconstruction_GP.png>] [20 <./chapter-1/images/u
+nion/gp/15_correlatin.png>] [21 <./chapter-1/images/union/gp/16_GRB_reconstruct
+ion.png>] [22 <./chapter-1/images/union/gp/18_omega_M_corner_plot.png>]
+[23] [24] [25] [26 <./chapter-1/images/union/lstm/18_omega_M_corner_plot.png>]
+[27
 
-])) (./chapter-2/chapter-2.tex [27]
+])) (./chapter-2/chapter-2.tex [28]
 Chapter 2.
-(./chapter-2/./010_introduction.tex) (./chapter-2/./020_survey.tex
+(./chapter-2/./010_introduction.tex
 
-LaTeX Warning: Citation `li2019model' on page 28 undefined on input line 2.
+LaTeX Warning: Citation `aghanim2020planck' on page 29 undefined on input line 
+2.
 
-) (./chapter-2/./030_observational_data.tex
 
-LaTeX Warning: Citation `suzuki2012hubble' on page 28 undefined on input line 3
-.
+LaTeX Warning: Citation `alam2017clustering' on page 29 undefined on input line
+ 2.
 
-) (./chapter-2/./040_methodology.tex
-Underfull \vbox (badness 1052) has occurred while \output is active []
 
- [28
+LaTeX Warning: Citation `zlatev1999quintessence' on page 29 undefined on input 
+line 2.
 
-]
-(./chapter-2/./041_vae.tex
 
-LaTeX Warning: Citation `kingma2013auto' on page 29 undefined on input line 2.
+LaTeX Warning: Citation `chevallier2001accelerating' on page 29 undefined on in
+put line 2.
+
+) (./chapter-2/./020_survey.tex
+
+LaTeX Warning: Citation `mackay1992evidence' on page 29 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `penny2006bayesian' on page 29 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `trotta2008bayes' on page 29 undefined on input line 2.
+
+
+
+LaTeX Warning: Citation `martin2011hunting' on page 29 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `basilakos2018dark' on page 29 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `lonappan2018bayesian' on page 29 undefined on input li
+ne 2.
+
+
+LaTeX Warning: Citation `li2019model' on page 29 undefined on input line 2.
+
+) (./chapter-2/./030_observational_data.tex [29
+
+])
+(./chapter-2/./040_methodology.tex (./chapter-2/./041_vae.tex
+
+LaTeX Warning: Citation `kingma2013auto' on page 30 undefined on input line 2.
 
 
 LaTeX Warning: Command \textbullet invalid in math mode on input line 14.
@@ -1895,26 +1733,31 @@ LaTeX Warning: Command \textbullet invalid in math mode on input line 14.
 Missing character: There is no ˆ in font cmr10!
 ) (./chapter-2/./042_gan.tex
 
-LaTeX Warning: Citation `goodfellow2014generative' on page 29 undefined on inpu
+LaTeX Warning: Citation `goodfellow2014generative' on page 30 undefined on inpu
 t line 2.
 
-) (./chapter-2/./043_vaegan.tex
 
-LaTeX Warning: Citation `larsen2016autoencoding' on page 29 undefined on input 
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [30])
+(./chapter-2/./043_vaegan.tex
+
+LaTeX Warning: Citation `larsen2016autoencoding' on page 31 undefined on input 
 line 2.
 
+)) (./chapter-2/./050_toy_model.tex
+Underfull \vbox (badness 3735) has occurred while \output is active []
 
-Underfull \vbox (badness 1859) has occurred while \output is active []
-
- [29]))
-(./chapter-2/./050_toy_model.tex [30]
-<./chapter-2/images/toy/dist_toy_models.png, id=544, 462.528pt x 346.896pt>
+ [31]
+<./chapter-2/images/toy/dist_toy_models.png, id=578, 462.528pt x 346.896pt>
 File: ./chapter-2/images/toy/dist_toy_models.png Graphic file (type png)
 <use ./chapter-2/images/toy/dist_toy_models.png>
 Package pdftex.def Info: ./chapter-2/images/toy/dist_toy_models.png  used on in
 put line 23.
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./chapter-2/images/toy/true_vs_reconstructed.png, id=545, 462.528pt x 346.896p
+
+[32 <./chapter-2/images/toy/dist_toy_models.png>]
+<./chapter-2/images/toy/true_vs_reconstructed.png, id=586, 462.528pt x 346.896p
 t>
 File: ./chapter-2/images/toy/true_vs_reconstructed.png Graphic file (type png)
 <use ./chapter-2/images/toy/true_vs_reconstructed.png>
@@ -1923,37 +1766,51 @@ Package pdftex.def Info: ./chapter-2/images/toy/true_vs_reconstructed.png  used
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
 )
 (./chapter-2/./060_dark_energy_models.tex
-<./chapter-2/images/dark_energy/samples.png, id=546, 462.528pt x 346.896pt>
+<./chapter-2/images/dark_energy/samples.png, id=587, 462.528pt x 346.896pt>
 File: ./chapter-2/images/dark_energy/samples.png Graphic file (type png)
 <use ./chapter-2/images/dark_energy/samples.png>
 Package pdftex.def Info: ./chapter-2/images/dark_energy/samples.png  used on in
 put line 4.
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
 
-Overfull \hbox (2.86389pt too wide) in paragraph at lines 8--9
-\T1/cmr/m/n/10 We study the model com-par-i-son prob-lem among three dark en-er
-gy mod-els: $\OT1/cmr/m/n/10 (1)\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 (\OML/cmm/m/i
-t/10 z\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1(^^C[]); (2)$
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9.
 
 
-Underfull \vbox (badness 2753) has occurred while \output is active []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\Lambda' on input line 9.
 
- [31 <./chapter-2/images/toy/dist_toy_models.png>] [32 <./chapter-2/images/toy/
-true_vs_reconstructed.png>] [33 <./chapter-2/images/dark_energy/samples.png>]
-<./chapter-2/images/dark_energy/true_vs_reconstructed.png, id=566, 462.528pt x 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 9.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 14.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\omega' on input line 14.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 14.
+
+[33 <./chapter-2/images/toy/true_vs_reconstructed.png>] [34 <./chapter-2/images
+/dark_energy/samples.png>]
+<./chapter-2/images/dark_energy/true_vs_reconstructed.png, id=603, 462.528pt x 
 346.896pt>
 File: ./chapter-2/images/dark_energy/true_vs_reconstructed.png Graphic file (ty
 pe png)
 <use ./chapter-2/images/dark_energy/true_vs_reconstructed.png>
 Package pdftex.def Info: ./chapter-2/images/dark_energy/true_vs_reconstructed.p
-ng  used on input line 32.
+ng  used on input line 47.
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-)
-(./chapter-2/./070_conclusion.tex) (./thesis.bbl [34] [35 <./chapter-2/images/d
-ark_energy/true_vs_reconstructed.png>]pdfTeX warning (ext4): destination with t
-he same identifier (name{cite.riess1998observational}) has been already used, d
-uplicate ignored
+) (./chapter-2/./070_conclusion.tex) (./thesis.bbl
+[35] [36 <./chapter-2/images/dark_energy/true_vs_reconstructed.png>]pdfTeX warn
+ing (ext4): destination with the same identifier (name{cite.riess1998observatio
+nal}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.4 \bibitem{riess1998observational}
@@ -2009,7 +1866,7 @@ l.77 \bibitem{suzuki2012hubble}
 <to be read again> 
                    \relax 
 l.89 \bibitem{scikit-learn}
-                            [36
+                            [37
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cite.d2005fi
 ts}) has been already used, duplicate ignored
@@ -2027,13 +1884,121 @@ ed
 <to be read again> 
                    \relax 
 l.115 \bibitem{tensorflow2015-whitepaper}
-                                         )) (./chapter-3/chapter-3.tex [37]
+                                         )) (./chapter-3/chapter-3.tex [38]
 Chapter 3.
-(./chapter-3/./010_introduction.tex) (./chapter-3/./020_survey.tex)
-(./chapter-3/./030_observational_data.tex
+(./chapter-3/./010_introduction.tex) (./chapter-3/./020_survey.tex
+
+LaTeX Warning: Citation `collister2007megaz' on page 39 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `bilicki2013two' on page 39 undefined on input line 2.
+
+
+LaTeX Warning: Citation `benitez2000bayesian' on page 39 undefined on input lin
+e 2.
+
+
+LaTeX Warning: Citation `brammer2008eazy' on page 39 undefined on input line 2.
+
+
+
+LaTeX Warning: Citation `kotulla2009impact' on page 39 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `dahlen2010detailed' on page 39 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `bolzonella2000photometric' on page 39 undefined on inp
+ut line 2.
+
+
+LaTeX Warning: Citation `arnouts1999measuring' on page 39 undefined on input li
+ne 2.
+
+
+LaTeX Warning: Citation `ilbert2006accurate' on page 39 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `assef2008low' on page 39 undefined on input line 2.
+
+
+LaTeX Warning: Citation `assef2010low' on page 39 undefined on input line 2.
+
+
+LaTeX Warning: Citation `feldmann2006zurich' on page 39 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `collister2004annz' on page 39 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `gerdes2010arborz' on page 39 undefined on input line 2
+.
+
+
+LaTeX Warning: Citation `wolf2009bayesian' on page 39 undefined on input line 2
+.
+
+
+LaTeX Warning: Citation `csabai2007multidimensional' on page 39 undefined on in
+put line 2.
+
+
+LaTeX Warning: Citation `carliles2010random' on page 39 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `brescia2014catalogue' on page 39 undefined on input li
+ne 2.
+
+
+LaTeX Warning: Citation `elliott2015overlooked' on page 39 undefined on input l
+ine 2.
+
+
+LaTeX Warning: Citation `abdalla2011comparison' on page 39 undefined on input l
+ine 2.
+
+
+LaTeX Warning: Citation `hildebrandt2010phat' on page 39 undefined on input lin
+e 2.
+
+
+LaTeX Warning: Citation `dahlen2013critical' on page 39 undefined on input line
+ 2.
+
+
+LaTeX Warning: Citation `collister2004annz' on page 39 undefined on input line 
+2.
+
+
+LaTeX Warning: Citation `hogan2015gaz' on page 39 undefined on input line 2.
+
+) (./chapter-3/./030_observational_data.tex
+
+LaTeX Warning: Citation `accetta2022seventeenth' on page 39 undefined on input 
+line 3.
+
+
+LaTeX Warning: Citation `gunn20062' on page 39 undefined on input line 3.
+
+
+LaTeX Warning: Citation `smith2002ugriz' on page 39 undefined on input line 3.
+
+
+LaTeX Warning: Citation `eisenstein2011sdss' on page 39 undefined on input line
+ 3.
+
+
+LaTeX Warning: Citation `li2008casjobs' on page 39 undefined on input line 3.
+
 LaTeX Font Info:    Trying to load font information for T1+SourceCodePro-TLF on
  input line 3.
-
 (/usr/share/texlive/texmf-dist/tex/latex/sourcecodepro/T1SourceCodePro-TLF.fd
 File: T1SourceCodePro-TLF.fd 2018/02/18 (autoinst) Font definitions for T1/Sour
 ceCodePro-TLF.
@@ -2041,7 +2006,7 @@ ceCodePro-TLF.
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 7.19995pt on input line 3.
 
-[38
+[39
 
 ] (./chapter-3/././031_SDSS_DR17.tex
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
@@ -2064,31 +2029,68 @@ Overfull \hbox (95.57642pt too wide) in paragraph at lines 49--49
  bands) to ensure that you don't get junk objects.[] 
  []
 
-[39])) (./chapter-3/./040_methodology.tex (./chapter-3/./041_SR.tex))
-(./chapter-3/./050_estimation.tex [40]
-<./chapter-3/images/density_plot.png, id=680, 462.528pt x 346.896pt>
+[40])) (./chapter-3/./040_methodology.tex (./chapter-3/./041_SR.tex
+
+LaTeX Warning: Citation `schmidt2009distilling' on page 41 undefined on input l
+ine 3.
+
+
+LaTeX Warning: Citation `udrescu2020ai' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Citation `wu2019toward' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Citation `cranmer2020discovering' on page 41 undefined on input 
+line 3.
+
+
+LaTeX Warning: Citation `villaescusa2021camels' on page 41 undefined on input l
+ine 3.
+
+
+LaTeX Warning: Citation `kim2020integration' on page 41 undefined on input line
+ 3.
+
+
+LaTeX Warning: Citation `liu2021machine' on page 41 undefined on input line 3.
+
+
+LaTeX Warning: Citation `wilstrup2021symbolic' on page 41 undefined on input li
+ne 3.
+
+)) (./chapter-3/./050_estimation.tex
+
+LaTeX Warning: Citation `pysr' on page 41 undefined on input line 3.
+
+
+Underfull \vbox (badness 1616) has occurred while \output is active []
+
+ [41]
+<./chapter-3/images/density_plot.png, id=642, 462.528pt x 346.896pt>
 File: ./chapter-3/images/density_plot.png Graphic file (type png)
 <use ./chapter-3/images/density_plot.png>
 Package pdftex.def Info: ./chapter-3/images/density_plot.png  used on input lin
 e 22.
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./chapter-3/images/predictions.png, id=681, 462.528pt x 346.896pt>
+<./chapter-3/images/predictions.png, id=643, 462.528pt x 346.896pt>
 File: ./chapter-3/images/predictions.png Graphic file (type png)
 <use ./chapter-3/images/predictions.png>
 Package pdftex.def Info: ./chapter-3/images/predictions.png  used on input line
  28.
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./chapter-3/images/predictions_with_error.png, id=682, 462.528pt x 346.896pt>
+<./chapter-3/images/predictions_with_error.png, id=644, 462.528pt x 346.896pt>
 File: ./chapter-3/images/predictions_with_error.png Graphic file (type png)
 <use ./chapter-3/images/predictions_with_error.png>
 Package pdftex.def Info: ./chapter-3/images/predictions_with_error.png  used on
  input line 34.
 (pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-) (./chapter-3/./060_conclusion.tex)
-(./thesis.bbl [41] [42 <./chapter-3/images/density_plot.png>] [43 <./chapter-3/
-images/predictions.png>] [44 <./chapter-3/images/predictions_with_error.png>]pd
-fTeX warning (ext4): destination with the same identifier (name{cite.riess1998o
-bservational}) has been already used, duplicate ignored
+)
+(./chapter-3/./060_conclusion.tex) (./thesis.bbl [42] [43 <./chapter-3/images/d
+ensity_plot.png>] [44 <./chapter-3/images/predictions.png>] [45 <./chapter-3/im
+ages/predictions_with_error.png>]pdfTeX warning (ext4): destination with the sa
+me identifier (name{cite.riess1998observational}) has been already used, duplic
+ate ignored
 <to be read again> 
                    \relax 
 l.4 \bibitem{riess1998observational}
@@ -2144,7 +2146,7 @@ l.77 \bibitem{suzuki2012hubble}
 <to be read again> 
                    \relax 
 l.89 \bibitem{scikit-learn}
-                            [45
+                            [46
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cite.d2005fi
 ts}) has been already used, duplicate ignored
@@ -2162,18 +2164,18 @@ ed
 <to be read again> 
                    \relax 
 l.115 \bibitem{tensorflow2015-whitepaper}
-                                         )) [46]
+                                         )) [47]
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 18.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
 (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2C108F84EF44C6D1C3D837C4CBF9AD7C;3578.
+(rerunfilecheck)             Checksum: 7263298346067C3E7B9DB6D10CEED13E;3747.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2185,154 +2187,44 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 35600 strings out of 481239
- 822104 string characters out of 5920377
- 1209117 words of memory out of 5000000
- 49797 multiletter control sequences out of 15000+600000
+ 35533 strings out of 481239
+ 820703 string characters out of 5920377
+ 1218150 words of memory out of 5000000
+ 49763 multiletter control sequences out of 15000+600000
  556795 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,115p,2176b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{cite.pysr} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.wilstrup2021symbolic} has been referenced but 
-does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.liu2021machine} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.kim2020integration} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.villaescusa2021camels} has been referenced but
- does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.cranmer2020discovering} has been referenced bu
-t does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.wu2019toward} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.udrescu2020ai} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.schmidt2009distilling} has been referenced but
- does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.li2008casjobs} has been referenced but does no
-t exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.eisenstein2011sdss} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.smith2002ugriz} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.gunn20062} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.accetta2022seventeenth} has been referenced bu
-t does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.hogan2015gaz} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.dahlen2013critical} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.hildebrandt2010phat} has been referenced but d
-oes not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.abdalla2011comparison} has been referenced but
- does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.elliott2015overlooked} has been referenced but
- does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.brescia2014catalogue} has been referenced but 
-does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.carliles2010random} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.csabai2007multidimensional} has been reference
-d but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.wolf2009bayesian} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.gerdes2010arborz} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.collister2004annz} has been referenced but doe
-s not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.feldmann2006zurich} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.assef2010low} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.assef2008low} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.ilbert2006accurate} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.arnouts1999measuring} has been referenced but 
-does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.bolzonella2000photometric} has been referenced
- but does not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.dahlen2010detailed} has been referenced but do
-es not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.kotulla2009impact} has been referenced but doe
-s not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.brammer2008eazy} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.benitez2000bayesian} has been referenced but d
-oes not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.bilicki2013two} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{cite.collister2007megaz} has been referenced but do
-es not exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
-texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}</usr/share/texlive/texmf
--dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfb
-x1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
-0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1
-000.pfb>
-Output written on thesis.pdf (52 pages, 1302993 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfrm3583.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.p
+fb>
+Output written on thesis.pdf (53 pages, 1313758 bytes).
 PDF statistics:
- 851 PDF objects out of 1000 (max. 8388607)
- 716 compressed objects within 8 object streams
- 223 named destinations out of 1000 (max. 500000)
- 533 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 806 PDF objects out of 1000 (max. 8388607)
+ 670 compressed objects within 7 object streams
+ 190 named destinations out of 1000 (max. 500000)
+ 557 words of extra memory for PDF output out of 10000 (max. 10000000)
 

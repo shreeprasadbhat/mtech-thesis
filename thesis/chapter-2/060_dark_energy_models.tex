@@ -5,7 +5,22 @@
 	\caption{Samples from dark energy models}
 	\label{fig:dark_energy_samples}
 \end{figure}
-We study the model comparison problem among three dark energy models: $(1) \omega(z)=-1(\Lambda \mathrm{CDM}) ;(2)$ $\omega(z)=\omega_{D E}(\omega \mathrm{CDM}) ;(3) \omega(z)=\omega_{0}+\omega_{a} \frac{z}{1+z}$ (CPL), given a set of observations of distance moduli at different redshifts. The expansion rate of a spatially flat FRW universe is determined by the matter and dark energy,
+We consider three popular dark energy models to test out VAE-GAN network for model selection and interpolation.
+\subsection{$\Lambda$CDM}
+The equation of state parameter is
+\begin{equation}
+	\omega(z)=-1
+\end{equation}
+\subsection{$\omega$CDM}
+\begin{equation}
+	\omega(z)=\omega_{D E}
+\end{equation}
+\subsection{CPL}
+\begin{equation}
+	\omega(z)=\omega_{0}+\omega_{a} \frac{z}{1+z}
+\end{equation}
+\subsection{Distance Modulus}
+We evaluate these models at redshifts $z_{obs}$ given by Union2.1 data and randomly sampled redshifts between $(0.8 min(z_{obs}) - 1.2 * max(z_{obs})$. The expansion rate of a spatially flat FRW universe is determined by the matter and dark energy,
 $$
 H^{2}(z)=H_{0}^{2}\left\{\Omega_{m 0}(1+z)^{3}+\left(1-\Omega_{m 0}\right) \exp \left[3 \int \frac{1+\omega\left(z^{\prime}\right)}{1+z^{\prime}} d z^{\prime}\right]\right\}
 $$

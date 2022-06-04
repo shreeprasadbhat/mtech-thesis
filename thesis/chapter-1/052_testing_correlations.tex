@@ -10,12 +10,12 @@ The luminosity relations are connections between measurable parameters of the li
 \end{enumerate}
 
 \begin{align}
-& \log \frac{L}{\operatorname{erg} \mathrm{s}^{-1}}=a_{1}+b_{1} \log \frac{\tau_{\operatorname{lag}, i}}{0.1 s}, \\
-& \log \frac{L}{\operatorname{erg~s}^{-1}}=a_{2}+b_{2} \log \frac{V_{i}}{0.02}, \\
-& \log \frac{L}{\operatorname{erg~s}^{-1}}=a_{3}+b_{3} \log \frac{E_{p, i}}{300 \mathrm{keV}}\\
-\log \frac{E_{\gamma}}{\text { erg }}=a_{4}+b_{4} \log \frac{E_{p, i}}{300 \mathrm{keV}}, \\
-\log \frac{L}{\text { erg s }}=a_{5}+b_{5} \log \frac{\tau_{\mathrm{RT}, i}}{0.1 \mathrm{~s}}, \\
-\log \frac{E_{\text {iso }}}{\text { erg }}=a_{6}+b_{6} \log \frac{E_{p, i}}{300 \mathrm{keV}}
+\log \frac{L}{\operatorname{erg} \mathrm{s}^{-1}} &= a_{1}+b_{1} \log \frac{\tau_{\operatorname{lag}, i}}{0.1 s}, \\
+\log \frac{L}{\operatorname{erg~s}^{-1}} &= a_{2}+b_{2} \log \frac{V_{i}}{0.02}, \\
+ \log \frac{L}{\operatorname{erg~s}^{-1}} &= a_{3}+b_{3} \log \frac{E_{p, i}}{300 \mathrm{keV}}\\
+\log \frac{E_{\gamma}}{\text { erg }} &= a_{4}+b_{4} \log \frac{E_{p, i}}{300 \mathrm{keV}}, \\
+\log \frac{L}{\text { erg s }} &= a_{5}+b_{5} \log \frac{\tau_{\mathrm{RT}, i}}{0.1 \mathrm{~s}}, \\
+\log \frac{E_{\text {iso }}}{\text { erg }} &= a_{6}+b_{6} \log \frac{E_{p, i}}{300 \mathrm{keV}}
 \end{align}
 
 Assuming that GRBs radiate isotropically, the isotropic equivalent luminosity can be derived from the bolometric peak flux $P_{\text {bolo }}$ by (Schaefer 2007)
@@ -51,12 +51,7 @@ $$
 For each correlation and each redshift bin, By maximizing this joint likelihood function, we can derive the best-fitting parameters $a$, $b$ and the intrinsic scatter $\sigma_{int}$, where the intrinsic scatter $\sigma_{int}$ denotes any other unknown errors except for the measurement errors. The results of the fits and the number of GRBs used in each fit are summarized in \eqref{table_pantheon_gp}.
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{pantheon/gp/15_correlatin.png}
-	\caption{Luminsosity correlations best fit}
-	\label{fig:correlation_gp}
-\end{figure}
+
 
 \begin{table}
 \centering
@@ -108,3 +103,10 @@ Correlation & sample & N & a & $a_err$ & b & $b_err$ & $\sigma$ & $\sigma_{int}$
 We perform a Markov Chain Monte Carlo analysis to calculate the posterior probability density function (PDF) of parameter space. We assume a flat prior on all the free parameters and limit $\sigma_{\text {int }}>0$. Note that not all GRBs can be used to analyze each luminosity correlation, because not all the necessary quantities are measurable for some GRBs. For example, GRBs without measurement of the spectrum lag can not used in the $\tau_{\text {lag }}-L$ analysis. Hence, we present the best-fitting parameters, together with the number of available GRBs in each fitting in Table 1 In Figure 5 we plot all the six luminosity correlations in logarithmic coordinates. Low- $z$ and high- $z$ GRBs are represented by blue and red dots with the error bars denoting $1 \sigma$ uncertainties. The blue line, red line and black line stand for the best-fitting results for low- $z$ GRBs, high- $z$ GRBs and all- $z$ GRBs, respectively. The $1 \sigma$ and $2 \sigma$ contours and the PDFs for parameter space are plotted in Figure 6
 
 As shown in Table 1 low- $z$ GRBs have a smaller intercept, but a sharper slope than high- $z$ GRBs for all the six luminosity correlations. All- $z$ GRBs have the parameter values between that of low- $z$ and high- $z$ subsamples. For the intrinsic scatter, low- $z$ GRBs have larger value than high- $z$ GRBs, and the $E_{p}-E_{\gamma}$ relation has the smallest intrinsic scatter hence we can only obtain its upper limit. The $V-L$ relation has the largest intrinsic scatter, thus it can not be fitted well with a simple line, which is legible in Figure [5 In Figure 6 the contours in the $(a, b)$ plane indicate that the $E_{p}-E_{\gamma}$ relation of low- $z$ GRBs is consistent with that of high- $z$ GRBs at $1 \sigma$ confidence level. For the rest luminosity correlations, however, the intercepts and slopes for low- $z$ GRBs differ from that of high- $z$ GRBs at more than $2 \sigma$ confidence level.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{pantheon/gp/15_correlatin.png}
+	\caption{Luminsosity correlations best fit}
+	\label{fig:correlation_gp}
+\end{figure}

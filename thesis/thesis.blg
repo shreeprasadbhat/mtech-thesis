@@ -2,23 +2,33 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
-Illegal, another \bibstyle command---line 165 of file thesis.aux
+Illegal, another \bibstyle command---line 175 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 166 of file thesis.aux
+Illegal, another \bibdata command---line 176 of file thesis.aux
  : \bibdata
  :         {./references/chapter-2}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 231 of file thesis.aux
+Illegal, another \bibstyle command---line 243 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 232 of file thesis.aux
+Illegal, another \bibdata command---line 244 of file thesis.aux
  : \bibdata
  :         {./references/chapter-3}
 I'm skipping whatever remains of this command
 Database file #1: ./references/chapter-1.bib
+Warning--I didn't find a database entry for "aghanim2020planck"
+Warning--I didn't find a database entry for "alam2017clustering"
+Warning--I didn't find a database entry for "zlatev1999quintessence"
+Warning--I didn't find a database entry for "chevallier2001accelerating"
+Warning--I didn't find a database entry for "mackay1992evidence"
+Warning--I didn't find a database entry for "penny2006bayesian"
+Warning--I didn't find a database entry for "trotta2008bayes"
+Warning--I didn't find a database entry for "martin2011hunting"
+Warning--I didn't find a database entry for "basilakos2018dark"
+Warning--I didn't find a database entry for "lonappan2018bayesian"
 Warning--I didn't find a database entry for "li2019model"
 Warning--I didn't find a database entry for "kingma2013auto"
 Warning--I didn't find a database entry for "goodfellow2014generative"
@@ -62,7 +72,7 @@ Warning--I didn't find a database entry for "wilstrup2021symbolic"
 Warning--I didn't find a database entry for "pysr"
 You've used 13 entries,
             2642 wiz_defined-function locations,
-            695 strings with 8848 characters,
+            705 strings with 9035 characters,
 and the built_in function-call counts, 10110 in all, are:
 = -- 930
 > -- 371
