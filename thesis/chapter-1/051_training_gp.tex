@@ -3,9 +3,20 @@ We optimize the hyper-parameters of kernels by maximizing the marginal likelihoo
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{pantheon/gp/02_Sample_posterior_distibutions.png}
-	\caption{Posterior samples drawn from GP}
-	\label{fig:posterior_pantheon}
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{pantheon/gp/02_Sample_prior_distibutions.png}
+		\caption{Prior samples drawn from GP}
+		\label{fig:prior_pantheon}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{pantheon/gp/02_Sample_posterior_distibutions.png}
+		\caption{Posterior samples drawn from GP}
+		\label{fig:posterior_pantheon}
+	\end{subfigure}
+	\caption{Prior and Posterior distrution samples}
+	\label{prior_posterior_pantheon_gp}
 \end{figure}
 
 The error bars with predictions are shown below

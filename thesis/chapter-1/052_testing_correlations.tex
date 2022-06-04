@@ -1,6 +1,11 @@
 \subsection{Testing redshift dependence of luminosity correlations}
-The luminosity relations are connections between measurable parameters of the light curves and/or spectra with the GRB luminosity. Specifically, I will be using the power law relationships between explained below. This section will discuss the calibration of all six relations. The calibration will essentially be a fit on a log-log plot of the luminosity indicator versus the luminosity. For this calibration process, the burst’s luminosity distance must be known to convert Pbolo to L (or Sbolo to Egamma) and this is known only for bursts with measured redshifts. However, an important point is that the conversion from the observed redshift to a luminosity distance is done by machine learning model. The observed luminosity indicators will have different values from those that would be observed in the rest frame of the GRB. That is, the light curves and spectra seen by Earth-orbiting satellites suffer time-dilation and redshift. The physical connection between the indicators and the luminosity is in the GRB rest frame, so we must take our observed indicators and correct them to the rest frame of the GRB. For the two times (Tlag and TRT ), the observed quantities must be divided by 1+z to correct for time dilation. The observed V value varies as the inverse of the time stretching, so our measured value must be multiplied by 1 + z to correct to the GRB rest frame. The observed Epeak value must be multiplied by 1 + z to correct for the redshift of the spectrum. The number of peaks in the light curve is defined in such a way as to have no z dependance. The dilation and redshift effects on thetajet and Egamma,iso have already been corrected in equations 1 and 2. A possibly substantial problem for the Tlag, V , and TRT relations is that we are in practice limited to the available energy bands (c.f. Table 5) whereas these correspond to different energy bands in the GRB reference frame. Ideally, we would want to measure these indicators in observed energy bands that correspond to some consistent band in the GRB frame
-\begin{enumerate}
+After reconstructing the redshift-distance modulus from the machine learning model, we can use it fit luminosity correlations. Luminosity correlations are connections between measurable parameters of the GRB vairables(light curves, spectra etc) with the GRB luminosity(L). The burst’s luminosity distance must be known to convert $P_{bolo}$ to $L$ (or $S_{bolo}$ to $E_{\gamma}$) and this is known only for bursts with measured redshifts.
+\begin{align}
+	\mu &= 5 \log \frac{d_{L}}{\mathrm{Mpc}}+25\\
+	L &= 4 \pi d_{L}^{2} P_{\text {bolo }}
+\end{align}
+We are using the six luminosity correlations defined in \cite{schaefer2007hubble}.
+\begin{enumerate}[noitemsep]
 \item{Lag versus Luminosity ($T_{lag}-L$)}
 \item{Variability versus Luminosity ($V-L$)}
 \item{$E_{peak}$ versus Luminosity ($E_{peak}-L$)}
@@ -8,7 +13,14 @@ The luminosity relations are connections between measurable parameters of the li
 \item{$T_{RT}$ versus Luminosity ($T_{RT}-L$)}
 \item{$E_{peak}$ versus $E_{iso}$ ($E_{peak}-E_{iso}$)}
 \end{enumerate}
-
+The observed luminosity indicators will have different values from those that would be observed in the rest frame of the GRB. That is, the light curves and spectra seen by Earth-orbiting satellites suffer time-dilation and redshift. The physical connection between the indicators and the luminosity is in the GRB rest frame, so we must take our observed indicators and correct them to the rest frame of the GRB.
+\begin{align}
+	T_{lag_i} &= \frac{T_{lag}}{1 + z}\\
+	T_{RT_i} &= \frac{T_{RT}}{1 + z}\\
+	V_i &= V(1 + z)\\
+	E_{peak_i} &= E_{peak}(1 + z)
+\end{align}
+The calibration will essentially be a fit on a log-log plot of the luminosity indicator versus the luminosity. However, an important point is that the conversion from the observed redshift to a luminosity distance is independent of any cosmological model.
 \begin{align}
 \log \frac{L}{\operatorname{erg} \mathrm{s}^{-1}} &= a_{1}+b_{1} \log \frac{\tau_{\operatorname{lag}, i}}{0.1 s}, \\
 \log \frac{L}{\operatorname{erg~s}^{-1}} &= a_{2}+b_{2} \log \frac{V_{i}}{0.02}, \\
@@ -17,15 +29,6 @@ The luminosity relations are connections between measurable parameters of the li
 \log \frac{L}{\text { erg s }} &= a_{5}+b_{5} \log \frac{\tau_{\mathrm{RT}, i}}{0.1 \mathrm{~s}}, \\
 \log \frac{E_{\text {iso }}}{\text { erg }} &= a_{6}+b_{6} \log \frac{E_{p, i}}{300 \mathrm{keV}}
 \end{align}
-
-Assuming that GRBs radiate isotropically, the isotropic equivalent luminosity can be derived from the bolometric peak flux $P_{\text {bolo }}$ by (Schaefer 2007)
-$$
-L=4 \pi d_{L}^{2} P_{\text {bolo }},
-$$
-where $d_{L}$ is the luminosity distance of GRB, which can be obtained from the reconstructed distance moduli of Pantheon presented in section B with the relation
-$$
-\mu=5 \log \frac{d_{L}}{\mathrm{Mpc}}+25 .
-$$
 Hence, the uncertainty of $L$ propagates from the uncertainties of $P_{\text {bolo }}$ and $d_{L}$. The isotropic equivalent energy $E_{\text {iso }}$ can be obtained from the bolometric fluence $S_{\text {bolo }}$ by
 $$
 E_{\text {iso }}=4 \pi d_{L}^{2} S_{\text {bolo }}(1+z)^{-1},
@@ -37,23 +40,12 @@ $$
 
 where $F_{\text {beam }} \equiv 1-\cos \theta_{\text {jet }}$ is the beaming factor, $\theta_{\text {jet }}$ is the jet opening angle. The uncertainty of $E_{\gamma}$ propagates from the uncertainties of $E_{\text {iso and }} F_{\text {beam }}$.
 
-In order to test if the correlations discussed in the above
-section vary with redshift, we divide the GRB samples
-into two subsamples corresponding to the following redshift
-bins: the low-z sample ($z \leq 1.4$) which consists of 50 GRBs, and the high-z sample ($z > 1.4$) which consists of 66 GRBs. We investigate the redshift dependence of luminosity correlations for this two subsamples, as well as for the full GRBs sample. To fit the six luminosity correlations, we apply the D’Agostini’s liklihood\cite{d2005fits}
-
-
+In order to test if the correlations discussed in the above section vary with redshift, we divide the GRB samples into two subsamples corresponding to the following redshift bins: the low-z sample ($z \leq 1.4$) which consists of 50 GRBs, and the high-z sample ($z > 1.4$) which consists of 66 GRBs. We investigate the redshift dependence of luminosity correlations for this two subsamples, as well as for the full GRBs sample. To fit the six luminosity correlations, we apply the D’Agostini’s liklihood\cite{d2005fits}
 $$
 \mathcal{L}\left(\sigma_{\mathrm{int}}, a, b\right) \propto \prod_{i} \frac{1}{\sqrt{\sigma_{\mathrm{int}}^{2}+\sigma_{y i}^{2}+b^{2} \sigma_{x i}^{2}}} \times \exp \left[-\frac{\left(y_{i}-a-b x_{i}\right)^{2}}{2\left(\sigma_{\mathrm{int}}^{2}+\sigma_{y i}^{2}+b^{2} \sigma_{x i}^{2}\right)}\right]
 $$
-
-
 For each correlation and each redshift bin, By maximizing this joint likelihood function, we can derive the best-fitting parameters $a$, $b$ and the intrinsic scatter $\sigma_{int}$, where the intrinsic scatter $\sigma_{int}$ denotes any other unknown errors except for the measurement errors. The results of the fits and the number of GRBs used in each fit are summarized in \eqref{table_pantheon_gp}.
-
-
-
-
-\begin{table}
+\begin{table} [H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
