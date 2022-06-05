@@ -1,9 +1,10 @@
 \section{Reconstruction and calibration of distance modulus using Gaussian Processes}
+\label{results_gp_pantheon}
 We first use Gaussian processes to  reconstruct $\mu-z$ relation from pantheon data. Gaussian processes can construct function without involving any model assumption. The Gaussian processes only depend on the covariance function $k(x, x')$, which characterizes the correlation between the function value at $x$ to that at $x'$. There are many covariance functions available, but any covariance function should be positive definite and monotonously decreasing with the increment of distance between $x$ and $x'$. Here we use the following kernel
 \begin{equation}\label{eq_kernel}
-	k(x, x') = ConstantKernel() + 1.0 * DotProduct(1) ** 0.1 + 1.0 * WhiteKernel(1)
+	\text{k(x, x') = ConstantKernel() + 1.0 * DotProduct(1) ** 0.1}
 \end{equation}
-Our kernel \eqref{eq_kernel} is a sum of linear, constant and whitekernels. Linear Kernel with exponent is used to capture relation in the data, constant kernel is used as scale magnitude and white kernel explains the noise in the input.
+Our kernel \eqref{eq_kernel} is a sum of linear, constant kernels. Linear Kernel with exponent is used to capture relation in the data, constant kernel is used as scale magnitude.
 \input{051_training_gp}
 \input{052_testing_correlations}
 \input{053_calibration}

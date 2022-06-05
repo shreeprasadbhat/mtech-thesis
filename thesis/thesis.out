@@ -2,7 +2,7 @@
 \BOOKMARK [1][-]{Doc-Start}{Approval Sheet}{}% 2
 \BOOKMARK [1][-]{Doc-Start}{Abstract}{}% 3
 \BOOKMARK [0][-]{chapter*.1}{Nomenclature}{}% 4
-\BOOKMARK [0][-]{chapter.1}{Model-independently calibrating the luminosity correlations of GRBs using deep learning}{}% 5
+\BOOKMARK [0][-]{chapter.1}{Model-independent distance calibration of Gamma-Ray Bursts}{}% 5
 \BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 6
 \BOOKMARK [1][-]{section.1.2}{Literature Survey}{chapter.1}% 7
 \BOOKMARK [1][-]{section.1.3}{Observational Data}{chapter.1}% 8
@@ -11,7 +11,7 @@
 \BOOKMARK [2][-]{subsection.1.3.3}{Union}{section.1.3}% 11
 \BOOKMARK [1][-]{section.1.4}{Methodology}{chapter.1}% 12
 \BOOKMARK [2][-]{subsection.1.4.1}{Gaussian Processes}{section.1.4}% 13
-\BOOKMARK [2][-]{subsection.1.4.2}{Long Short Term Memory}{section.1.4}% 14
+\BOOKMARK [2][-]{subsection.1.4.2}{Recurrent Neural Networks}{section.1.4}% 14
 \BOOKMARK [1][-]{section.1.5}{Reconstruction and calibration of distance modulus using Gaussian Processes}{chapter.1}% 15
 \BOOKMARK [2][-]{subsection.1.5.1}{Training}{section.1.5}% 16
 \BOOKMARK [2][-]{subsection.1.5.2}{Testing redshift dependence of luminosity correlations}{section.1.5}% 17
@@ -26,3 +26,28 @@
 \BOOKMARK [2][-]{subsection.1.7.1}{using Gaussian Processes}{section.1.7}% 26
 \BOOKMARK [2][-]{subsection.1.7.2}{using Deep Learning}{section.1.7}% 27
 \BOOKMARK [1][-]{section.1.8}{Conclusion}{chapter.1}% 28
+\BOOKMARK [0][-]{chapter.2}{Model Comparison of Dark Energy models Using Deep Network}{}% 29
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.2}{Literature Survey}{chapter.2}% 31
+\BOOKMARK [1][-]{section.2.3}{Observational Data}{chapter.2}% 32
+\BOOKMARK [2][-]{subsection.2.3.1}{Union2.1}{section.2.3}% 33
+\BOOKMARK [1][-]{section.2.4}{Methodology}{chapter.2}% 34
+\BOOKMARK [2][-]{subsection.2.4.1}{VAE}{section.2.4}% 35
+\BOOKMARK [2][-]{subsection.2.4.2}{GAN}{section.2.4}% 36
+\BOOKMARK [2][-]{subsection.2.4.3}{VAEGAN}{section.2.4}% 37
+\BOOKMARK [1][-]{section.2.5}{Test on toy model}{chapter.2}% 38
+\BOOKMARK [1][-]{section.2.6}{Dark enrgy models}{chapter.2}% 39
+\BOOKMARK [2][-]{subsection.2.6.1}{CDM}{section.2.6}% 40
+\BOOKMARK [2][-]{subsection.2.6.2}{CDM}{section.2.6}% 41
+\BOOKMARK [2][-]{subsection.2.6.3}{CPL}{section.2.6}% 42
+\BOOKMARK [2][-]{subsection.2.6.4}{Distance Modulus}{section.2.6}% 43
+\BOOKMARK [1][-]{section.2.7}{Conclusion}{chapter.2}% 44
+\BOOKMARK [0][-]{chapter.3}{Photometric redshift estimation using Symbolic Regression}{}% 45
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.2}{Literature Survey}{chapter.3}% 47
+\BOOKMARK [1][-]{section.3.3}{Observation Data}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.3.1}{SDSS DR17 photometry}{section.3.3}% 49
+\BOOKMARK [1][-]{section.3.4}{Methodology}{chapter.3}% 50
+\BOOKMARK [2][-]{subsection.3.4.1}{Symbolic Regression}{section.3.4}% 51
+\BOOKMARK [1][-]{section.3.5}{Photometric redshift estimation}{chapter.3}% 52
+\BOOKMARK [1][-]{section.3.6}{Conclusion}{chapter.3}% 53

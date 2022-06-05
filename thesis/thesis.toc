@@ -1,8 +1,8 @@
 \contentsline {section}{Declaration}{ii}{Doc-Start}%
 \contentsline {section}{Approval Sheet}{iii}{Doc-Start}%
 \contentsline {section}{Abstract}{v}{Doc-Start}%
-\contentsline {chapter}{Nomenclature}{vi}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Model-independently calibrating the luminosity correlations of GRBs using deep learning}{1}{chapter.1}%
+\contentsline {chapter}{Nomenclature}{vii}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}Model-independent distance calibration of Gamma-Ray Bursts}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Literature Survey}{2}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Observational Data}{2}{section.1.3}%
@@ -11,7 +11,10 @@
 \contentsline {subsection}{\numberline {1.3.3}Union}{2}{subsection.1.3.3}%
 \contentsline {section}{\numberline {1.4}Methodology}{3}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Gaussian Processes}{3}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Long Short Term Memory}{4}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.2}Recurrent Neural Networks}{4}{subsection.1.4.2}%
+\contentsline {subsubsection}{LSTM Cell}{5}{section*.2}%
+\contentsline {subsubsection}{Network Architecture}{6}{section*.4}%
+\contentsline {subsubsection}{Bayesian Neural Networks}{7}{section*.6}%
 \contentsline {section}{\numberline {1.5}Reconstruction and calibration of distance modulus using Gaussian Processes}{7}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Training}{7}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Testing redshift dependence of luminosity correlations}{9}{subsection.1.5.2}%
@@ -24,13 +27,38 @@
 \contentsline {subsection}{\numberline {1.6.4}Constraints on dark energy}{18}{subsection.1.6.4}%
 \contentsline {section}{\numberline {1.7}Redoing analysis with Union Data}{18}{section.1.7}%
 \contentsline {subsection}{\numberline {1.7.1}using Gaussian Processes}{19}{subsection.1.7.1}%
-\contentsline {subsubsection}{Training}{19}{section*.16}%
-\contentsline {subsubsection}{Testing redshift dependence of luminosity correlations}{20}{section*.19}%
-\contentsline {subsubsection}{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}{21}{section*.21}%
-\contentsline {subsubsection}{Constraints on the dark energy}{21}{section*.23}%
+\contentsline {subsubsection}{Training}{19}{section*.19}%
+\contentsline {subsubsection}{Testing redshift dependence of luminosity correlations}{20}{section*.22}%
+\contentsline {subsubsection}{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}{21}{section*.24}%
+\contentsline {subsubsection}{Constraints on the dark energy}{21}{section*.26}%
 \contentsline {subsection}{\numberline {1.7.2}using Deep Learning}{22}{subsection.1.7.2}%
-\contentsline {subsubsection}{Training}{22}{section*.26}%
-\contentsline {subsubsection}{Testing redshift dependence of luminosity correlations}{23}{section*.29}%
-\contentsline {subsubsection}{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}{25}{section*.32}%
-\contentsline {subsubsection}{Constraints on dark energy}{25}{section*.34}%
+\contentsline {subsubsection}{Training}{22}{section*.29}%
+\contentsline {subsubsection}{Testing redshift dependence of luminosity correlations}{23}{section*.32}%
+\contentsline {subsubsection}{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}{25}{section*.35}%
+\contentsline {subsubsection}{Constraints on dark energy}{25}{section*.37}%
 \contentsline {section}{\numberline {1.8}Conclusion}{26}{section.1.8}%
+\contentsline {chapter}{\numberline {2}Model Comparison of Dark Energy models Using Deep Network}{29}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{29}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Literature Survey}{29}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Observational Data}{30}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Union2.1}{30}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Methodology}{30}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}VAE}{30}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}GAN}{31}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}VAEGAN}{31}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Test on toy model}{32}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Dark enrgy models}{33}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}$\Lambda $CDM}{33}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}$\omega $CDM}{33}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}CPL}{35}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Distance Modulus}{35}{subsection.2.6.4}%
+\contentsline {section}{\numberline {2.7}Conclusion}{35}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Photometric redshift estimation using Symbolic Regression}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{39}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Literature Survey}{39}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Observation Data}{39}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}SDSS DR17 photometry}{40}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Methodology}{41}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Symbolic Regression}{41}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Photometric redshift estimation}{41}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Conclusion}{42}{section.3.6}%

@@ -2,45 +2,113 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
+Illegal, another \bibstyle command---line 204 of file thesis.aux
+ : \bibstyle
+ :          {iiththesis}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 205 of file thesis.aux
+ : \bibdata
+ :         {./references/chapter-2}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 275 of file thesis.aux
+ : \bibstyle
+ :          {iiththesis}
+I'm skipping whatever remains of this command
+Illegal, another \bibdata command---line 276 of file thesis.aux
+ : \bibdata
+ :         {./references/chapter-3}
+I'm skipping whatever remains of this command
 Database file #1: ./references/chapter-1.bib
-You've used 15 entries,
+Warning--I didn't find a database entry for "aghanim2020planck"
+Warning--I didn't find a database entry for "alam2017clustering"
+Warning--I didn't find a database entry for "zlatev1999quintessence"
+Warning--I didn't find a database entry for "chevallier2001accelerating"
+Warning--I didn't find a database entry for "mackay1992evidence"
+Warning--I didn't find a database entry for "penny2006bayesian"
+Warning--I didn't find a database entry for "trotta2008bayes"
+Warning--I didn't find a database entry for "martin2011hunting"
+Warning--I didn't find a database entry for "basilakos2018dark"
+Warning--I didn't find a database entry for "lonappan2018bayesian"
+Warning--I didn't find a database entry for "li2019model"
+Warning--I didn't find a database entry for "kingma2013auto"
+Warning--I didn't find a database entry for "goodfellow2014generative"
+Warning--I didn't find a database entry for "larsen2016autoencoding"
+Warning--I didn't find a database entry for "collister2007megaz"
+Warning--I didn't find a database entry for "bilicki2013two"
+Warning--I didn't find a database entry for "benitez2000bayesian"
+Warning--I didn't find a database entry for "brammer2008eazy"
+Warning--I didn't find a database entry for "kotulla2009impact"
+Warning--I didn't find a database entry for "dahlen2010detailed"
+Warning--I didn't find a database entry for "bolzonella2000photometric"
+Warning--I didn't find a database entry for "arnouts1999measuring"
+Warning--I didn't find a database entry for "ilbert2006accurate"
+Warning--I didn't find a database entry for "assef2008low"
+Warning--I didn't find a database entry for "assef2010low"
+Warning--I didn't find a database entry for "feldmann2006zurich"
+Warning--I didn't find a database entry for "collister2004annz"
+Warning--I didn't find a database entry for "gerdes2010arborz"
+Warning--I didn't find a database entry for "wolf2009bayesian"
+Warning--I didn't find a database entry for "csabai2007multidimensional"
+Warning--I didn't find a database entry for "carliles2010random"
+Warning--I didn't find a database entry for "brescia2014catalogue"
+Warning--I didn't find a database entry for "elliott2015overlooked"
+Warning--I didn't find a database entry for "abdalla2011comparison"
+Warning--I didn't find a database entry for "hildebrandt2010phat"
+Warning--I didn't find a database entry for "dahlen2013critical"
+Warning--I didn't find a database entry for "hogan2015gaz"
+Warning--I didn't find a database entry for "accetta2022seventeenth"
+Warning--I didn't find a database entry for "gunn20062"
+Warning--I didn't find a database entry for "smith2002ugriz"
+Warning--I didn't find a database entry for "eisenstein2011sdss"
+Warning--I didn't find a database entry for "li2008casjobs"
+Warning--I didn't find a database entry for "schmidt2009distilling"
+Warning--I didn't find a database entry for "udrescu2020ai"
+Warning--I didn't find a database entry for "wu2019toward"
+Warning--I didn't find a database entry for "cranmer2020discovering"
+Warning--I didn't find a database entry for "villaescusa2021camels"
+Warning--I didn't find a database entry for "kim2020integration"
+Warning--I didn't find a database entry for "liu2021machine"
+Warning--I didn't find a database entry for "wilstrup2021symbolic"
+Warning--I didn't find a database entry for "pysr"
+You've used 16 entries,
             2642 wiz_defined-function locations,
-            668 strings with 8490 characters,
-and the built_in function-call counts, 11403 in all, are:
-= -- 1084
-> -- 386
+            725 strings with 9563 characters,
+and the built_in function-call counts, 11634 in all, are:
+= -- 1100
+> -- 394
 < -- 0
-+ -- 191
-- -- 120
-* -- 1251
-:= -- 985
-add.period$ -- 46
-call.type$ -- 15
++ -- 194
+- -- 122
+* -- 1278
+:= -- 1015
+add.period$ -- 49
+call.type$ -- 16
 change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 1198
-empty$ -- 581
-format.name$ -- 131
-if$ -- 2132
+cite$ -- 16
+duplicate$ -- 1219
+empty$ -- 598
+format.name$ -- 134
+if$ -- 2177
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 205
-newline$ -- 79
-num.names$ -- 15
-pop$ -- 234
+int.to.str$ -- 16
+missing$ -- 211
+newline$ -- 84
+num.names$ -- 16
+pop$ -- 237
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 556
+skip$ -- 560
 stack$ -- 0
 substring$ -- 426
-swap$ -- 1517
+swap$ -- 1539
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 47
-width$ -- 17
-write$ -- 153
+while$ -- 48
+width$ -- 18
+write$ -- 163
+(There were 4 error messages)

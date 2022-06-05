@@ -102,6 +102,13 @@
   Physics}\/} \bibinfo{volume}{2020}, (\bibinfo{year}{2020})
   \bibinfo{pages}{008}.
 
+\bibitem{gal2016theoretically}
+\bibinfo{author}{Y.~Gal} and \bibinfo{author}{Z.~Ghahramani}.
+\newblock \bibinfo{title}{A theoretically grounded application of dropout in
+  recurrent neural networks}.
+\newblock {\em \bibinfo{journal}{Advances in neural information processing
+  systems}\/} \bibinfo{volume}{29}.
+
 \bibitem{scikit-learn}
 \bibinfo{author}{F.~Pedregosa}, \bibinfo{author}{G.~Varoquaux},
   \bibinfo{author}{A.~Gramfort}, \bibinfo{author}{V.~Michel},
