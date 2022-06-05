@@ -86,6 +86,22 @@
 \newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
   \bibinfo{volume}{746}, (\bibinfo{year}{2012}) \bibinfo{pages}{85}.
 
+\bibitem{rasmussen2003gaussian}
+\bibinfo{author}{C.~E. Rasmussen}.
+\newblock \bibinfo{title}{Gaussian processes in machine learning}.
+\newblock In \bibinfo{booktitle}{Summer school on machine learning}.
+  \bibinfo{organization}{Springer}, \bibinfo{year}{2003}
+  \bibinfo{pages}{63--71}.
+
+\bibitem{escamilla2020deep}
+\bibinfo{author}{C.~Escamilla-Rivera}, \bibinfo{author}{M.~A.~C. Quintero}, and
+  \bibinfo{author}{S.~Capozziello}.
+\newblock \bibinfo{title}{A deep learning approach to cosmological dark energy
+  models}.
+\newblock {\em \bibinfo{journal}{Journal of Cosmology and Astroparticle
+  Physics}\/} \bibinfo{volume}{2020}, (\bibinfo{year}{2020})
+  \bibinfo{pages}{008}.
+
 \bibitem{scikit-learn}
 \bibinfo{author}{F.~Pedregosa}, \bibinfo{author}{G.~Varoquaux},
   \bibinfo{author}{A.~Gramfort}, \bibinfo{author}{V.~Michel},

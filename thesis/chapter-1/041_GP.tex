@@ -1,0 +1,38 @@
+\subsection{Gaussian Processes}
+Gaussian Processes is a non-parametric regression technqiue, in the sense that we don't make any assumption about the function form. We define a prior probability distribution over functions y(x), such that set of values evaluated at $x_1, x_2 ... x_n$ follow gaussian distribution. This joint gaussian distributino is specified by mean and covariance. In most applications, we will not have any
+prior knowledge about the mean of y(x) and so by symmetry we take it to be zero. The covariance of y(x) evaluated at any two values of x,
+which is given by the kernel function $k(x, x')$.
+A Gaussian Process is completely specified by its mean function and covariance function. We define mean function $m(x)$ and the covariance function $k(x, x')$ of real process $f(x)$ as
+\begin{align}
+	m(\textbf{x}) &= \mathbb{E}\left[ f(\textbf{x}) \right] \\
+	k(\textbf{x}, \textbf{x'}) &= \mathbb{E} \left[ (f(\textbf{x})-m(\textbf{x}))(f(\textbf{x'})-m(\textbf{x'}))\right]
+\end{align}
+and will write the Gaussian process as
+\begin{equation}
+	f(\textbf{x}) \approx GP\left(m(\textbf{x}), k(\textbf{x},\textbf{x'})\right)
+\end{equation}
+We will assume mean function of prior to be zero, since it's difficult predict the mean.
+\[
+\begin{bmatrix}
+	\textbf{f} \\ \textbf{f*}
+\end{bmatrix} = \mathcal{N} \left( \textbf{0}, \begin{bmatrix}
+K(\textbf{X}, \textbf{X}) & K(\textbf{X}, \textbf{X*})\\ K(\textbf{X*}, \textbf{X}) & K(\textbf{X*}, \textbf{X*}) 
+\end{bmatrix} \right)
+\]
+If there are $\textbf{n}$ training points and $\textbf{n*}$ test points then $K(\textbf{X}, \textbf{X'})$ denotes the $\textbf{n} \times \textbf{n*}$ matrix of the covariances evaluated at all pairs of training and test points, and similarly for the other entries $K(\textbf{X}, \textbf{X*})$, $K(\textbf{X*}, \textbf{X*})$ and $K(\textbf{X*}, \textbf{X*})$. To get the posterior distribution over functions we need to restrict this joint prior distribution to contain only those functions which agree with the observed data points. In probabilistic terms this operation is extremely simple, corresponding to conditioning the joint Gaussian prior distribution on the observation to give
+\begin{multline*}
+	\label{eq_k}
+	\textbf{f}_*|X_*,X. \textbf{f} \approx \mathcal{N} \left( K(X_*, X) K(X, X)^{-1}\textbf{f}, K(X_*, X_*)-K(X_*, X)K(X,X)^{-1}K(X, C_*) \right)
+\end{multline*}
+Function values $\textbf{f}_*$ (corresponding to test inputs $X_*$) can be sampled from the joint posterior distribution by evaluating the mean and covariance matrix from \eqref{eq_k} and generating samples.
+The marginal likelihood(or evidence) $p(y|X)$. The marginal likelihood is the integral of the likelihood times the prior
+\begin{equation}
+	p(\textbf{y}|X) = \int p(\textbf{y}|\textbf{f}, X)p(\textbf{f}|X)d\textbf{f}
+\end{equation}
+The term marginal likelihood refers to the marginalization over the function values \textbf{f}. Under the Gaussian process model the prior is Gaussian, $\textbf{f}|X \approx \mathcal{N}(\textbf{0}, K)$ or
+\begin{equation}
+	log p(\textbf{f|X} = -\frac{1}{2} \textbf{f}^TK^{-1}\textbf{f}-\frac{1}{2} log |K| - \frac{n}{2} log 2\pi
+\end{equation}
+and the likelihood is a factorized Gaussian $\textbf{y}|\textbf{f} \approx \mathcal{N}(\textbf{f}, \sigma^2_nI)| - \frac{n}{2} log2\pi$
+This result can also be obtained directly by observing that $\textbf{y} \approx \mathcal{N}(\textbf{0}, K+\sigma^2_nI)$.
+A practical implementation \cite{rasmussen2003gaussian} of Gaussian process regression is shown algorithm. The algorithm uses Cholesky decomposition, instead of directly inverting the matrix, since it is faster and numerically more stable. The algorithm returns the predictive mean and variance for noise free test data to compute the predictive distribution for noisy test data $\textbf{y}_*$, simply add the noise variance $\sigma^2_n$ to the predictive variance of $f_*$.
