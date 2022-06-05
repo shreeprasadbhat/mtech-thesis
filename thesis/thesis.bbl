@@ -102,6 +102,12 @@
   Physics}\/} \bibinfo{volume}{2020}, (\bibinfo{year}{2020})
   \bibinfo{pages}{008}.
 
+\bibitem{goodfellow2016deep}
+\bibinfo{author}{I.~Goodfellow}, \bibinfo{author}{Y.~Bengio}, and
+  \bibinfo{author}{A.~Courville}.
+\newblock \bibinfo{title}{Deep learning}.
+\newblock \bibinfo{publisher}{MIT press}, \bibinfo{year}{2016}.
+
 \bibitem{srivastava2014dropout}
 \bibinfo{author}{N.~Srivastava}, \bibinfo{author}{G.~Hinton},
   \bibinfo{author}{A.~Krizhevsky}, \bibinfo{author}{I.~Sutskever}, and

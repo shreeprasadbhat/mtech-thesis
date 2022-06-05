@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  5 JUN 2022 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.18)  5 JUN 2022 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1437,6 +1437,10 @@ Underfull \hbox (badness 10000) detected at line 28
 LaTeX Warning: Reference `eq_k' on page 3 undefined on input line 29.
 
 [3]) (./chapter-1/./042_LSTM.tex
+
+LaTeX Warning: Citation `goodfellow2016deep' on page 4 undefined on input line 
+4.
+
 <./chapter-1/images/lstm_Cell.png, id=375, 274.02374pt x 185.69376pt>
 File: ./chapter-1/images/lstm_Cell.png Graphic file (type png)
 <use ./chapter-1/images/lstm_Cell.png>
@@ -2349,7 +2353,7 @@ e/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/
 public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm3583.pfb></usr/share
 /texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on thesis.pdf (55 pages, 1438939 bytes).
+Output written on thesis.pdf (55 pages, 1438974 bytes).
 PDF statistics:
  894 PDF objects out of 1000 (max. 8388607)
  744 compressed objects within 8 object streams
