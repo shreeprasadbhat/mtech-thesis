@@ -2,19 +2,19 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 The style file: iiththesis.bst
-Illegal, another \bibstyle command---line 175 of file thesis.aux
+Illegal, another \bibstyle command---line 211 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 176 of file thesis.aux
+Illegal, another \bibdata command---line 212 of file thesis.aux
  : \bibdata
  :         {./references/chapter-2}
 I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 243 of file thesis.aux
+Illegal, another \bibstyle command---line 284 of file thesis.aux
  : \bibstyle
  :          {iiththesis}
 I'm skipping whatever remains of this command
-Illegal, another \bibdata command---line 244 of file thesis.aux
+Illegal, another \bibdata command---line 285 of file thesis.aux
  : \bibdata
  :         {./references/chapter-3}
 I'm skipping whatever remains of this command
@@ -70,45 +70,45 @@ Warning--I didn't find a database entry for "kim2020integration"
 Warning--I didn't find a database entry for "liu2021machine"
 Warning--I didn't find a database entry for "wilstrup2021symbolic"
 Warning--I didn't find a database entry for "pysr"
-You've used 13 entries,
+You've used 19 entries,
             2642 wiz_defined-function locations,
-            705 strings with 9035 characters,
-and the built_in function-call counts, 10110 in all, are:
-= -- 930
-> -- 371
+            741 strings with 10033 characters,
+and the built_in function-call counts, 13185 in all, are:
+= -- 1266
+> -- 430
 < -- 0
-+ -- 178
-- -- 116
-* -- 1154
-:= -- 881
-add.period$ -- 39
-call.type$ -- 13
-change.case$ -- 1
++ -- 215
+- -- 132
+* -- 1415
+:= -- 1143
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 1055
-empty$ -- 500
-format.name$ -- 126
-if$ -- 1864
+cite$ -- 19
+duplicate$ -- 1384
+empty$ -- 690
+format.name$ -- 147
+if$ -- 2483
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 189
-newline$ -- 69
-num.names$ -- 13
-pop$ -- 200
+int.to.str$ -- 19
+missing$ -- 235
+newline$ -- 99
+num.names$ -- 19
+pop$ -- 297
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 473
+skip$ -- 631
 stack$ -- 0
-substring$ -- 366
-swap$ -- 1359
+substring$ -- 487
+swap$ -- 1727
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 39
-width$ -- 15
-write$ -- 132
+while$ -- 54
+width$ -- 21
+write$ -- 191
 (There were 4 error messages)

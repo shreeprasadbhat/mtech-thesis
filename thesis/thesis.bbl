@@ -86,6 +86,44 @@
 \newblock {\em \bibinfo{journal}{The Astrophysical Journal}\/}
   \bibinfo{volume}{746}, (\bibinfo{year}{2012}) \bibinfo{pages}{85}.
 
+\bibitem{rasmussen2003gaussian}
+\bibinfo{author}{C.~E. Rasmussen}.
+\newblock \bibinfo{title}{Gaussian processes in machine learning}.
+\newblock In \bibinfo{booktitle}{Summer school on machine learning}.
+  \bibinfo{organization}{Springer}, \bibinfo{year}{2003}
+  \bibinfo{pages}{63--71}.
+
+\bibitem{escamilla2020deep}
+\bibinfo{author}{C.~Escamilla-Rivera}, \bibinfo{author}{M.~A.~C. Quintero}, and
+  \bibinfo{author}{S.~Capozziello}.
+\newblock \bibinfo{title}{A deep learning approach to cosmological dark energy
+  models}.
+\newblock {\em \bibinfo{journal}{Journal of Cosmology and Astroparticle
+  Physics}\/} \bibinfo{volume}{2020}, (\bibinfo{year}{2020})
+  \bibinfo{pages}{008}.
+
+\bibitem{goodfellow2016deep}
+\bibinfo{author}{I.~Goodfellow}, \bibinfo{author}{Y.~Bengio}, and
+  \bibinfo{author}{A.~Courville}.
+\newblock \bibinfo{title}{Deep learning}.
+\newblock \bibinfo{publisher}{MIT press}, \bibinfo{year}{2016}.
+
+\bibitem{srivastava2014dropout}
+\bibinfo{author}{N.~Srivastava}, \bibinfo{author}{G.~Hinton},
+  \bibinfo{author}{A.~Krizhevsky}, \bibinfo{author}{I.~Sutskever}, and
+  \bibinfo{author}{R.~Salakhutdinov}.
+\newblock \bibinfo{title}{Dropout: a simple way to prevent neural networks from
+  overfitting}.
+\newblock {\em \bibinfo{journal}{The journal of machine learning research}\/}
+  \bibinfo{volume}{15}, (\bibinfo{year}{2014}) \bibinfo{pages}{1929--1958}.
+
+\bibitem{gal2016theoretically}
+\bibinfo{author}{Y.~Gal} and \bibinfo{author}{Z.~Ghahramani}.
+\newblock \bibinfo{title}{A theoretically grounded application of dropout in
+  recurrent neural networks}.
+\newblock {\em \bibinfo{journal}{Advances in neural information processing
+  systems}\/} \bibinfo{volume}{29}.
+
 \bibitem{scikit-learn}
 \bibinfo{author}{F.~Pedregosa}, \bibinfo{author}{G.~Varoquaux},
   \bibinfo{author}{A.~Gramfort}, \bibinfo{author}{V.~Michel},
@@ -136,5 +174,10 @@
 \newblock \bibinfo{title}{{TensorFlow}: Large-Scale Machine Learning on
   Heterogeneous Systems} \bibinfo{year}{2015}.
 \newblock \bibinfo{note}{Software available from tensorflow.org}.
+
+\bibitem{kingma2014adam}
+\bibinfo{author}{D.~P. Kingma} and \bibinfo{author}{J.~Ba}.
+\newblock \bibinfo{title}{Adam: A method for stochastic optimization}.
+\newblock {\em \bibinfo{journal}{arXiv preprint arXiv:1412.6980}\/} .
 
 \end{thebibliography}
