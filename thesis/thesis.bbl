@@ -102,6 +102,15 @@
   Physics}\/} \bibinfo{volume}{2020}, (\bibinfo{year}{2020})
   \bibinfo{pages}{008}.
 
+\bibitem{srivastava2014dropout}
+\bibinfo{author}{N.~Srivastava}, \bibinfo{author}{G.~Hinton},
+  \bibinfo{author}{A.~Krizhevsky}, \bibinfo{author}{I.~Sutskever}, and
+  \bibinfo{author}{R.~Salakhutdinov}.
+\newblock \bibinfo{title}{Dropout: a simple way to prevent neural networks from
+  overfitting}.
+\newblock {\em \bibinfo{journal}{The journal of machine learning research}\/}
+  \bibinfo{volume}{15}, (\bibinfo{year}{2014}) \bibinfo{pages}{1929--1958}.
+
 \bibitem{gal2016theoretically}
 \bibinfo{author}{Y.~Gal} and \bibinfo{author}{Z.~Ghahramani}.
 \newblock \bibinfo{title}{A theoretically grounded application of dropout in
@@ -159,5 +168,10 @@
 \newblock \bibinfo{title}{{TensorFlow}: Large-Scale Machine Learning on
   Heterogeneous Systems} \bibinfo{year}{2015}.
 \newblock \bibinfo{note}{Software available from tensorflow.org}.
+
+\bibitem{kingma2014adam}
+\bibinfo{author}{D.~P. Kingma} and \bibinfo{author}{J.~Ba}.
+\newblock \bibinfo{title}{Adam: A method for stochastic optimization}.
+\newblock {\em \bibinfo{journal}{arXiv preprint arXiv:1412.6980}\/} .
 
 \end{thebibliography}

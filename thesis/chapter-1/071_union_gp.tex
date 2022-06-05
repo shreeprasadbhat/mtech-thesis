@@ -1,4 +1,5 @@
 \subsection{using Gaussian Processes}
+\label{071_union_gp}
 \subsubsection{Training}
 The posterior drawn Gaussian process is shown below
 
@@ -20,7 +21,7 @@ The posterior drawn Gaussian process is shown below
 	\label{prior_posterior_pantheon_gp}
 \end{figure}
 
-The error bars with predictions are shown belwo
+The error bars with predictions are shown below
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{union/gp/03_Reconstruction_GP.png}
@@ -32,31 +33,11 @@ Log Marginal Likelihood = -20.3
 
 Score = 99.51
 \subsubsection{Testing redshift dependence of luminosity correlations}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{union/gp/15_correlatin.png}
-	\caption{Luminsosity correlations best fit}
-	\label{fig:correlation_gp_union}
-\end{figure}
-\subsubsection{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\textwidth]{union/gp/16_GRB_reconstruction.png}
-	\caption{GRB Hubble Diagram}
-	\label{fig:HD_GRB_GP_union}
-\end{figure}
-\subsubsection{Constraints on the dark energy}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{union/gp/18_omega_M_corner_plot.png}
-	\caption{GRB Hubble Diagram}
-	\label{fig:OmegaM_GP_union}
-\end{figure}
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
 \hline
-Correlation & sample & N & a & $a_err$ & b & $b_err$ & $\sigma$ & $\sigma_{int}$\\
+Correlation & sample & N & a & $a_{err}$ & b & $b_{err}$ & $\sigma$ & $\sigma_{int}$\\
 \hline
 \multirow{3}{*}{$T_{lag}-L$} & low-z & 37 & 52.13 & 0.11 & -0.79 & 0.16 & 0.53 & 0.08\\
 \cline{2-9}
@@ -95,6 +76,26 @@ Correlation & sample & N & a & $a_err$ & b & $b_err$ & $\sigma$ & $\sigma_{int}$
  & All-z & 101 & 52.83 & 0.06 & 1.53 & 0.13 & 0.52 & 0.04\\
 \hline
 \end{tabular}
-\caption{A test caption}
+\caption{Best fitting parameters for luminsoity correlations. N is the number of GRB samples.}
 \label{table_gp_union}
 \end{table}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{union/gp/15_correlatin.png}
+	\caption{Luminsosity correlations best fit}
+	\label{fig:correlation_gp_union}
+\end{figure}
+\subsubsection{Calibrating distance modulus from $E_{peak}-E_{gamma}$ relation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{union/gp/16_GRB_reconstruction.png}
+	\caption{GRB Hubble Diagram}
+	\label{fig:HD_GRB_GP_union}
+\end{figure}
+\subsubsection{Constraints on the dark energy}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{union/gp/18_omega_M_corner_plot.png}
+	\caption{GRB Hubble Diagram}
+	\label{fig:OmegaM_GP_union}
+\end{figure}
