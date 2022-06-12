@@ -10,14 +10,35 @@ class GANMonitor(tf.keras.callbacks.Callback):
 
     def on_epoch_end(self, epoch, logs=None):
 
-        z = tf.random.normal(shape=(1, self.latent_dim))
-        x_interpolate = self.model.generator(z)
+        if epoch % 1 == 0:
 
-        plt.scatter(self.model.z, x_interpolate.numpy(), s=4)
-        plt.xlim(0,1.5)
-        plt.ylim(33,55)
-        plt.show()
+            z = tf.random.normal(shape=(1, self.latent_dim))
+            #z_mean, z_logvar = self.modelencoder(x_test_580[0].reshape(-1,580))
+            #z = self.model.sampling((z_mean, z_logvar)) # re-parameterize
+            x_interpolate = self.model.generator(z)
+            
+            #plt.scatter(self.model.z, x_real_580, s=4, color='b', label='real')
+            plt.scatter(self.model.z, self.model.scaler.inverse_transform(x_interpolate.numpy()), s=4, color='r', label='reconstructed')
+            plt.xlim(0,1.5)
+            plt.ylim(33,48)
+            plt.xlabel(r'redshift $z$')
+            plt.ylabel(r'distance modulus $\mu$')
+            plt.legend()
+            plt.show()
 
-        pred = self.model.s_discriminator(x_interpolate)
-        print(pred)
-        print('Class : ',tf.argmax(pred, axis=-1))
+            pred = self.model.s_discriminator(x_interpolate)
+            print(pred)
+            print('Class : ',tf.argmax(pred, axis=-1))
+
+            #x_interpolate = self.model.generator(z)
+
+            #plt.scatter(self.model.z, self.model.scaler.inverse_transform(x_interpolate.numpy()), s=4)
+            #plt.xlim(0,1.5)
+            #plt.ylim(33,48)
+            #plt.xlabel(r'redshift $z$')
+            #plt.ylabel(r'distance modulus $\mu$')
+            #plt.show()
+
+            #pred = self.model.s_discriminator(x_interpolate)
+            #print(pred)
+            #print('Class : ',tf.argmax(pred, axis=-1))

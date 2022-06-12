@@ -78,6 +78,7 @@ class Encoder(keras.Model):
         self.dense3 = layers.Dense(latent_dim*2)
 
     def call(self, inputs):
+
         x = self.reshape(inputs)
         x = self.conv1(x)
         x = self.bn1(x)

@@ -1,10 +1,51 @@
 # Data should be generated before running model
-# Run  following commands to generate data
+# Run  following com_580mands to gener, ate data
+
+python3 z_obs.py
+- outputs z_obs.csv which redshifts of 512 SNIa given in the Union2.1
 
 python3 z.py
-python3 z_obs.py
+- outputs z.csv which contains redshifts of 512 SNIa given in the Union2.1 sample and 1468 randomly sampled in the range (0.8*min(z_obs), 1.2*max(z_obs)), total 2048 redshifts, these randomly sampled redshifts are our interpolation points
+ 
 python3 LambdaCDM.py
+outputs files 
+1. x_real_580_LambdaCDM.csv - contains distance modulus for z_obs
+2. x_real_LambdaCDM.csv - contains distance modulus for z
+3. y_real_LambdaCDM.csv - contains label of LambdaCDM (0)
+
+add errors(sigma_obs) to all generated data
+1. x_real_580_LambdaCDM_with_err.csv - contains distance modulus for z_obs
+2. x_real_LambdaCDM_with_err.csv - contains distance modulus for z
+3. y_real_LambdaCDM_with_err.csv - contains label of LambdaCDM (0)
+
+
+
 python3 OmegaCDM.py
+outputs files 
+1. x_real_580_OmegaCDM.csv - contains distance modulus for z_obs
+2. x_real_OmegaCDM.csv - contains distance modulus for z
+3. y_real_OmegaCDM.csv - contains label of OmegaCDM (1)
+
+add errors(sigma_obs) to all generated data
+1. x_real_580_OmegaCDM_with_err.csv - contains distance modulus for z_obs
+2. x_real_OmegaCDM_with_err.csv - contains distance modulus for z
+3. y_real_OmegaCDM_with_err.csv - contains label of LambdaCDM (0)
+
+
 python3 CPL.py
+outputs files 
+1. x_real_580_CPL.csv - contains distance modulus for z_obs
+2. x_real_CPL.csv - contains distance modulus for z
+3. y_real_CPL.csv - contains label of CPL (2)
+
+1. x_real_580_CPL_with_err.csv - contains distance modulus for z_obs
+2. x_real_CPL_with_err.csv - contains distance modulus for z
+3. y_real_CPL_with_err.csv - contains label of CPL (2)
+
+
 python3 merge.py
+
+
+python3 plots.py
+# plot of samples of each dark energy model can be seen in plots.py
 

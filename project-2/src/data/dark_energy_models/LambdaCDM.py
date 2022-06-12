@@ -40,10 +40,8 @@ size = 12800
 input_dim = 2048
 
 def lambdaCDMSample(z):
-    omega_M = np.random.uniform(omega_M_low, omega_M_high, (size, input_dim))
-    H0 = np.random.uniform(H0_low, H0_high, (size, input_dim))
-    #omega_M = np.tile(omega_M, (1, input_dim))
-    #H0 = np.tile(H0, (1, input_dim))
+    omega_M = np.random.uniform(omega_M_low, omega_M_high, (size, 1))
+    H0 = np.random.uniform(H0_low, H0_high, (size, 1))
     return distance_modulus(z, omega_M, H0)
 
 x_real = lambdaCDMSample(np.tile(np.reshape(z, (1, input_dim)), (size, 1)))
@@ -56,22 +54,12 @@ np.savetxt("x_real_580_lambdaCDM.csv", x_real_580, delimiter=",")
 np.savetxt("x_real_lambdaCDM.csv", x_real, delimiter=",")
 np.savetxt("y_real_lambdaCDM.csv", y_real, delimiter=",")
 
-if __name__ == '__main__':
+cov_obs = np.genfromtxt('../../../data/Union/SCPUnion2.1_covmat_sys.txt')
 
-    import numpy as np
-    import matplotlib.pyplot as plt
+# generate err from multivariate normal distribution with covariance matrix of Union2.1
+err_obs = np.random.multivariate_normal(np.zeros(580), cov_obs, size=(12800,))
 
-    union = np.genfromtxt('../../../data/Union/union.txt', delimiter=' ', usecols=(1,2,3), names=True)
-    union.sort(order='zCMB')
-    z_obs = union['zCMB'].astype('float32')
-    mu = union['MU'].astype('float32')
+x_real_580_with_err = x_real_580 + err_obs
 
-    prng = np.random.RandomState(123)
-    z = prng.uniform(0.8*np.min(z_obs), 1.2*np.max(z_obs), 1468)
-    z = np.concatenate((z, z_obs), axis=0)
-    z.sort()
-    x_real = np.genfromtxt('x_real_lambdaCDM.csv',delimiter=',')
-
-    plt.plot(z, x_real[0])
-    plt.plot(z, x_real[1])
-    plt.show()
+# save samples with added errors
+np.savetxt("x_real_580_lambdaCDM_with_err.csv", x_real_580_with_err, delimiter=",")

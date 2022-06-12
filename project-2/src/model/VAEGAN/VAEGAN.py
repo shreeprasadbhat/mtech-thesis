@@ -68,7 +68,6 @@ class VAEGAN(keras.Model):
 
         with tf.GradientTape() as tape:
             y_pred = self.s_discriminator(x_real)
-            print(y_real.shape, y_pred.shape)
             s_loss = self.sparse_categorical_cross_entropy_loss_fn(y_real, y_pred)
 
         grads = tape.gradient(s_loss, self.s_discriminator.trainable_weights)
@@ -98,10 +97,15 @@ class VAEGAN(keras.Model):
 
             z_mean, z_logvar = self.encoder(x_real_580)
             z = self.sampling((z_mean, z_logvar)) # reparameterize
-    
-            y_pred2 = self.discriminator(self.generator(z))
-            y_true2 = self.discriminator(x_real)
-            g_loss += self.binary_cross_entropy_loss_fn(y_true2, y_pred2)
+            
+            #????? 
+            x_pred = self.discriminator(self.generator(z))
+            x_true = self.discriminator(x_real)
+            #x_pred = self.generator(z)
+            #x_true = x_real
+
+            # try mse or likelihood
+            g_loss += self.mse(x_true, x_pred)
 
         grads = tape.gradient(g_loss, self.generator.trainable_weights)
         self.g_optimizer.apply_gradients(zip(grads, self.generator.trainable_weights))
@@ -110,10 +114,10 @@ class VAEGAN(keras.Model):
         with tf.GradientTape() as tape:
             z_mean, z_logvar = self.encoder(x_real_580)
             z = self.sampling((z_mean, z_logvar)) # reparameterize
-            #x_pred = self.discriminator(self.generator(z))
-            #x_true = self.discriminator(x_real)
-            x_pred = self.generator(z)
-            x_true = x_real
+            x_pred = self.discriminator(self.generator(z))
+            x_true = self.discriminator(x_real)
+            #x_pred = self.generator(z)
+            #x_true = x_real
             recon_loss = self.mse(x_pred, x_true)
             kl_loss = self.kl_loss(z_mean, z_logvar)
             e_loss = recon_loss + kl_loss
