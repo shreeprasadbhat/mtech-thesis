@@ -59,7 +59,7 @@ df = df[df['g'] > 0]
 df = df[df['r'] > 0]
 df = df[df['i'] > 0]
 df = df[df['z'] > 0]
-error_cut = 2. 
+error_cut = 0.3  
 df = df[df['u_err'] < error_cut]
 df = df[df['g_err'] < error_cut]
 df = df[df['r_err'] < error_cut]
@@ -68,24 +68,24 @@ df = df[df['z_err'] < error_cut]
 df = df[df['specz_err'] < 0.01]
 df = df[(df['specz'] > 0) & (df['specz'] < 1.)]
 
-df_new = pd.DataFrame(columns=['u','g','r','i','z','u_err','g_err','r_err','i_err','z_err','specz','specz_err','photoz','photoz_err'])
-
-sample_size = 1000
-interval_size = 0.001
-z_max_train = 1 
-z_max = df['specz'].max()
-
-z_list = np.arange(0, z_max_train, interval_size)
-
-for z in z_list :
-    df_cur = df[(df['specz'] >= z) & (df['specz'] < z+interval_size)]
-    train_size = min(sample_size, df_cur.shape[0])
-    if train_size == 0 : continue
-    df_train_cur = df_cur.sample(n=train_size, random_state=123)
-    df_new = pd.concat([df_new, df_train_cur])
-df = df_new
-
-print(df.shape)
+#df_new = pd.DataFrame(columns=['u','g','r','i','z','u_err','g_err','r_err','i_err','z_err','specz','specz_err','photoz','photoz_err'])
+#
+#sample_size = 100
+#interval_size = 0.001
+#z_max_train = 1 
+#z_max = df['specz'].max()
+#
+#z_list = np.arange(0, z_max_train, interval_size)
+#
+#for z in z_list :
+#    df_cur = df[(df['specz'] >= z) & (df['specz'] < z+interval_size)]
+#    train_size = min(sample_size, df_cur.shape[0])
+#    if train_size == 0 : continue
+#    df_train_cur = df_cur.sample(n=train_size, random_state=123)
+#    df_new = pd.concat([df_new, df_train_cur])
+#df = df_new
+#
+#print(df.shape)
 
 filename = 'MyTable_shreeprasadbhat.csv'
 

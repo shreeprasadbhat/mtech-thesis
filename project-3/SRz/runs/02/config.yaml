@@ -1,0 +1,24 @@
+outdir : "../runs/02/"
+train_filepath : '../../data/data'
+val_filepath : ''
+test_filepath : '../../data/test'
+equation_file : 'equation.csv'
+equation : '0.009954149*g*i + i*(-0.0014492471*g*i + 0.037396688*i) - 5.6483536'
+populations : 100
+population_size : 50 
+niterations : 5 
+binary_operators :
+        - 'plus'
+        - 'sub'
+        - 'mult'
+          #- 'div'
+unary_operators :
+variable_names : 
+        - 'u'
+        - 'g'
+        - 'r'
+        - 'i'
+        - 'z'
+model_selection : 'accuracy'
+loss : 'L2DistLoss()'
+progress : True
